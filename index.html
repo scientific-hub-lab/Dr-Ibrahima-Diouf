@@ -1,286 +1,210 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dr. Ibrahima Diouf — Climate & Health</title>
-  <meta name="description" content="Dr. Ibrahima Diouf — Climate & Health Researcher. Academic portfolio, CV, projects, publications, and contact." />
-
-  <!-- Minimal, elegant, responsive CSS -->
+  <title>Dr. Ibrahima DIOUF — Climate & Health</title>
+  <meta name="description" content="Academic website of Dr. Ibrahima Diouf — climate & health, data, adaptation. Projects, dashboards, publications, CV and contact." />
+  <meta property="og:title" content="Dr. Ibrahima DIOUF — Climate & Health" />
+  <meta property="og:description" content="Projects, dashboards, publications, CV and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="photo_profile.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg: #0b1220;
-      --panel:#0f172a;
-      --muted:#94a3b8;
-      --text:#e5e7eb;
-      --brand:#60a5fa;
-      --accent:#22c55e;
-      --card:#111827;
-      --ring: 0 0 0 2px rgba(96,165,250,.35);
-      --radius: 18px;
-      --shadow: 0 10px 30px rgba(2,6,23,.35);
-    }
-    /* light mode */
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f7fafc; --panel:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#475569;
-        --shadow:0 12px 24px rgba(2,6,23,.08);
-      }
-    }
-    html,body{height:100%}
-    body{
-      margin:0; background: radial-gradient(1200px 800px at 80% -10%, rgba(96,165,250,.25), transparent 60%),
-                 radial-gradient(1000px 700px at -20% 10%, rgba(34,197,94,.18), transparent 55%), var(--bg);
-      color:var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-    }
-    a{color:var(--brand); text-decoration:none}
-    a:hover{opacity:.92}
-    .wrap{max-width:1120px; padding:28px; margin-inline:auto}
-
-    /* top bar */
-    .top{
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-      position:sticky; top:0; z-index:20; padding:14px 28px; backdrop-filter:saturate(160%) blur(10px);
-      background:color-mix(in oklab, var(--bg) 84%, transparent); border-bottom:1px solid color-mix(in oklab, var(--muted) 25%, transparent);
-    }
-    .brand{display:flex; gap:14px; align-items:center}
-    .brand img{width:48px; height:48px; border-radius:50%; object-fit:cover; box-shadow:var(--shadow)}
-    .brand h1{font-size:18px; margin:0}
-    .muted{color:var(--muted)}
-    .nav{display:flex; gap:18px; flex-wrap:wrap}
-    .btn{
-      display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px;
-      border:1px solid color-mix(in oklab, var(--muted) 32%, transparent);
-      color:var(--text); background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 92%, transparent), color-mix(in oklab, var(--panel) 70%, transparent));
-    }
-    .btn:hover{box-shadow:var(--ring)}
-    .btn.primary{background:linear-gradient(180deg, color-mix(in oklab, var(--brand) 20%, var(--panel)), var(--panel)); border-color: color-mix(in oklab, var(--brand) 55%, transparent)}
-    .btn.small{padding:8px 12px; font-size:14px}
-
-    /* hero */
-    .hero{
-      display:grid; grid-template-columns: 1.05fr .95fr; gap:36px; align-items:center; margin-top:22px;
-    }
-    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
-    .panel{
-      background:linear-gradient(180deg, color-mix(in oklab, var(--panel) 85%, transparent), color-mix(in oklab, var(--panel) 100%, #000));
-      border:1px solid color-mix(in oklab, var(--muted) 30%, transparent);
-      border-radius: var(--radius); box-shadow: var(--shadow);
-    }
-    .pad{padding:26px}
-    .title{font-size:40px; line-height:1.15; margin:.25em 0 .35em}
-    .kicker{display:inline-block; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
-
-    /* badges */
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 2px}
-    .badge{
-      padding:6px 10px; border-radius:999px; font-size:13px; color:var(--text);
-      border:1px dashed color-mix(in oklab, var(--muted) 35%, transparent);
-      background:color-mix(in oklab, var(--panel) 90%, transparent)
-    }
-
-    /* grid cards */
-    .grid{display:grid; gap:18px; grid-template-columns: repeat(12, 1fr)}
-    .col-6{grid-column: span 6}
-    .col-4{grid-column: span 4}
-    .col-8{grid-column: span 8}
-    .col-12{grid-column: 1/-1}
-    @media (max-width:900px){ .col-6,.col-4,.col-8{grid-column:1/-1} }
-
-    .card{background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 30%, transparent); border-radius:var(--radius); padding:22px 20px; box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px}
-    .list{margin:0; padding:0; list-style:none}
-    .list li{margin:10px 0}
-    .chips{display:flex; flex-wrap:wrap; gap:8px}
-    .chip{padding:6px 10px; border-radius:999px; background:color-mix(in oklab, var(--brand) 8%, var(--panel)); border:1px solid color-mix(in oklab, var(--brand) 40%, transparent); font-size:13px}
-
-    .section-title{margin:28px 0 10px}
-    .footer{margin:30px 0 60px; color:var(--muted); font-size:14px}
-    .inline-icons a{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:10px; border:1px solid color-mix(in oklab, var(--muted) 28%, transparent); margin-right:10px}
-    .inline-icons svg{width:18px; height:18px}
+    :root{ --bg:#0f1a24;--ink:#0b1220;--muted:#556170;--paper:#f7f9fc;--card:#ffffff; --brand:#1c8cff;--brand-ink:#0b66c3;--ring:rgba(28,140,255,.2);--radius:18px; }
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    a{color:var(--brand);text-decoration:none} a:hover{color:var(--brand-ink)}
+    .topbar{position:sticky;top:0;z-index:50;background:var(--bg);color:#e6edf6;border-bottom:1px solid rgba(255,255,255,.06)}
+    .container{max-width:1160px;margin:0 auto;padding:0 20px}
+    .row{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:14px;padding:14px 0}
+    .avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(145deg,#4b5b6b,#27313b);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);object-fit:cover;}
+    .titlewrap{display:flex;flex-direction:column}.name{font-weight:700;letter-spacing:.2px}.tag{font-size:.9rem;color:#b9c7d6}
+    .social{display:flex;align-items:center;gap:14px;margin-left:20px}
+    .social a{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;border:1px solid rgba(255,255,255,.18);} .social a:hover{background:rgba(255,255,255,.08)} .social svg{width:16px;height:16px;fill:#e6edf6}
+    @media (max-width:860px){.social{display:none}}
+    nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0} nav a{color:#e6edf6;font-weight:600} nav a:hover{opacity:.9}
+    .hamburger{display:none;cursor:pointer;padding:10px} .bar{display:block;width:22px;height:2px;background:#e6edf6;margin:5px 0}
+    @media (max-width:860px){nav ul{display:none}nav ul.open{display:flex;flex-direction:column;gap:16px;padding:14px 0}.hamburger{display:block}.row{align-items:flex-start}}
+    .hero{padding:64px 0 26px;background:linear-gradient(180deg,var(--bg) 0%, #122232 70%, var(--paper) 70%)} .hero-card{background:transparent;color:#e6edf6}
+    .hero h1{font-size:48px;line-height:1.15;margin:18px 0}.hero p{max-width:1000px;color:#c9d6e2;font-size:18px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.chip{background:rgba(255,255,255,.1);color:#e6edf6;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14)}
+    section{padding:56px 0}.section-title{font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:700}
+    .panel{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:0 1px 1px rgba(16,24,40,.04),0 10px 24px rgba(2,12,27,.06)}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:16px;padding:18px;border:1px solid #eef2f8}.card h4{margin:4px 0 8px}
+    .bullets{margin:8px 0 0 18px}
+    .cta{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;border:1px solid #dfe8f3;background:#f8fbff}
+    footer{padding:40px 0 64px;text-align:center;color:#6b7a8b}
   </style>
 </head>
 <body>
-  <!-- Top bar -->
-  <header class="top">
-    <div class="brand">
-      <img src="assets/images/photo_profile.png" alt="Portrait of Dr Ibrahima Diouf" />
-      <div>
-        <h1>Dr. Ibrahima Diouf</h1>
-        <div class="muted" id="tagline" data-en="Climate & Health Researcher" data-fr="Chercheur — Climat & Santé">
-          Climate & Health Researcher
+  <header class="topbar">
+    <div class="container">
+      <div class="row">
+        <div class="brand">
+          <img src="photo_profile.jpg" class="avatar" alt="Portrait — Dr. Ibrahima Diouf">
+          <div class="titlewrap">
+            <div class="name">Dr. Ibrahima DIOUF</div>
+            <div class="tag">Climate & Health — AI, Data, Adaptation</div>
+          </div>
+        </div>
+        <nav>
+          <div class="hamburger" aria-label="Menu" onclick="toggleMenu()"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+          <ul id="nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#dashboards">Dashboards</a></li>
+            <li><a href="#phd">PhD</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="social" aria-label="Social links">
+          <a href="https://orcid.org/0000-0002-3157-0925" target="_blank" aria-label="ORCID" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.2 8.7h-1.6v6.6h1.6c2 0 3.6-1.5 3.6-3.3 0-1.8-1.6-3.3-3.6-3.3zM8.4 8.7H7v6.6h1.4V8.7zM12 3.6C7.3 3.6 3.6 7.3 3.6 12S7.3 20.4 12 20.4 20.4 16.7 20.4 12 16.7 3.6 12 3.6zm0 15.1c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"/></svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=en" target="_blank" aria-label="Google Scholar" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L1 12l11 10 11-10L12 2zm0 3.3l7.7 6.7L12 18.6 4.3 12 12 5.3z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/dr-ibrahima-diouf-610872108" target="_blank" aria-label="LinkedIn" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.1c.5-1 1.8-2.2 3.8-2.2 4 0 4.7 2.6 4.7 6V24h-4v-7.1c0-1.7 0-3.8-2.3-3.8-2.3 0-2.7 1.8-2.7 3.7V24h-4V8z"/></svg>
+          </a>
         </div>
       </div>
     </div>
-    <nav class="nav">
-      <a href="#cv" class="btn small">CV</a>
-      <a href="#projects" class="btn small">Projects</a>
-      <a href="#publications" class="btn small">Publications</a>
-      <a href="#dashboards" class="btn small">Dashboards</a>
-      <a href="#contact" class="btn small">Contact</a>
-      <button id="langBtn" class="btn primary small" aria-label="Toggle language">FR/EN</button>
-    </nav>
   </header>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="panel pad">
-        <span class="kicker" id="welcomeKicker" data-fr="Bienvenue" data-en="Welcome">Welcome</span>
-        <h2 class="title" id="welcomeTitle"
-            data-en="Hello — I’m Dr. Ibrahima Diouf"
-            data-fr="Bonjour — je suis Dr Ibrahima Diouf">
-          Hello — I’m Dr. Ibrahima Diouf
-        </h2>
-        <p id="welcomeText"
-           data-en="I work at the intersection of climate and public health. My interests include climate-sensitive diseases, rainfall and CMIP6 projections, malaria risk, and decision-ready dashboards for West and Central Africa. I teach and collaborate with the University Cheikh Anta Diop (Senegal) and the University of Labé (Guinea)."
-           data-fr="Je travaille à l’intersection du climat et de la santé publique. Mes intérêts couvrent les maladies sensibles au climat, la pluie et les projections CMIP6, le risque palustre, ainsi que des tableaux de bord opérationnels pour l’Afrique de l’Ouest et du Centre. J’enseigne et collabore avec l’UCAD (Sénégal) et l’Université de Labé (Guinée).">
-          I work at the intersection of climate and public health. My interests include climate-sensitive diseases, rainfall and CMIP6 projections, malaria risk, and decision-ready dashboards for West and Central Africa. I teach and collaborate with the University Cheikh Anta Diop (Senegal) and the University of Labé (Guinea).
+  <section id="home" class="hero">
+    <div class="container hero-card">
+      <h1>Hello — I’m Dr. Ibrahima Diouf</h1>
+      <p>Lecturer and international consultant in climate & health with 15+ years of experience integrating climate datasets (CHIRPS/CHIRTS, CMIP6) and public-health data to build <strong>early warning systems</strong> and guide <strong>adaptation</strong>.</p>
+      <div class="chips" role="list">
+        <span class="chip" role="listitem">Early Warning Systems</span>
+        <span class="chip" role="listitem">VECTRI / OpenMalaria</span>
+        <span class="chip" role="listitem">Dash • Hugging Face</span>
+        <span class="chip" role="listitem">CMIP6 • ETCCDI</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-title">About Me</div>
+      <div class="panel">
+        <p><strong>Profile.</strong> Climate–health researcher and lecturer specializing in climate variability, vector-borne disease modelling, and health-system resilience. <em>Lead Author</em> for the <strong>IPCC AR7 (Africa Chapter)</strong>, <em>Co-Chair</em> of the <strong>Applied Malaria Modeling Network (AMMnet, Senegal)</strong>, and Team Lead (Francophone countries) within the <strong>HMST–Global Fund</strong> programme. Dual affiliation with <strong>Cheikh Anta Diop University (Senegal)</strong> and the <strong>University of Labé (Guinea)</strong>; currently based in the United States.</p>
+        <p><strong>Collaboration & service.</strong> Experience across projects funded by the EU (FP7), USAID, WHO, UNICEF, IIED and NOAA. Principal Consultant to the Senegal <em>PNA/FVC</em> initiative aligning national and sub-national adaptation planning. Frequent presenter at AMS, AGU, UNFCCC (SB62) and the World One Health Congress.</p>
+        <p class="actions">
+          <a class="cta" href="CV_Dr_Ibrahima_DIOUF.pdf" target="_blank" rel="noopener">Download full CV (PDF)</a>
+          &nbsp;•&nbsp;
+          <a class="cta" href="About_Dr_Ibrahima_Diouf.pdf" target="_blank" rel="noopener">Short bio (PDF)</a>
         </p>
-        <div class="badges">
-          <span class="badge">Climate & Health</span>
-          <span class="badge">Geospatial</span>
-          <span class="badge">CMIP6</span>
-          <span class="badge">Malaria / EIR</span>
-          <span class="badge">Dashboards</span>
-        </div>
-        <div class="inline-icons" style="margin-top:14px">
-          <a href="https://orcid.org/0000-0002-3157-0925" target="_blank" rel="noopener">
-            <!-- ORCID SVG -->
-            <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" fill="#a6e22e"><circle cx="128" cy="128" r="128"/><path d="M99 70h17v116H99zM151 86a28 28 0 1 1 0 56 28 28 0 0 1 0-56Zm0-16a44 44 0 1 0 0 88 44 44 0 0 0 0-88Z" fill="#0b0"/></svg>
-            ORCID
-          </a>
-          <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="#60a5fa"><path d="M288 0L0 192l80 48 208-128 208 128 80-48L288 0zM64 304v144h160V320h128v128h160V304L288 176 64 304z"/></svg>
-            Google Scholar
-          </a>
-          <a href="http://linkedin.com/in/dr-ibrahima-diouf-610872108" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#0ea5e9"><path d="M100.28 448H7.4V148.9h92.88zm-46.44-340c-29.5 0-53.44-24-53.44-53.5S24.34.9 53.84.9 107.3 24.9 107.3 54.4s-24 53.6-53.46 53.6zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.24-79.2-48.3 0-55.7 37.7-55.7 76.6V448h-92.7V148.9h89v40.8h1.3c12.4-23.5 42.6-48.2 87.6-48.2 93.7 0 111 61.7 111 141.9V448z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://huggingface.co/idiouf" target="_blank" rel="noopener">
-            🤗 Hugging Face
-          </a>
-          <a class="btn small" href="CV_DIOUF_ENG.pdf" target="_blank" rel="noopener">Download CV (EN)</a>
-        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="grid">
-        <div class="col-12 card">
-          <h3 class="section-title" id="affilsTitle" data-en="Affiliations" data-fr="Affiliations">Affiliations</h3>
-          <ul class="list" id="affilsList">
-            <li><strong>UCAD — Université Cheikh Anta Diop (Senegal)</strong></li>
-            <li><strong>Université de Labé (Guinea)</strong></li>
+  <section id="projects">
+    <div class="container">
+      <div class="section-title">Recent Projects</div>
+      <div class="cards">
+        <article class="card">
+          <h4>HMST – Global Fund (Francophone Team Lead)</h4>
+          <ul class="bullets">
+            <li>Lead climate–health integration for Senegal, Niger, Central African Republic (+ Guinea-Bissau extension).</li>
+            <li>Design risk indicators and build operational workflows for health-system resilience.</li>
           </ul>
-          <div class="chips">
-            <span class="chip">Teaching</span>
-            <span class="chip">Research</span>
-            <span class="chip">Collaboration</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTENT GRID -->
-    <section class="grid" style="margin-top:26px">
-      <div class="col-8">
-        <div class="card" id="projects">
-          <h3 class="section-title" data-en="Selected Projects" data-fr="Projets sélectionnés">Selected Projects</h3>
-          <ul class="list">
-            <li><strong>Climate-sensitive diseases:</strong> modeling and dashboards for West/Central Africa.</li>
-            <li><strong>Rainfall & CMIP6 projections (Senegal & Guinea):</strong> ADM1 analyses and decision-ready visuals.</li>
-            <li><strong>Malaria risk (EIR):</strong> linking rainfall and entomological inoculation rate to support public health.</li>
+        </article>
+        <article class="card">
+          <h4>PNA/FVC – Senegal (Principal Consultant)</h4>
+          <ul class="bullets">
+            <li>Align national and sub-national adaptation planning; stakeholder mapping and capacity-building.</li>
+            <li>Co-develop training materials and decision-support for ministries and COMRECC actors.</li>
           </ul>
-        </div>
-
-        <div class="card" id="publications">
-          <h3 class="section-title" data-en="Publications (selection)" data-fr="Publications (sélection)">Publications (selection)</h3>
-          <p class="muted" data-en="See Google Scholar for the full list." data-fr="Voir Google Scholar pour la liste complète.">
-            See Google Scholar for the full list.
-          </p>
-          <ul class="list">
-            <li>[1] Climate–health analytics and risk visualization for operational decision-making. <em>(year)</em></li>
-            <li>[2] Rainfall variability and implications for malaria early warning. <em>(year)</em></li>
-            <li>[3] CMIP6-based scenarios for rainfall in Senegal and Guinea. <em>(year)</em></li>
+        </article>
+        <article class="card">
+          <h4>Applied Malaria Modeling Network (AMMnet)</h4>
+          <ul class="bullets">
+            <li>Co-chair network activities: modelling clinics, workflows, and training for malaria early warning.</li>
+            <li>Bridge research and programme needs across universities and public-health agencies.</li>
           </ul>
-        </div>
+        </article>
+        <article class="card">
+          <h4>CSID-EWS in LMICs</h4>
+          <ul class="bullets">
+            <li>Prototype early-warning tools combining CHIRPS/CHIRTS, CMIP6 and surveillance data.</li>
+            <li>Support local decision-making for epidemic preparedness and climate adaptation.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h4>NOAA–UCAR Climate Fellowship</h4>
+          <ul class="bullets">
+            <li>Advanced modelling of malaria–climate interactions and sub-seasonal to seasonal predictability.</li>
+            <li>Collaborations with CPC/NOAA and partners to operationalize early-warning components.</li>
+          </ul>
+        </article>
       </div>
+    </div>
+  </section>
 
-      <div class="col-4">
-        <div class="card" id="cv">
-          <h3 class="section-title" data-en="Curriculum Vitae" data-fr="Curriculum vitæ">Curriculum Vitae</h3>
-          <p class="muted" data-en="Short academic CV with teaching and research activities." data-fr="CV académique synthétique avec activités d’enseignement et de recherche.">
-            Short academic CV with teaching and research activities.
-          </p>
-          <p>
-            <a class="btn" href="CV_DIOUF_ENG.pdf" target="_blank" rel="noopener">Download CV (EN)</a>
-          </p>
-          <div class="chips">
-            <span class="chip">Teaching</span>
-            <span class="chip">Supervision</span>
-            <span class="chip">Field work</span>
-          </div>
-        </div>
-
-        <div class="card" id="contact">
-          <h3 class="section-title" data-en="Contact" data-fr="Contact">Contact</h3>
-          <p class="muted" data-en="For collaboration, projects or supervision, feel free to reach out." data-fr="Pour toute collaboration, projet ou encadrement, n’hésitez pas à me contacter.">
-            For collaboration, projects or supervision, feel free to reach out.
-          </p>
-          <p>✉️ <a href="mailto:ibrahima23.diouf@ucad.edu.sn">ibrahima23.diouf@ucad.edu.sn</a></p>
-          <p>🔗 <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Google Scholar</a> ·
-             <a href="https://orcid.org/0000-0002-3157-0925" target="_blank" rel="noopener">ORCID</a> ·
-             <a href="http://linkedin.com/in/dr-ibrahima-diouf-610872108" target="_blank" rel="noopener">LinkedIn</a></p>
-        </div>
-      </div>
-
-      <div class="col-12 card" id="dashboards">
-        <h3 class="section-title" data-en="Interactive Dashboards" data-fr="Tableaux de bord interactifs">Interactive Dashboards</h3>
-        <ul class="list">
-          <li>
-            <strong>Multi Disease Dashboard — DRC (MPX / etc.)</strong> ·
-            <a href="https://huggingface.co/spaces/idiouf/multi_disease_dashboard_DRC" target="_blank" rel="noopener">Open</a>
-            <span class="muted"> — Explore cases, deaths, time series, and ADM1 mapping.</span>
-          </li>
-          <li>
-            <strong>Senegal Rainfall — CMIP6 ADM1</strong> ·
-            <a href="https://huggingface.co/spaces/idiouf/senegal-pluie-adm1" target="_blank" rel="noopener">Open</a>
-          </li>
-          <li>
-            <strong>Guinea Rainfall & EIR</strong> ·
-            <a href="https://huggingface.co/spaces/idiouf/guinee-pluie-eir" target="_blank" rel="noopener">Open</a>
-          </li>
-          <li>
-            <strong>Climate Multi-Diseases Dashboard</strong> ·
-            <a href="https://huggingface.co/spaces/idiouf/climate-multi-diseases-dashboard" target="_blank" rel="noopener">Open</a>
-          </li>
+  <section id="dashboards">
+    <div class="container">
+      <div class="section-title">Interactive Dashboards (Climate & Health)</div>
+      <div class="panel">
+        <p>Data-driven tools for climate–health integration, epidemic monitoring, and climate-risk visualization — hosted on <strong>Hugging Face Spaces</strong>.</p>
+        <p><strong>Main profile:</strong> <a href="https://huggingface.co/idiouf" target="_blank" rel="noopener">https://huggingface.co/idiouf</a></p>
+        <ul>
+          <li><strong>Multi-Disease Dashboard — DRC (ADM1)</strong> → <a href="https://huggingface.co/spaces/idiouf/multi_disease_dashboard_DRC" target="_blank" rel="noopener">/spaces/idiouf/multi_disease_dashboard_DRC</a></li>
+          <li><strong>Senegal Rainfall (ADM1) — CMIP6 Projections</strong> → <a href="https://huggingface.co/spaces/idiouf/senegal-pluie-adm1" target="_blank" rel="noopener">/spaces/idiouf/senegal-pluie-adm1</a></li>
+          <li><strong>Guinea Rainfall–EIR Dashboard</strong> → <a href="https://huggingface.co/spaces/idiouf/guinee-pluie-eir" target="_blank" rel="noopener">/spaces/idiouf/guinee-pluie-eir</a></li>
+          <li><strong>Climate Multi-Diseases Dashboard</strong> → <a href="https://huggingface.co/spaces/idiouf/climate-multi-diseases-dashboard" target="_blank" rel="noopener">/spaces/idiouf/climate-multi-diseases-dashboard</a></li>
         </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="footer">
-      © <span id="year"></span> Dr. Ibrahima Diouf · <span class="muted">Academic portfolio</span>
-    </footer>
-  </main>
+  <section id="phd">
+    <div class="container">
+      <div class="section-title">PhD — Thesis Summary</div>
+      <div class="panel">
+        <p><strong>Title:</strong> Climate–health: observation and modelling of the seasonal incidence of malaria for forecasting in Senegal and the Sahel.</p>
+        <p>Identifies climatic drivers (rainfall, humidity, temperature), documents strong May–October seasonality, and evidences an <em>El Niño → reduced mosquito abundance & malaria incidence</em> link using the <em>LMM</em> and <em>S4CAST</em> models (six-month lead). Projections with IPSL, HadGEM, GFDL, MIROC indicate widespread warming and mixed rainfall signals; malaria models <em>LMM_R0</em>, <em>MARA</em>, <em>MIASMA</em> suggest more favourable transmission conditions with inter-annual variability increasingly temperature-sensitive.</p>
+        <p><a class="cta" href="Resume_these_Ibrahima_DIOUF.pdf" target="_blank" rel="noopener">Download thesis abstract (PDF)</a></p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Tiny JS: language toggle + current year -->
-  <script>
-    const $ = (s) => document.querySelectorAll(s);
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <section id="publications">
+    <div class="container">
+      <div class="section-title">Selected Publications</div>
+      <div class="panel">
+        <ul>
+          <li><strong>Diouf I.</strong>, Fall P., Diakhaté M., Senghor H., Dieng M.D.B., Tompkins A.M., Arnault J., et al. (2024). Process-based atmosphere–hydrology–malaria modelling: performance for spatio-temporal malaria transmission dynamics in Sub-Saharan Africa. <em>Water Resources Research</em>, 60(6).</li>
+          <li>Fall P., <strong>Diouf I.</strong>, Dème A., Diouf S., Sene D., Sultan B., Janicot S. (2023). Enhancing understanding of climate-change impacts on malaria using VECTRI and bias-corrected CMIP6. <em>Microbiology Research</em>, 14(4).</li>
+          <li><strong>Diouf I.</strong>, Sy I., Ndione J-A., Gaye A.T. (2022). Malaria in Senegal: recent and future changes based on bias-corrected CMIP6 simulations. <em>Tropical Medicine and Infectious Disease</em>, 7(11).</li>
+          <li><strong>Diouf I.</strong>, Suárez-Moreno R., Rodríguez-Fonseca B., Caminade C., et al. (2021). Oceanic influence on seasonal malaria incidence in West Africa. <em>Weather, Climate, and Society</em>.</li>
+          <li><strong>Diouf I.</strong>, Fonseca B.F., Deme A., Caminade C., et al. (2017). Comparison of malaria simulations driven by observations and reanalyses in Senegal. <em>International Journal of Environmental Research and Public Health</em>, 14(10).</li>
+        </ul>
+        <p>Complete list on <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      </div>
+    </div>
+  </section>
 
-    const toFR = () => {
-      $('[data-fr]').forEach(el => { el.textContent = el.getAttribute('data-fr'); });
-    };
-    const toEN = () => {
-      $('[data-en]').forEach(el => { el.textContent = el.getAttribute('data-en'); });
-    };
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">Contact & Profiles</div>
+      <div class="panel">
+        <p><strong>Emails:</strong> <a href="mailto:ibrahima23.diouf@ucad.edu.sn">ibrahima23.diouf@ucad.edu.sn</a> • <a href="mailto:ibrahima.diouf@univ-labe.edu.gn">ibrahima.diouf@univ-labe.edu.gn</a></p>
+        <p><strong>Profiles:</strong> <a href="https://orcid.org/0000-0002-3157-0925" target="_blank" rel="noopener">ORCID</a> · <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://linkedin.com/in/dr-ibrahima-diouf-610872108" target="_blank" rel="noopener">LinkedIn</a></p>
+        <p><a class="cta" href="#home">↑ Back to top</a></p>
+      </div>
+    </div>
+  </section>
 
-    let lang = 'en';
-    document.getElementById('langBtn').addEventListener('click', () => {
-      lang = (lang === 'en') ? 'fr' : 'en';
-      (lang === 'fr') ? toFR() : toEN();
-      document.documentElement.setAttribute('lang', lang);
-    });
-  </script>
+  <footer>© <span id="year"></span> Dr. Ibrahima Diouf — Hosted on GitHub Pages.</footer>
+  <script>function toggleMenu(){document.getElementById('nav').classList.toggle('open')}document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
