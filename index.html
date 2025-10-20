@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Ibrahima DIOUF — Climat & Santé</title>
+  <meta name="description" content="Site académique — climat & santé, IA, données. Projets, publications, CV et contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1a24;--ink:#0b1220;--muted:#556170;--paper:#f7f9fc;--card:#ffffff;
+      --brand:#1c8cff;--brand-ink:#0b66c3;--ring:rgba(28,140,255,.2);--radius:18px;
+    }
+    *{box-sizing:border-box} html,body{margin:0;padding:0}
+    body{font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    a{color:var(--brand);text-decoration:none} a:hover{color:var(--brand-ink)}
+    .topbar{position:sticky;top:0;z-index:50;background:var(--bg);color:#e6edf6;border-bottom:1px solid rgba(255,255,255,.06)}
+    .container{max-width:1160px;margin:0 auto;padding:0 20px}
+    .row{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:14px;padding:14px 0}
+    .avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(145deg,#4b5b6b,#27313b);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);object-fit:cover;}
+    .titlewrap{display:flex;flex-direction:column}.name{font-weight:700;letter-spacing:.2px}.tag{font-size:.9rem;color:#b9c7d6}
+    .social{display:flex;align-items:center;gap:14px;margin-left:20px}
+    .social a{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;border:1px solid rgba(255,255,255,.18);}
+    .social a:hover{background:rgba(255,255,255,.08)}
+    .social svg{width:16px;height:16px;fill:#e6edf6}
+    @media (max-width:860px){.social{display:none}}
+    nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0} nav a{color:#e6edf6;font-weight:600} nav a:hover{opacity:.9}
+    .hamburger{display:none;cursor:pointer;padding:10px}.bar{display:block;width:22px;height:2px;background:#e6edf6;margin:5px 0}
+    @media (max-width:860px){nav ul{display:none}nav ul.open{display:flex;flex-direction:column;gap:16px;padding:14px 0}.hamburger{display:block}.row{align-items:flex-start}}
+    .hero{padding:64px 0 26px;background:linear-gradient(180deg,var(--bg) 0%, #122232 70%, var(--paper) 70%)}
+    .hero-card{background:transparent;color:#e6edf6}.hero h1{font-size:48px;line-height:1.15;margin:18px 0}.hero p{max-width:1000px;color:#c9d6e2;font-size:18px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.chip{background:rgba(255,255,255,.1);color:#e6edf6;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14)}
+    section{padding:56px 0}.section-title{font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:700}
+    .panel{background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:0 1px 1px rgba(16,24,40,.04),0 10px 24px rgba(2,12,27,.06)}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:var(--card);border-radius:16px;padding:18px;border:1px solid #eef2f8}.card h4{margin:4px 0 8px}
+    .cta{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;border:1px solid #dfe8f3;background:#f8fbff}
+    footer{padding:40px 0 64px;text-align:center;color:#6b7a8b}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="row">
+        <div class="brand">
+          <img src="photo_profile.jpg" class="avatar" alt="Photo — Dr. Ibrahima Diouf">
+          <div class="titlewrap">
+            <div class="name">Dr. Ibrahima DIOUF</div>
+            <div class="tag">Climat & Santé — IA, Données, Adaptation</div>
+          </div>
+        </div>
+        <nav>
+          <div class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+          </div>
+          \1
+            <li><a href="#accueil">Home</a></li>
+<li><a href="#cv">CV</a></li>
+<li><a href="#projets">Projects</a></li>
+<li><a href="#dashboards">Dashboards</a></li>
+<li><a href="#these">PhD</a></li>
+<li><a href="#pubs">Publications</a></li>
+<li><a href="#contact">Contact</a></li>
+          \3
+        </nav>
+
+        <div class="social">
+          <!-- ORCID -->
+          <a href="https://orcid.org/0000-0002-3157-0925" target="_blank" aria-label="ORCID" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.2 8.7h-1.6v6.6h1.6c2 0 3.6-1.5 3.6-3.3 0-1.8-1.6-3.3-3.6-3.3zM8.4 8.7H7v6.6h1.4V8.7zM12 3.6C7.3 3.6 3.6 7.3 3.6 12S7.3 20.4 12 20.4 20.4 16.7 20.4 12 16.7 3.6 12 3.6zm0 15.1c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"/></svg>
+          </a>
+          <!-- Google Scholar (stylized 'G') -->
+          <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" aria-label="Google Scholar" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L1 12l11 10 11-10L12 2zm0 3.3l7.7 6.7L12 18.6 4.3 12 12 5.3z"/></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="http://linkedin.com/in/dr-ibrahima-diouf-610872108" target="_blank" aria-label="LinkedIn" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.1c.5-1 1.8-2.2 3.8-2.2 4 0 4.7 2.6 4.7 6V24h-4v-7.1c0-1.7 0-3.8-2.3-3.8-2.3 0-2.7 1.8-2.7 3.7V24h-4V8z"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <section id="accueil" class="hero">
+    <div class="container hero-card">
+      <h1>Bonjour — je suis Dr. Ibrahima Diouf</h1>
+      <p>Enseignant-chercheur et consultant international en climat & santé. J’intègre données climatiques (CHIRPS/CHIRTS, CMIP6) et données sanitaires (paludisme, maladies à potentiel épidémique) pour développer des systèmes d’alerte précoce et guider l’adaptation.</p>
+      <div class="chips">
+        <span class="chip">Early Warning Systems</span>
+        <span class="chip">VECTRI / OpenMalaria</span>
+        <span class="chip">Dash • Hugging Face</span>
+        <span class="chip">CMIP6 • ETCCDI</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <div class="container">
+      <div class="section-title">Profil & Parcours</div>
+      <div class="panel">
+        <p><strong>Lead Author</strong> — IPCC AR7 (Chapitre Afrique) • <strong>Co‑chair</strong> AMMnet (Sénégal) • Team Lead (pays francophones) — Global Fund HMST.</p>
+        <p>Affiliations : UCAD (Sénégal), Université de Labé (Guinée). Basé aux États‑Unis, collaborations OMS, UNICEF, USAID, NOAA.</p>
+        <p><a class="cta" href="CV_Dr_Ibrahima_DIOUF.pdf" target="_blank">Télécharger le CV (PDF)</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <div class="container">
+      <div class="section-title">Projets récents</div>
+      <div class="cards">
+        <article class="card">
+          <h4>CSID‑EWS in LMICs</h4>
+          <p>Co‑développement d’outils d’alerte intégrant données climatiques et sanitaires pour la décision locale.</p>
+        </article>
+        <article class="card">
+          <h4>Top‑20 Climate Indicators (CLI/VUL CCVI)</h4>
+          <p>Tableau de bord multi‑continents sur Hugging Face (export PNG/SVG/CSV, mises à jour trimestrielles).</p>
+        </article>
+        <article class="card">
+          <h4>VECTRI & OpenMalaria</h4>
+          <p>Forçages CHIRPS/CMIP6, scénarios d’adaptation, validation croisée spatio‑temporelle.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboards">
+    <div class="container">
+      <div class="section-title">Interactive Dashboards (Climate &amp; Health)</div>
+      <div class="panel">
+        <p>Showcasing data-driven tools for climate–health integration, epidemic monitoring, and climate impact visualization — all hosted on <strong>Hugging Face Spaces</strong>.</p>
+        <p><strong>Main profile:</strong> <a href="https://huggingface.co/idiouf" target="_blank" rel="noopener">https://huggingface.co/idiouf</a></p>
+        <ul>
+          <li><strong>Multi-Disease Dashboard – DRC (ADM1)</strong><br>
+            ➜ <a href="https://huggingface.co/spaces/idiouf/multi_disease_dashboard_DRC" target="_blank" rel="noopener">https://huggingface.co/spaces/idiouf/multi_disease_dashboard_DRC</a><br>
+            <em>Rapid epidemic analysis in the Democratic Republic of Congo (including Monkeypox, MPX). Explore weekly/monthly/yearly trends, compare provinces, switch between cases and deaths, and view ready-to-publish thematic maps.</em>
+          </li>
+          <li><strong>Senegal Rainfall (ADM1) — CMIP6 Projections</strong><br>
+            ➜ <a href="https://huggingface.co/spaces/idiouf/senegal-pluie-adm1" target="_blank" rel="noopener">https://huggingface.co/spaces/idiouf/senegal-pluie-adm1</a><br>
+            <em>Interactive exploration of regional rainfall projections across Senegal using CMIP6 climate models.</em>
+          </li>
+          <li><strong>Guinea Rainfall–EIR Dashboard</strong><br>
+            ➜ <a href="https://huggingface.co/spaces/idiouf/guinee-pluie-eir" target="_blank" rel="noopener">https://huggingface.co/spaces/idiouf/guinee-pluie-eir</a><br>
+            <em>Visualizes rainfall and entomological inoculation rate (EIR) correlations for malaria surveillance in Guinea.</em>
+          </li>
+          <li><strong>Climate Multi-Diseases Dashboard</strong><br>
+            ➜ <a href="https://huggingface.co/spaces/idiouf/climate-multi-diseases-dashboard" target="_blank" rel="noopener">https://huggingface.co/spaces/idiouf/climate-multi-diseases-dashboard</a><br>
+            <em>Combines climate and disease data to explore multi-risk interactions and co-exposure patterns.</em>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+<section id="these">
+    <div class="container">
+      <div class="section-title">Thèse & Recherches doctorales</div>
+      <div class="panel">
+        <p><strong>Résumé (FR)</strong> — Climat–santé : observations et modélisation de l’incidence saisonnière du paludisme pour sa prévision au Sénégal et au Sahel. 
+        L’étude caractérise les déterminants climatiques (précipitations, humidité, températures), montre la forte saisonnalité (mai–octobre) du risque et identifie un lien El Niño → baisse des moustiques et de l’incidence via le couplage <em>LMM</em> et <em>S4CAST</em> à 6 mois d’échéance. 
+        Les projections (IPSL, HadGEM, GFDL, MIROC) indiquent une hausse généralisée des températures et des signaux mixtes sur les précipitations; les modèles <em>LMM_R0</em>, <em>MARA</em>, <em>MIASMA</em> suggèrent des conditions plus favorables à la transmission, la variabilité interannuelle étant davantage liée aux températures.</p>
+        <p><strong>Abstract (EN)</strong> — Climate–health: observation and modelling of the seasonal incidence of malaria for forecasting in Senegal and the Sahel. 
+        We quantify climatic drivers (rainfall, humidity, temperature), show strong seasonality (May–October) of transmission risk and identify an El Niño → reduction of mosquito abundance and malaria incidence using the <em>LMM</em> and <em>S4CAST</em> models with six‑month lead time. 
+        Projections with global models (IPSL, HadGEM, GFDL, MIROC) show widespread warming and mixed rainfall signals; malaria models <em>LMM_R0</em>, <em>MARA</em>, <em>MIASMA</em> indicate more favourable transmission conditions with year‑to‑year variability more temperature‑sensitive.</p>
+        <p><a class="cta" href="Resume_these_Ibrahima_DIOUF.pdf" target="_blank">Télécharger le résumé de thèse (PDF)</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pubs">
+    <div class="container">
+      <div class="section-title">Publications (sélection)</div>
+      <div class="panel">
+        <ul>
+          <li>Diouf I. et al. (2024) <em>Process‑based atmosphere–hydrology–malaria modeling</em>, Water Resources Research.</li>
+          <li>Fall P., Diouf I. et al. (2023) <em>Impact of climate change on malaria using VECTRI</em>, TMID.</li>
+          <li>Diouf I. et al. (2021) <em>Oceanic influence on seasonal malaria incidence</em>, WCAS.</li>
+        </ul>
+        <p>Voir : <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank">Google Scholar</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">Contact & Profils</div>
+      <div class="panel">
+        <p><strong>Emails :</strong> <a href="mailto:ibrahima23.diouf@ucad.edu.sn">ibrahima23.diouf@ucad.edu.sn</a> • <a href="mailto:ibrahima.diouf@univ-labe.edu.gn">ibrahima.diouf@univ-labe.edu.gn</a></p>
+        <p><strong>Profils :</strong> <a href="https://orcid.org/0000-0002-3157-0925" target="_blank">ORCID</a> ·
+          <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank">Google Scholar</a> ·
+          <a href="http://linkedin.com/in/dr-ibrahima-diouf-610872108" target="_blank">LinkedIn</a></p>
+        <p><a class="cta" href="#accueil">↑ Retour en haut</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>© <span id="year"></span> Dr. Ibrahima Diouf — Hébergé sur GitHub Pages.</footer>
+
+  <script>
+    function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
