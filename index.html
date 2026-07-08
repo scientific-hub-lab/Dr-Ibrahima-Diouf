@@ -422,7 +422,7 @@
 
     // Init from storage or browser
     const saved = (()=>{ try { return localStorage.getItem('site_lang'); } catch(e){ return null; } })();
-    const startLang = saved || (navigator.language || 'en').slice(0,2).toLowerCase().startsWith('fr') ? 'fr' : 'en';
+    const startLang = saved || ((navigator.language || 'en').slice(0,2).toLowerCase().startsWith('fr') ? 'fr' : 'en');
     applyI18n(startLang);
 
     // Bind buttons
