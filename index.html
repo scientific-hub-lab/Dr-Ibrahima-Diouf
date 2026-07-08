@@ -71,6 +71,7 @@
       display:flex;align-items:center;justify-content:space-between;gap:24px;
       padding:14px 0;
     }
+
     .brand{display:flex;align-items:center;gap:16px;min-width:330px}
     .avatar{
       width:82px;height:82px;border-radius:50%;object-fit:cover;object-position:center;
@@ -79,6 +80,7 @@
     body.light .avatar{border-color:rgba(11,126,232,.25)}
     .name{font-size:1.35rem;line-height:1.15;font-weight:900;color:var(--ink);letter-spacing:-.3px}
     .tag{font-size:.95rem;color:var(--muted);font-weight:600;max-width:420px}
+
     .badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}
     .badge{
       display:inline-flex;align-items:center;gap:6px;
@@ -86,14 +88,14 @@
       background:rgba(255,255,255,.08);border:1px solid var(--line);
       padding:3px 9px;border-radius:999px;
     }
-    .badge:hover{color:var(--brand2)}
-    .badge.primary{border-color:rgba(0,204,187,.55);background:rgba(0,204,187,.12)}
     body.light .badge{background:#eef6ff}
+    .badge.primary{border-color:rgba(0,204,187,.55);background:rgba(0,204,187,.12)}
 
     .rightnav{display:flex;align-items:center;gap:14px}
     nav ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;align-items:center}
     nav a{color:var(--ink);font-weight:800;font-size:.93rem}
     nav a:hover{color:var(--brand)}
+
     .social{display:flex;align-items:center;gap:8px}
     .social a,.btn-mini{
       display:inline-flex;align-items:center;justify-content:center;
@@ -115,7 +117,7 @@
         radial-gradient(circle at 88% 10%, rgba(0,204,187,.16), transparent 30%),
         linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%);
       border-bottom:1px solid var(--line);
-      padding:76px 0 72px;
+      padding:64px 0 72px;
     }
 
     .hero-banner{
@@ -126,22 +128,25 @@
       box-shadow:var(--shadow);
       background:var(--card);
     }
-    .hero-banner img{
-      display:block;
-      width:100%;
-      height:auto;
+    .hero-banner img{display:block;width:100%;height:auto}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:34px;
+      align-items:center;
     }
-    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:44px;align-items:center}
+
     .eyebrow{
       display:inline-flex;gap:8px;align-items:center;
       color:var(--brand2);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;
       margin-bottom:14px;
     }
     .hero h1{
-      font-size:clamp(2.4rem,5.7vw,5.2rem);line-height:1.03;margin:0 0 18px;
-      letter-spacing:-2.5px;color:var(--ink);
+      font-size:clamp(2.2rem,5.3vw,4.7rem);line-height:1.03;margin:0 0 18px;
+      letter-spacing:-2.2px;color:var(--ink);
     }
-    .hero .lead{font-size:1.18rem;color:var(--soft);max-width:850px;margin:0 0 22px}
+    .hero .lead{font-size:1.15rem;color:var(--soft);max-width:850px;margin:0 0 22px}
     .chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
     .chip{
       background:rgba(255,255,255,.08);border:1px solid var(--line);
@@ -207,7 +212,7 @@
     .affiliation-row a{font-weight:900}
 
     .timeline{position:relative;display:grid;gap:14px}
-    .timeline-item{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:start}
+    .timeline-item{display:grid;grid-template-columns:125px 1fr;gap:18px;align-items:start}
     .year{color:var(--gold);font-weight:900}
     .timeline-box{padding:18px;border-radius:18px;border:1px solid var(--line);background:var(--card2)}
     .timeline-box h4{margin:0 0 4px;color:var(--ink)}
@@ -254,7 +259,7 @@
       nav ul{display:none}
       nav ul.open{display:flex;flex-direction:column;align-items:flex-start;padding:12px 0}
       .social{flex-wrap:wrap}
-      .hero{padding:50px 0}
+      .hero{padding:36px 0 50px}
       .hero-banner{border-radius:20px;margin-bottom:30px}
       .timeline-item,.affiliation-row{grid-template-columns:1fr}
     }
@@ -278,7 +283,7 @@
             <div class="tag" data-i18n="top.tag">Climate & Health Scientist • International Consultant</div>
             <div class="badges">
               <a class="badge primary" href="https://univ-labe.edu.gn/" target="_blank" rel="noopener">Primary: University of Labé</a>
-              <a class="badge" href="https://esp.sn/" target="_blank" rel="noopener">ESP/UCAD</a>
+              <a class="badge" href="https://www.ucad.sn/" target="_blank" rel="noopener">UCAD</a>
               <a class="badge" href="https://www.ipcc.ch/" target="_blank" rel="noopener">IPCC AR7 WGII</a>
             </div>
           </div>
@@ -330,35 +335,35 @@
         <div class="hero-banner">
           <img src="hero_climate_health.png" alt="Climate-Health Interactions and the Dynamics of Malaria in West Africa">
         </div>
-      </div>
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow" data-i18n="hero.eyebrow">IPCC AR7 Lead Author • Climate & Health</div>
-          <h1 data-i18n="hero.title">Climate-informed health systems for a changing world.</h1>
-          <p class="lead" data-i18n="hero.lead">
-            I am Dr. Ibrahima Diouf, a climate and health scientist, lecturer and international consultant working at the interface of climate data, infectious disease modelling, early warning systems and adaptation in Africa.
-          </p>
-          <div class="chips">
-            <span class="chip">IPCC AR7 WGII</span>
-            <span class="chip">HMST – Global Fund</span>
-            <span class="chip">Malaria Modelling</span>
-            <span class="chip">Early Warning Systems</span>
-            <span class="chip">Climate Dashboards</span>
-          </div>
-          <div class="hero-actions">
-            <a class="btn primary" href="CV_Dr_Ibrahima_DIOUF.pdf" target="_blank" rel="noopener" data-i18n="hero.cv">Download CV</a>
-            <a class="btn secondary" href="https://huggingface.co/idiouf" target="_blank" rel="noopener" data-i18n="hero.dash">View Dashboards</a>
-            <a class="btn secondary" href="#contact" data-i18n="hero.contact">Contact</a>
-          </div>
-        </div>
 
-        <div class="portrait-card">
-          <img src="photo_profile.jpeg" alt="Dr. Ibrahima Diouf">
-          <div class="portrait-caption" data-i18n="hero.caption">Climate & Health • Data • Adaptation • Africa</div>
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow" data-i18n="hero.eyebrow">IPCC AR7 Lead Author • Climate & Health</div>
+            <h1 data-i18n="hero.title">Climate-informed health systems for a changing world.</h1>
+            <p class="lead" data-i18n="hero.lead">
+              I am Dr. Ibrahima Diouf, a climate and health scientist, lecturer and international consultant working at the interface of climate data, infectious disease modelling, early warning systems and adaptation in Africa.
+            </p>
+            <div class="chips">
+              <span class="chip">Primary affiliation: University of Labé</span>
+              <span class="chip">Research affiliation: UCAD</span>
+              <span class="chip">IPCC AR7 WGII</span>
+              <span class="chip">HMST – Global Fund</span>
+              <span class="chip">Malaria Modelling</span>
+            </div>
+            <div class="hero-actions">
+              <a class="btn primary" href="CV_Dr_Ibrahima_DIOUF.pdf" target="_blank" rel="noopener" data-i18n="hero.cv">Download CV</a>
+              <a class="btn secondary" href="https://huggingface.co/idiouf" target="_blank" rel="noopener" data-i18n="hero.dash">View Dashboards</a>
+              <a class="btn secondary" href="#contact" data-i18n="hero.contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="portrait-card">
+            <img src="photo_profile.jpeg" alt="Dr. Ibrahima Diouf">
+            <div class="portrait-caption" data-i18n="hero.caption">Climate & Health • Data • Adaptation • Africa</div>
+          </div>
         </div>
       </div>
     </section>
-
 
     <section id="affiliations">
       <div class="container">
@@ -375,10 +380,10 @@
           <div class="affiliation-row">
             <div class="label" data-i18n="aff.other">Research affiliation</div>
             <div>
-              <h4><a href="https://esp.sn/" target="_blank" rel="noopener">École Supérieure Polytechnique — UCAD</a></h4>
-              <p data-i18n="aff.esp">Research affiliation with Cheikh Anta Diop University, Senegal.</p>
+              <h4><a href="https://www.ucad.sn/" target="_blank" rel="noopener">Cheikh Anta Diop University (UCAD)</a></h4>
+              <p data-i18n="aff.ucad">Research affiliation with Cheikh Anta Diop University, Dakar, Senegal.</p>
             </div>
-            <a href="https://esp.sn/" target="_blank" rel="noopener">Visit →</a>
+            <a href="https://www.ucad.sn/" target="_blank" rel="noopener">Visit →</a>
           </div>
           <div class="affiliation-row">
             <div class="label" data-i18n="aff.international">International role</div>
@@ -415,7 +420,7 @@
           <article class="card"><div class="icon">🎓</div><h3><a href="https://univ-labe.edu.gn/" target="_blank" rel="noopener">University of Labé</a></h3><p data-i18n="role.1">Primary institutional affiliation as lecturer-researcher supporting teaching, supervision and climate-health research in Guinea.</p></article>
           <article class="card"><div class="icon">🌍</div><h3><a href="https://www.ipcc.ch/" target="_blank" rel="noopener">IPCC AR7 WGII</a></h3><p data-i18n="role.2">Lead Author for the Africa Chapter, contributing to the Seventh Assessment Report.</p></article>
           <article class="card"><div class="icon">🏥</div><h3>HMST – Global Fund</h3><p data-i18n="role.3">Francophone Team Lead for climate-health integration in country reports and health system strengthening.</p></article>
-          <article class="card"><div class="icon">🔬</div><h3><a href="https://esp.sn/" target="_blank" rel="noopener">ESP/UCAD</a></h3><p data-i18n="role.4">Research affiliation with École Supérieure Polytechnique, Cheikh Anta Diop University, Senegal.</p></article>
+          <article class="card"><div class="icon">🔬</div><h3><a href="https://www.ucad.sn/" target="_blank" rel="noopener">Cheikh Anta Diop University (UCAD)</a></h3><p data-i18n="role.4">Research affiliation with Cheikh Anta Diop University, Dakar, Senegal.</p></article>
           <article class="card"><div class="icon">🦟</div><h3>AMMnet Senegal</h3><p data-i18n="role.5">Co-chair of the Applied Malaria Modeling Network in Senegal.</p></article>
           <article class="card"><div class="icon">🤝</div><h3>International Consulting</h3><p data-i18n="role.6">Technical support for climate-health projects with partners including WHO, UNICEF, USAID, IIED and NOAA-linked collaborations.</p></article>
         </div>
@@ -504,14 +509,17 @@
         'hero.title':'Climate-informed health systems for a changing world.',
         'hero.lead':'I am Dr. Ibrahima Diouf, a climate and health scientist, lecturer and international consultant working at the interface of climate data, infectious disease modelling, early warning systems and adaptation in Africa.',
         'hero.cv':'Download CV','hero.dash':'View Dashboards','hero.contact':'Contact','hero.caption':'Climate & Health • Data • Adaptation • Africa',
+        'aff.title':'Institutional affiliations','aff.primary':'Primary affiliation','aff.other':'Research affiliation','aff.international':'International role',
+        'aff.labe':'Lecturer-researcher, Faculty of Science and Technology, Guinea.',
+        'aff.ucad':'Research affiliation with Cheikh Anta Diop University, Dakar, Senegal.',
+        'aff.ipcc':'Lead Author, AR7 Working Group II, Africa Chapter.',
         'highlights.title':'Highlights','highlights.heading':'Scientific profile at a glance','highlights.text':'A career focused on climate-sensitive health risks, operational climate services, early warning systems and capacity building.',
         'stat.1':'Years of experience','stat.2':'AR7 Lead Author','stat.3':'Dashboards & tools','stat.4':'Countries engaged',
-        'aff.title':'Institutional affiliations','aff.primary':'Primary affiliation','aff.other':'Research affiliation','aff.international':'International role','aff.labe':'Lecturer-researcher, Faculty of Science and Technology, Guinea.','aff.esp':'Research affiliation with Cheikh Anta Diop University, Senegal.','aff.ipcc':'Lead Author, AR7 Working Group II, Africa Chapter.',
         'roles.title':'Current roles',
         'role.1':'Primary institutional affiliation as lecturer-researcher supporting teaching, supervision and climate-health research in Guinea.',
         'role.2':'Lead Author for the Africa Chapter, contributing to the Seventh Assessment Report.',
         'role.3':'Francophone Team Lead for climate-health integration in country reports and health system strengthening.',
-        'role.4':'Research affiliation with École Supérieure Polytechnique, Cheikh Anta Diop University, Senegal.',
+        'role.4':'Research affiliation with Cheikh Anta Diop University, Dakar, Senegal.',
         'role.5':'Co-chair of the Applied Malaria Modeling Network in Senegal.',
         'role.6':'Technical support for climate-health projects with partners including WHO, UNICEF, USAID, IIED and NOAA-linked collaborations.',
         'research.title':'Research focus','research.1.h':'Climate & Health','research.1.p':'Understanding how climate variability and change affect public health risks in Africa.',
@@ -539,14 +547,17 @@
         'hero.title':'Des systèmes de santé informés par le climat pour un monde en mutation.',
         'hero.lead':'Je suis Dr Ibrahima Diouf, scientifique climat-santé, enseignant-chercheur et consultant international, travaillant à l’interface des données climatiques, de la modélisation des maladies infectieuses, des systèmes d’alerte précoce et de l’adaptation en Afrique.',
         'hero.cv':'Télécharger le CV','hero.dash':'Voir les dashboards','hero.contact':'Contact','hero.caption':'Climat & Santé • Données • Adaptation • Afrique',
+        'aff.title':'Affiliations institutionnelles','aff.primary':'Affiliation principale','aff.other':'Affiliation de recherche','aff.international':'Rôle international',
+        'aff.labe':'Enseignant-chercheur, Faculté des Sciences et Techniques, Guinée.',
+        'aff.ucad':'Affiliation de recherche avec l’Université Cheikh Anta Diop, Dakar, Sénégal.',
+        'aff.ipcc':'Auteur principal, AR7 Groupe de travail II, Chapitre Afrique.',
         'highlights.title':'Points clés','highlights.heading':'Profil scientifique en bref','highlights.text':'Un parcours axé sur les risques sanitaires sensibles au climat, les services climatiques opérationnels, les systèmes d’alerte précoce et le renforcement des capacités.',
         'stat.1':'Années d’expérience','stat.2':'Auteur principal AR7','stat.3':'Dashboards & outils','stat.4':'Pays impliqués',
-        'aff.title':'Affiliations institutionnelles','aff.primary':'Affiliation principale','aff.other':'Affiliation de recherche','aff.international':'Rôle international','aff.labe':'Enseignant-chercheur, Faculté des Sciences et Techniques, Guinée.','aff.esp':'Affiliation de recherche avec l’Université Cheikh Anta Diop, Sénégal.','aff.ipcc':'Auteur principal, AR7 Groupe de travail II, Chapitre Afrique.',
         'roles.title':'Rôles actuels',
         'role.1':'Affiliation institutionnelle principale comme enseignant-chercheur, avec des activités d’enseignement, d’encadrement et de recherche climat-santé en Guinée.',
         'role.2':'Auteur principal pour le chapitre Afrique du Septième Rapport d’évaluation.',
         'role.3':'Team Lead francophone pour l’intégration climat-santé dans les rapports pays et le renforcement des systèmes de santé.',
-        'role.4':'Affiliation de recherche avec l’École Supérieure Polytechnique, Université Cheikh Anta Diop, Sénégal.',
+        'role.4':'Affiliation de recherche avec l’Université Cheikh Anta Diop, Dakar, Sénégal.',
         'role.5':'Co-président du réseau Applied Malaria Modeling Network au Sénégal.',
         'role.6':'Appui technique à des projets climat-santé avec des partenaires tels que l’OMS, l’UNICEF, l’USAID, l’IIED et des collaborations liées à la NOAA.',
         'research.title':'Axes de recherche','research.1.h':'Climat & Santé','research.1.p':'Comprendre comment la variabilité et le changement climatiques affectent les risques sanitaires en Afrique.',
