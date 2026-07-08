@@ -30,6 +30,18 @@
       --radius:18px;
     }
 
+    body.light{
+      --bg:#f6f8fb;
+      --bg2:#ffffff;
+      --ink:#0b1220;
+      --muted:#556170;
+      --paper:#f7f9fc;
+      --card:#ffffff;
+      --brand:#1c8cff;
+      --brand-ink:#0b66c3;
+      --line:#e7edf5;
+    }
+
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;scroll-behavior:smooth}
     body{
@@ -56,6 +68,12 @@
       backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(255,255,255,.08);
       color:#e6edf6;
+    }
+
+    body.light .topbar{
+      background:rgba(255,255,255,.96);
+      border-bottom:1px solid #e7edf5;
+      color:#0b1220;
     }
 
     .topbar-inner{
@@ -85,6 +103,10 @@
       flex-shrink:0;
     }
 
+    body.light .avatar{
+      border:3px solid rgba(28,140,255,.25);
+    }
+
     .titlewrap{
       display:flex;
       flex-direction:column;
@@ -99,12 +121,16 @@
       color:#ffffff;
     }
 
+    body.light .name{color:#0b1220}
+
     .tag{
       font-size:.98rem;
       color:#c3d0df;
       font-weight:500;
       max-width:390px;
     }
+
+    body.light .tag{color:#556170}
 
     .affiliations{
       display:flex;
@@ -121,6 +147,12 @@
       padding:3px 8px;
       border-radius:999px;
       white-space:nowrap;
+    }
+
+    body.light .affiliation{
+      color:#0b1220;
+      background:#f0f5fb;
+      border:1px solid #dce7f3;
     }
 
     .rightnav{
@@ -144,7 +176,9 @@
       font-size:.95rem;
     }
 
+    body.light nav a{color:#0b1220}
     nav a:hover{color:#ffffff}
+    body.light nav a:hover{color:#0b66c3}
 
     .social{
       display:flex;
@@ -164,6 +198,11 @@
       transition:.2s ease;
     }
 
+    body.light .social a{
+      border:1px solid #dce7f3;
+      background:#f7fbff;
+    }
+
     .social a:hover{
       background:rgba(255,255,255,.11);
       transform:translateY(-1px);
@@ -175,13 +214,17 @@
       fill:#e6edf6;
     }
 
-    .lang-switch{
+    body.light .social svg{fill:#0b1220}
+
+    .lang-switch,
+    .theme-switch{
       display:flex;
       gap:7px;
       align-items:center;
     }
 
-    .lang-btn{
+    .lang-btn,
+    .theme-btn{
       background:transparent;
       color:#e6edf6;
       border:1px solid rgba(255,255,255,.18);
@@ -192,8 +235,20 @@
       font-size:.78rem;
     }
 
-    .lang-btn.active{
-      background:rgba(255,255,255,.14);
+    body.light .lang-btn,
+    body.light .theme-btn{
+      color:#0b1220;
+      border:1px solid #dce7f3;
+    }
+
+    .lang-btn.active,
+    .theme-btn.active{
+      background:rgba(255,255,255,.16);
+    }
+
+    body.light .lang-btn.active,
+    body.light .theme-btn.active{
+      background:#eaf4ff;
     }
 
     .hamburger{
@@ -204,6 +259,8 @@
       border:1px solid rgba(255,255,255,.15);
     }
 
+    body.light .hamburger{border:1px solid #dce7f3}
+
     .bar{
       display:block;
       width:22px;
@@ -211,6 +268,8 @@
       background:#e6edf6;
       margin:5px 0;
     }
+
+    body.light .bar{background:#0b1220}
 
     .hero{
       padding:72px 0 70px;
@@ -220,16 +279,21 @@
       border-bottom:1px solid rgba(255,255,255,.08);
     }
 
-    .hero-card{
-      color:#e6edf6;
+    body.light .hero{
+      background:
+        radial-gradient(circle at top left, rgba(28,140,255,.14), transparent 35%),
+        linear-gradient(180deg,#ffffff 0%, #eef5fc 100%);
+      border-bottom:1px solid #e7edf5;
     }
+
+    .hero-card{color:var(--ink)}
 
     .hero h1{
       font-size:clamp(2rem,5vw,3.6rem);
       line-height:1.1;
       margin:18px 0;
       letter-spacing:-1px;
-      color:#ffffff;
+      color:var(--ink);
     }
 
     .hero p{
@@ -237,6 +301,8 @@
       color:#d5e2f0;
       font-size:1.12rem;
     }
+
+    body.light .hero p{color:#243244}
 
     .chips{
       display:flex;
@@ -255,6 +321,12 @@
       font-size:.9rem;
     }
 
+    body.light .chip{
+      color:#0b1220;
+      background:#ffffff;
+      border:1px solid #dce7f3;
+    }
+
     section{
       padding:56px 0;
       background:var(--paper);
@@ -269,22 +341,28 @@
       font-weight:800;
     }
 
+    body.light .section-title{color:#556170}
+
     .panel{
       background:var(--card);
       border-radius:var(--radius);
       padding:30px;
       box-shadow:0 10px 30px rgba(0,0,0,.22);
       border:1px solid var(--line);
-      color:#f4f7fb;
+      color:var(--ink);
+    }
+
+    body.light .panel{
+      box-shadow:0 10px 24px rgba(2,12,27,.06);
     }
 
     .panel p,
     .panel li{
-      color:#f4f7fb;
+      color:var(--ink);
     }
 
     .panel strong{
-      color:#ffffff;
+      color:var(--ink);
     }
 
     .cards{
@@ -299,17 +377,19 @@
       padding:20px;
       border:1px solid var(--line);
       box-shadow:0 8px 24px rgba(0,0,0,.20);
-      color:#f4f7fb;
+      color:var(--ink);
+    }
+
+    body.light .card{
+      box-shadow:0 4px 16px rgba(2,12,27,.035);
     }
 
     .card h4{
       margin:4px 0 8px;
-      color:#ffffff;
+      color:var(--ink);
     }
 
-    .card li{
-      color:#f4f7fb;
-    }
+    .card li{color:var(--ink)}
 
     .bullets{margin:8px 0 0 18px}
 
@@ -338,12 +418,40 @@
       color:#ffffff;
     }
 
+    body.light .cta{
+      background:#f8fbff;
+      color:#0b66c3;
+      border:1px solid #dfe8f3;
+    }
+
+    body.light .cta:hover{
+      background:#eef6ff;
+      color:#0b66c3;
+    }
+
+    .dashboard-link{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:10px;
+      padding:14px 18px;
+      border-radius:14px;
+      background:rgba(77,163,255,.12);
+      border:1px solid rgba(77,163,255,.35);
+      font-weight:800;
+    }
+
     footer{
       padding:40px 0 64px;
       text-align:center;
       color:#b9c7d6;
       background:var(--paper);
       border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    body.light footer{
+      color:#556170;
+      border-top:1px solid #e7edf5;
     }
 
     @media (max-width:1040px){
@@ -472,8 +580,13 @@
               </svg>
             </a>
 
+            <div class="theme-switch" role="group" aria-label="Theme switcher">
+              <button class="theme-btn active" id="btn-dark" type="button">Dark</button>
+              <button class="theme-btn" id="btn-light" type="button">Light</button>
+            </div>
+
             <div class="lang-switch" role="group" aria-label="Language switcher">
-              <button class="lang-btn" id="btn-en" data-lang="en" aria-pressed="false">EN</button>
+              <button class="lang-btn active" id="btn-en" data-lang="en" aria-pressed="true">EN</button>
               <button class="lang-btn" id="btn-fr" data-lang="fr" aria-pressed="false">FR</button>
             </div>
           </div>
@@ -566,41 +679,14 @@
 
   <section id="dashboards">
     <div class="container">
-      <div class="section-title" data-i18n="dash.title">Interactive Dashboards (Climate & Health)</div>
+      <div class="section-title" data-i18n="dash.title">Interactive Dashboards</div>
       <div class="panel">
-        <p data-i18n="dash.lead">Data-driven tools for climate–health integration, epidemic monitoring, and climate-risk visualization — hosted on <strong>Hugging Face Spaces</strong>.</p>
-        <p><strong data-i18n="dash.profileLabel">Main profile:</strong> <a href="https://huggingface.co/idiouf" target="_blank" rel="noopener">https://huggingface.co/idiouf</a></p>
-
-        <h4>🇸🇳 <span data-i18n="dash.sn">Senegal</span></h4>
-        <ul>
-          <li><strong data-i18n="dash.sn.1">Rainfall (ADM1) — CMIP6 Projections</strong> → <a href="https://huggingface.co/spaces/idiouf/senegal-pluie-adm1" target="_blank" rel="noopener">/spaces/idiouf/senegal-pluie-adm1</a></li>
-        </ul>
-
-        <h4>🇬🇳 <span data-i18n="dash.gn">Guinea</span></h4>
-        <ul>
-          <li><strong data-i18n="dash.gn.1">Rainfall & EIR (ADM2)</strong> → <a href="https://huggingface.co/spaces/idiouf/Guinea_Rainfall_EIR_ADM2" target="_blank" rel="noopener">/spaces/idiouf/Guinea_Rainfall_EIR_ADM2</a></li>
-          <li><strong>CMIP6 MultiDashboard</strong> → <a href="https://huggingface.co/spaces/idiouf/Guinea_CMIP6_MultiDashboard" target="_blank" rel="noopener">/spaces/idiouf/Guinea_CMIP6_MultiDashboard</a></li>
-          <li><strong data-i18n="dash.gn.3">Temperature — CMIP6</strong> → <a href="https://huggingface.co/spaces/idiouf/Guinea_Temperature_CMIP6" target="_blank" rel="noopener">/spaces/idiouf/Guinea_Temperature_CMIP6</a></li>
-          <li><strong data-i18n="dash.gn.4">Rainfall — CMIP6</strong> → <a href="https://huggingface.co/spaces/idiouf/Guinea_Rainfall_CMIP6" target="_blank" rel="noopener">/spaces/idiouf/Guinea_Rainfall_CMIP6</a></li>
-          <li><strong data-i18n="dash.gn.5">Malaria Risk — CMIP6</strong> → <a href="https://huggingface.co/spaces/idiouf/MalariaRisk_Guinea_CMIP6" target="_blank" rel="noopener">/spaces/idiouf/MalariaRisk_Guinea_CMIP6</a></li>
-          <li><strong data-i18n="dash.gn.6">Rainfall–EIR Dashboard (legacy)</strong> → <a href="https://huggingface.co/spaces/idiouf/guinee-pluie-eir" target="_blank" rel="noopener">/spaces/idiouf/guinee-pluie-eir</a></li>
-        </ul>
-
-        <h4>🇨🇩 DR Congo</h4>
-        <ul>
-          <li><strong data-i18n="dash.cd.1">Multi-Disease Dashboard (ADM1)</strong> → <a href="https://huggingface.co/spaces/idiouf/multi_disease_dashboard_DRC" target="_blank" rel="noopener">/spaces/idiouf/multi_disease_dashboard_DRC</a></li>
-        </ul>
-
-        <h4>🌍 <span data-i18n="dash.x">Cross-country / Thematic</span></h4>
-        <ul>
-          <li><strong data-i18n="dash.x.1">Climate & Vulnerability by Continent</strong> → <a href="https://huggingface.co/spaces/idiouf/Climate_and_Vulnerability_by_Continent" target="_blank" rel="noopener">/spaces/idiouf/Climate_and_Vulnerability_by_Continent</a></li>
-          <li><strong data-i18n="dash.x.2">Climate Multi-Diseases Dashboard</strong> → <a href="https://huggingface.co/spaces/idiouf/climate-multi-diseases-dashboard" target="_blank" rel="noopener">/spaces/idiouf/climate-multi-diseases-dashboard</a></li>
-          <li><strong>TaskForce Indicators – Dashboard (9a)</strong> → <a href="https://huggingface.co/spaces/idiouf/TaskForce_Indicators_9a_Dashboard" target="_blank" rel="noopener">/spaces/idiouf/TaskForce_Indicators_9a_Dashboard</a></li>
-          <li><strong data-i18n="dash.x.4">TaskForce – Methodology / LDC Applicability Gaps</strong> → <a href="https://huggingface.co/spaces/idiouf/TaskForce_Indicators_Methodology_LDC_Applicability_Gaps" target="_blank" rel="noopener">/spaces/idiouf/TaskForce_Indicators_Methodology_LDC_Applicability_Gaps</a></li>
-          <li><strong data-i18n="dash.x.5">World Economy Map (ISO3)</strong> → <a href="https://huggingface.co/spaces/idiouf/World_Economy_Map_ISO3" target="_blank" rel="noopener">/spaces/idiouf/World_Economy_Map_ISO3</a></li>
-        </ul>
-
-        <p class="muted" style="color:#b9c7d6;margin-top:12px" data-i18n="dash.note">If any link returns 404, verify the exact Space slug on Hugging Face; some card titles differ from URL slugs.</p>
+        <p data-i18n="dash.lead">All climate, health, adaptation, and data dashboards are available through my Hugging Face profile.</p>
+        <p>
+          <a class="dashboard-link" href="https://huggingface.co/idiouf" target="_blank" rel="noopener">
+            View dashboards on Hugging Face →
+          </a>
+        </p>
       </div>
     </div>
   </section>
@@ -691,24 +777,8 @@
         'proj.5.title': 'NOAA–UCAR Climate Fellowship',
         'proj.5.li1': 'Advanced modelling of malaria–climate interactions and sub-seasonal to seasonal predictability.',
         'proj.5.li2': 'Collaborations with CPC/NOAA and partners to operationalize early-warning components.',
-        'dash.title': 'Interactive Dashboards (Climate & Health)',
-        'dash.lead': 'Data-driven tools for climate–health integration, epidemic monitoring, and climate-risk visualization — hosted on <strong>Hugging Face Spaces</strong>.',
-        'dash.profileLabel': 'Main profile:',
-        'dash.sn': 'Senegal',
-        'dash.sn.1': 'Rainfall (ADM1) — CMIP6 Projections',
-        'dash.gn': 'Guinea',
-        'dash.gn.1': 'Rainfall & EIR (ADM2)',
-        'dash.gn.3': 'Temperature — CMIP6',
-        'dash.gn.4': 'Rainfall — CMIP6',
-        'dash.gn.5': 'Malaria Risk — CMIP6',
-        'dash.gn.6': 'Rainfall–EIR Dashboard (legacy)',
-        'dash.cd.1': 'Multi-Disease Dashboard (ADM1)',
-        'dash.x': 'Cross-country / Thematic',
-        'dash.x.1': 'Climate & Vulnerability by Continent',
-        'dash.x.2': 'Climate Multi-Diseases Dashboard',
-        'dash.x.4': 'TaskForce – Methodology / LDC Applicability Gaps',
-        'dash.x.5': 'World Economy Map (ISO3)',
-        'dash.note': 'If any link returns 404, verify the exact Space slug on Hugging Face; some card titles differ from URL slugs.',
+        'dash.title': 'Interactive Dashboards',
+        'dash.lead': 'All climate, health, adaptation, and data dashboards are available through my Hugging Face profile.',
         'phd.title': 'PhD — Thesis Summary',
         'phd.label': 'Title:',
         'phd.topic': 'Climate–health: observation and modelling of the seasonal incidence of malaria for forecasting in Senegal and the Sahel.',
@@ -756,24 +826,8 @@
         'proj.5.title': 'Bourse Climat NOAA–UCAR',
         'proj.5.li1': 'Modélisation avancée des interactions climat–paludisme et prévisibilité S2S.',
         'proj.5.li2': 'Collaborations avec le CPC/NOAA et partenaires pour opérationnaliser les composantes d’alerte.',
-        'dash.title': 'Tableaux de bord interactifs (Climat & Santé)',
-        'dash.lead': 'Outils data-driven pour l’intégration climat–santé, le suivi épidémique et la visualisation du risque climatique — hébergés sur les <strong>Hugging Face Spaces</strong>.',
-        'dash.profileLabel': 'Profil principal :',
-        'dash.sn': 'Sénégal',
-        'dash.sn.1': 'Pluie (ADM1) — Projections CMIP6',
-        'dash.gn': 'Guinée',
-        'dash.gn.1': 'Pluie & EIR (ADM2)',
-        'dash.gn.3': 'Température — CMIP6',
-        'dash.gn.4': 'Pluie — CMIP6',
-        'dash.gn.5': 'Risque paludisme — CMIP6',
-        'dash.gn.6': 'Pluie–EIR (héritage)',
-        'dash.cd.1': 'Tableau multi-maladies (ADM1)',
-        'dash.x': 'Inter-pays / Thématiques',
-        'dash.x.1': 'Climat & Vulnérabilité par continent',
-        'dash.x.2': 'Tableau multi-maladies climat',
-        'dash.x.4': 'TaskForce – Méthodologie / Lacunes d’applicabilité PMA',
-        'dash.x.5': 'Carte Économie mondiale (ISO3)',
-        'dash.note': 'Si un lien retourne 404, vérifiez le slug exact de la Space sur Hugging Face; certains titres diffèrent des URL.',
+        'dash.title': 'Tableaux de bord interactifs',
+        'dash.lead': 'Tous les tableaux de bord climat, santé, adaptation et données sont disponibles sur mon profil Hugging Face.',
         'phd.title': 'Doctorat — Résumé de thèse',
         'phd.label': 'Titre :',
         'phd.topic': 'Climat–santé : observation et modélisation de l’incidence saisonnière du paludisme pour la prévision au Sénégal et au Sahel.',
@@ -810,17 +864,32 @@
       } catch(e){}
     }
 
-    const saved = (() => {
+    function applyTheme(theme){
+      document.body.classList.toggle('light', theme === 'light');
+      document.getElementById('btn-dark').classList.toggle('active', theme === 'dark');
+      document.getElementById('btn-light').classList.toggle('active', theme === 'light');
+      try {
+        localStorage.setItem('site_theme', theme);
+      } catch(e){}
+    }
+
+    const savedTheme = (() => {
+      try { return localStorage.getItem('site_theme'); }
+      catch(e){ return null; }
+    })();
+
+    const savedLang = (() => {
       try { return localStorage.getItem('site_lang'); }
       catch(e){ return null; }
     })();
 
-    const startLang = saved || ((navigator.language || 'en').slice(0,2).toLowerCase().startsWith('fr') ? 'fr' : 'en');
-
-    applyI18n(startLang);
+    applyTheme(savedTheme || 'dark');
+    applyI18n(savedLang || 'en');
 
     document.getElementById('btn-en').addEventListener('click', () => applyI18n('en'));
     document.getElementById('btn-fr').addEventListener('click', () => applyI18n('fr'));
+    document.getElementById('btn-dark').addEventListener('click', () => applyTheme('dark'));
+    document.getElementById('btn-light').addEventListener('click', () => applyTheme('light'));
   </script>
 </body>
 </html>
