@@ -81,10 +81,13 @@
     .tag{font-size:.95rem;color:var(--muted);font-weight:600;max-width:420px}
     .badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}
     .badge{
+      display:inline-flex;align-items:center;gap:6px;
       font-size:.75rem;font-weight:700;color:var(--ink);
       background:rgba(255,255,255,.08);border:1px solid var(--line);
       padding:3px 9px;border-radius:999px;
     }
+    .badge:hover{color:var(--brand2)}
+    .badge.primary{border-color:rgba(0,204,187,.55);background:rgba(0,204,187,.12)}
     body.light .badge{background:#eef6ff}
 
     .rightnav{display:flex;align-items:center;gap:14px}
@@ -193,6 +196,16 @@
     .card h3,.card h4{margin:0 0 10px;color:var(--ink)}
     .card .icon{font-size:1.55rem;margin-bottom:12px}
 
+    .affiliation-list{display:grid;gap:14px}
+    .affiliation-row{
+      display:grid;grid-template-columns:160px 1fr auto;gap:18px;align-items:center;
+      padding:18px;border-radius:18px;background:var(--card2);border:1px solid var(--line);
+    }
+    .affiliation-row .label{font-weight:900;color:var(--brand2)}
+    .affiliation-row h4{margin:0;color:var(--ink)}
+    .affiliation-row p{margin:4px 0 0;color:var(--muted)}
+    .affiliation-row a{font-weight:900}
+
     .timeline{position:relative;display:grid;gap:14px}
     .timeline-item{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:start}
     .year{color:var(--gold);font-weight:900}
@@ -243,7 +256,7 @@
       .social{flex-wrap:wrap}
       .hero{padding:50px 0}
       .hero-banner{border-radius:20px;margin-bottom:30px}
-      .timeline-item{grid-template-columns:1fr}
+      .timeline-item,.affiliation-row{grid-template-columns:1fr}
     }
     @media (max-width:560px){
       .stats{grid-template-columns:1fr}
@@ -264,9 +277,9 @@
             <div class="name">Dr. Ibrahima DIOUF</div>
             <div class="tag" data-i18n="top.tag">Climate & Health Scientist • International Consultant</div>
             <div class="badges">
-              <span class="badge">ESP/UCAD</span>
-              <span class="badge">University of Labé</span>
-              <span class="badge">IPCC AR7 WGII</span>
+              <a class="badge primary" href="https://univ-labe.edu.gn/" target="_blank" rel="noopener">Primary: University of Labé</a>
+              <a class="badge" href="https://esp.sn/" target="_blank" rel="noopener">ESP/UCAD</a>
+              <a class="badge" href="https://www.ipcc.ch/" target="_blank" rel="noopener">IPCC AR7 WGII</a>
             </div>
           </div>
         </div>
@@ -278,6 +291,7 @@
             </button>
             <ul id="nav">
               <li><a href="#home" data-i18n="nav.home">Home</a></li>
+              <li><a href="#affiliations" data-i18n="nav.affiliations">Affiliations</a></li>
               <li><a href="#highlights" data-i18n="nav.highlights">Highlights</a></li>
               <li><a href="#roles" data-i18n="nav.roles">Roles</a></li>
               <li><a href="#research" data-i18n="nav.research">Research</a></li>
@@ -345,6 +359,39 @@
       </div>
     </section>
 
+
+    <section id="affiliations">
+      <div class="container">
+        <div class="section-title" data-i18n="aff.title">Institutional affiliations</div>
+        <div class="panel affiliation-list">
+          <div class="affiliation-row">
+            <div class="label" data-i18n="aff.primary">Primary affiliation</div>
+            <div>
+              <h4><a href="https://univ-labe.edu.gn/" target="_blank" rel="noopener">University of Labé</a></h4>
+              <p data-i18n="aff.labe">Lecturer-researcher, Faculty of Science and Technology, Guinea.</p>
+            </div>
+            <a href="https://univ-labe.edu.gn/" target="_blank" rel="noopener">Visit →</a>
+          </div>
+          <div class="affiliation-row">
+            <div class="label" data-i18n="aff.other">Research affiliation</div>
+            <div>
+              <h4><a href="https://esp.sn/" target="_blank" rel="noopener">École Supérieure Polytechnique — UCAD</a></h4>
+              <p data-i18n="aff.esp">Research affiliation with Cheikh Anta Diop University, Senegal.</p>
+            </div>
+            <a href="https://esp.sn/" target="_blank" rel="noopener">Visit →</a>
+          </div>
+          <div class="affiliation-row">
+            <div class="label" data-i18n="aff.international">International role</div>
+            <div>
+              <h4><a href="https://www.ipcc.ch/" target="_blank" rel="noopener">Intergovernmental Panel on Climate Change (IPCC)</a></h4>
+              <p data-i18n="aff.ipcc">Lead Author, AR7 Working Group II, Africa Chapter.</p>
+            </div>
+            <a href="https://www.ipcc.ch/" target="_blank" rel="noopener">Visit →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="highlights">
       <div class="container">
         <div class="section-title" data-i18n="highlights.title">Highlights</div>
@@ -365,10 +412,10 @@
       <div class="container">
         <div class="section-title" data-i18n="roles.title">Current roles</div>
         <div class="cards">
-          <article class="card"><div class="icon">🌍</div><h3>IPCC AR7 WGII</h3><p data-i18n="role.1">Lead Author for the Africa Chapter, contributing to the Seventh Assessment Report.</p></article>
-          <article class="card"><div class="icon">🏥</div><h3>HMST – Global Fund</h3><p data-i18n="role.2">Francophone Team Lead for climate-health integration in country reports and health system strengthening.</p></article>
-          <article class="card"><div class="icon">🎓</div><h3>University of Labé</h3><p data-i18n="role.3">Lecturer-researcher supporting teaching, supervision and climate-health research in Guinea.</p></article>
-          <article class="card"><div class="icon">🔬</div><h3>ESP/UCAD</h3><p data-i18n="role.4">Researcher affiliated with Cheikh Anta Diop University, Senegal.</p></article>
+          <article class="card"><div class="icon">🎓</div><h3><a href="https://univ-labe.edu.gn/" target="_blank" rel="noopener">University of Labé</a></h3><p data-i18n="role.1">Primary institutional affiliation as lecturer-researcher supporting teaching, supervision and climate-health research in Guinea.</p></article>
+          <article class="card"><div class="icon">🌍</div><h3><a href="https://www.ipcc.ch/" target="_blank" rel="noopener">IPCC AR7 WGII</a></h3><p data-i18n="role.2">Lead Author for the Africa Chapter, contributing to the Seventh Assessment Report.</p></article>
+          <article class="card"><div class="icon">🏥</div><h3>HMST – Global Fund</h3><p data-i18n="role.3">Francophone Team Lead for climate-health integration in country reports and health system strengthening.</p></article>
+          <article class="card"><div class="icon">🔬</div><h3><a href="https://esp.sn/" target="_blank" rel="noopener">ESP/UCAD</a></h3><p data-i18n="role.4">Research affiliation with École Supérieure Polytechnique, Cheikh Anta Diop University, Senegal.</p></article>
           <article class="card"><div class="icon">🦟</div><h3>AMMnet Senegal</h3><p data-i18n="role.5">Co-chair of the Applied Malaria Modeling Network in Senegal.</p></article>
           <article class="card"><div class="icon">🤝</div><h3>International Consulting</h3><p data-i18n="role.6">Technical support for climate-health projects with partners including WHO, UNICEF, USAID, IIED and NOAA-linked collaborations.</p></article>
         </div>
@@ -391,11 +438,14 @@
       <div class="container">
         <div class="section-title" data-i18n="timeline.title">Career timeline</div>
         <div class="panel timeline">
-          <div class="timeline-item"><div class="year">2010–2016</div><div class="timeline-box"><h4>PhD — Climate & Health Impacts</h4><p data-i18n="time.1">Seasonal malaria incidence, forecasting and climate-health modelling in Senegal and the Sahel.</p></div></div>
-          <div class="timeline-item"><div class="year">2017–2021</div><div class="timeline-box"><h4>NOAA CPC / UCAR</h4><p data-i18n="time.2">Postdoctoral and associate scientist work on malaria-climate interactions and early warning systems.</p></div></div>
-          <div class="timeline-item"><div class="year">2021–2024</div><div class="timeline-box"><h4>Adaptation & health system resilience</h4><p data-i18n="time.3">Support to national adaptation planning, UNICEF/USAID-linked work and climate-health assessments.</p></div></div>
-          <div class="timeline-item"><div class="year">2024–Present</div><div class="timeline-box"><h4>University of Labé</h4><p data-i18n="time.4">Lecturer-researcher in climate and health, supervision and capacity building.</p></div></div>
-          <div class="timeline-item"><div class="year">2025–Present</div><div class="timeline-box"><h4>IPCC AR7 WGII</h4><p data-i18n="time.5">Lead Author for the Africa Chapter of the Seventh Assessment Report.</p></div></div>
+          <div class="timeline-item"><div class="year">2025–Present</div><div class="timeline-box"><h4>IPCC AR7 WGII</h4><p data-i18n="time.1">Lead Author for the Africa Chapter of the Seventh Assessment Report.</p></div></div>
+          <div class="timeline-item"><div class="year">2024–Present</div><div class="timeline-box"><h4>University of Labé</h4><p data-i18n="time.2">Lecturer-researcher in climate and health, supervision and capacity building.</p></div></div>
+          <div class="timeline-item"><div class="year">2023–Present</div><div class="timeline-box"><h4>Institut Pasteur de Dakar / WHO-linked climate-health work</h4><p data-i18n="time.3">Climate data analysis, risk mapping and policy recommendations for vector-borne disease surveillance and control.</p></div></div>
+          <div class="timeline-item"><div class="year">2023–2024</div><div class="timeline-box"><h4>MSAS / Save the Children / UNICEF</h4><p data-i18n="time.4">Support to health system resilience, climate vulnerability assessment and strategy design.</p></div></div>
+          <div class="timeline-item"><div class="year">2021–2023</div><div class="timeline-box"><h4>National Adaptation Plan / GEF</h4><p data-i18n="time.5">Support to national adaptation planning, training and climate-health assessment.</p></div></div>
+          <div class="timeline-item"><div class="year">2017–2021</div><div class="timeline-box"><h4>NOAA CPC / UCAR</h4><p data-i18n="time.6">Postdoctoral and associate scientist work on malaria-climate interactions and early warning systems.</p></div></div>
+          <div class="timeline-item"><div class="year">2013–2017</div><div class="timeline-box"><h4>Universidad Complutense de Madrid / PREFACE</h4><p data-i18n="time.7">Research on tropical Atlantic climate variability and health risks in West Africa.</p></div></div>
+          <div class="timeline-item"><div class="year">2010–2016</div><div class="timeline-box"><h4>PhD — Climate & Health Impacts</h4><p data-i18n="time.8">Seasonal malaria incidence, forecasting and climate-health modelling in Senegal and the Sahel.</p></div></div>
         </div>
       </div>
     </section>
@@ -431,6 +481,7 @@
       <div class="container">
         <div class="section-title" data-i18n="contact.title">Contact</div>
         <div class="panel">
+          <p><strong data-i18n="contact.primary">Primary affiliation:</strong> <a href="https://univ-labe.edu.gn/" target="_blank" rel="noopener">University of Labé</a></p>
           <p><strong data-i18n="contact.emails">Emails:</strong> <a href="mailto:ibrahima23.diouf@ucad.edu.sn">ibrahima23.diouf@ucad.edu.sn</a> • <a href="mailto:ibrahima.diouf@univ-labe.edu.gn">ibrahima.diouf@univ-labe.edu.gn</a></p>
           <p><strong data-i18n="contact.profiles">Profiles:</strong> <a href="https://orcid.org/0000-0002-3157-0925" target="_blank" rel="noopener">ORCID</a> · <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://linkedin.com/in/dr-ibrahima-diouf-610872108" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.researchgate.net/profile/Ibrahima-Diouf-8?ev=hdr_xprf" target="_blank" rel="noopener">ResearchGate</a> · <a href="https://huggingface.co/idiouf" target="_blank" rel="noopener">Hugging Face</a></p>
           <p><a class="btn secondary" href="#home" data-i18n="contact.back">↑ Back to top</a></p>
@@ -448,18 +499,19 @@
     const I18N = {
       en: {
         'top.tag':'Climate & Health Scientist • International Consultant',
-        'nav.home':'Home','nav.highlights':'Highlights','nav.roles':'Roles','nav.research':'Research','nav.dash':'Dashboards','nav.pubs':'Publications','nav.contact':'Contact',
+        'nav.home':'Home','nav.affiliations':'Affiliations','nav.highlights':'Highlights','nav.roles':'Roles','nav.research':'Research','nav.dash':'Dashboards','nav.pubs':'Publications','nav.contact':'Contact',
         'hero.eyebrow':'IPCC AR7 Lead Author • Climate & Health',
         'hero.title':'Climate-informed health systems for a changing world.',
         'hero.lead':'I am Dr. Ibrahima Diouf, a climate and health scientist, lecturer and international consultant working at the interface of climate data, infectious disease modelling, early warning systems and adaptation in Africa.',
         'hero.cv':'Download CV','hero.dash':'View Dashboards','hero.contact':'Contact','hero.caption':'Climate & Health • Data • Adaptation • Africa',
         'highlights.title':'Highlights','highlights.heading':'Scientific profile at a glance','highlights.text':'A career focused on climate-sensitive health risks, operational climate services, early warning systems and capacity building.',
         'stat.1':'Years of experience','stat.2':'AR7 Lead Author','stat.3':'Dashboards & tools','stat.4':'Countries engaged',
+        'aff.title':'Institutional affiliations','aff.primary':'Primary affiliation','aff.other':'Research affiliation','aff.international':'International role','aff.labe':'Lecturer-researcher, Faculty of Science and Technology, Guinea.','aff.esp':'Research affiliation with Cheikh Anta Diop University, Senegal.','aff.ipcc':'Lead Author, AR7 Working Group II, Africa Chapter.',
         'roles.title':'Current roles',
-        'role.1':'Lead Author for the Africa Chapter, contributing to the Seventh Assessment Report.',
-        'role.2':'Francophone Team Lead for climate-health integration in country reports and health system strengthening.',
-        'role.3':'Lecturer-researcher supporting teaching, supervision and climate-health research in Guinea.',
-        'role.4':'Researcher affiliated with Cheikh Anta Diop University, Senegal.',
+        'role.1':'Primary institutional affiliation as lecturer-researcher supporting teaching, supervision and climate-health research in Guinea.',
+        'role.2':'Lead Author for the Africa Chapter, contributing to the Seventh Assessment Report.',
+        'role.3':'Francophone Team Lead for climate-health integration in country reports and health system strengthening.',
+        'role.4':'Research affiliation with École Supérieure Polytechnique, Cheikh Anta Diop University, Senegal.',
         'role.5':'Co-chair of the Applied Malaria Modeling Network in Senegal.',
         'role.6':'Technical support for climate-health projects with partners including WHO, UNICEF, USAID, IIED and NOAA-linked collaborations.',
         'research.title':'Research focus','research.1.h':'Climate & Health','research.1.p':'Understanding how climate variability and change affect public health risks in Africa.',
@@ -467,30 +519,34 @@
         'research.3.h':'Early warning systems','research.3.p':'Developing climate-informed tools for preparedness, targeting and decision-making.',
         'research.4.h':'AI & data science','research.4.p':'Integrating climate datasets, health data and machine learning for risk analysis and forecasting.',
         'timeline.title':'Career timeline',
-        'time.1':'Seasonal malaria incidence, forecasting and climate-health modelling in Senegal and the Sahel.',
-        'time.2':'Postdoctoral and associate scientist work on malaria-climate interactions and early warning systems.',
-        'time.3':'Support to national adaptation planning, UNICEF/USAID-linked work and climate-health assessments.',
-        'time.4':'Lecturer-researcher in climate and health, supervision and capacity building.',
-        'time.5':'Lead Author for the Africa Chapter of the Seventh Assessment Report.',
+        'time.1':'Lead Author for the Africa Chapter of the Seventh Assessment Report.',
+        'time.2':'Lecturer-researcher in climate and health, supervision and capacity building.',
+        'time.3':'Climate data analysis, risk mapping and policy recommendations for vector-borne disease surveillance and control.',
+        'time.4':'Support to health system resilience, climate vulnerability assessment and strategy design.',
+        'time.5':'Support to national adaptation planning, training and climate-health assessment.',
+        'time.6':'Postdoctoral and associate scientist work on malaria-climate interactions and early warning systems.',
+        'time.7':'Research on tropical Atlantic climate variability and health risks in West Africa.',
+        'time.8':'Seasonal malaria incidence, forecasting and climate-health modelling in Senegal and the Sahel.',
         'dash.title':'Dashboards','dash.heading':'Climate & Health Dashboards','dash.text':'All interactive dashboards, climate-risk tools and data applications are available through my Hugging Face profile.','dash.btn':'Open Hugging Face →',
         'pubs.title':'Selected publications','pubs.btn':'View all publications',
-        'contact.title':'Contact','contact.emails':'Emails:','contact.profiles':'Profiles:','contact.back':'↑ Back to top',
+        'contact.title':'Contact','contact.primary':'Primary affiliation:','contact.emails':'Emails:','contact.profiles':'Profiles:','contact.back':'↑ Back to top',
         'footer.text':'Dr. Ibrahima Diouf — Climate & Health Scientist.'
       },
       fr: {
         'top.tag':'Scientifique climat & santé • Consultant international',
-        'nav.home':'Accueil','nav.highlights':'Points clés','nav.roles':'Rôles','nav.research':'Recherche','nav.dash':'Tableaux de bord','nav.pubs':'Publications','nav.contact':'Contact',
+        'nav.home':'Accueil','nav.affiliations':'Affiliations','nav.highlights':'Points clés','nav.roles':'Rôles','nav.research':'Recherche','nav.dash':'Tableaux de bord','nav.pubs':'Publications','nav.contact':'Contact',
         'hero.eyebrow':'Auteur principal GIEC AR7 • Climat & Santé',
         'hero.title':'Des systèmes de santé informés par le climat pour un monde en mutation.',
         'hero.lead':'Je suis Dr Ibrahima Diouf, scientifique climat-santé, enseignant-chercheur et consultant international, travaillant à l’interface des données climatiques, de la modélisation des maladies infectieuses, des systèmes d’alerte précoce et de l’adaptation en Afrique.',
         'hero.cv':'Télécharger le CV','hero.dash':'Voir les dashboards','hero.contact':'Contact','hero.caption':'Climat & Santé • Données • Adaptation • Afrique',
         'highlights.title':'Points clés','highlights.heading':'Profil scientifique en bref','highlights.text':'Un parcours axé sur les risques sanitaires sensibles au climat, les services climatiques opérationnels, les systèmes d’alerte précoce et le renforcement des capacités.',
         'stat.1':'Années d’expérience','stat.2':'Auteur principal AR7','stat.3':'Dashboards & outils','stat.4':'Pays impliqués',
+        'aff.title':'Affiliations institutionnelles','aff.primary':'Affiliation principale','aff.other':'Affiliation de recherche','aff.international':'Rôle international','aff.labe':'Enseignant-chercheur, Faculté des Sciences et Techniques, Guinée.','aff.esp':'Affiliation de recherche avec l’Université Cheikh Anta Diop, Sénégal.','aff.ipcc':'Auteur principal, AR7 Groupe de travail II, Chapitre Afrique.',
         'roles.title':'Rôles actuels',
-        'role.1':'Auteur principal pour le chapitre Afrique du Septième Rapport d’évaluation.',
-        'role.2':'Team Lead francophone pour l’intégration climat-santé dans les rapports pays et le renforcement des systèmes de santé.',
-        'role.3':'Enseignant-chercheur impliqué dans l’enseignement, l’encadrement et la recherche climat-santé en Guinée.',
-        'role.4':'Chercheur affilié à l’Université Cheikh Anta Diop, Sénégal.',
+        'role.1':'Affiliation institutionnelle principale comme enseignant-chercheur, avec des activités d’enseignement, d’encadrement et de recherche climat-santé en Guinée.',
+        'role.2':'Auteur principal pour le chapitre Afrique du Septième Rapport d’évaluation.',
+        'role.3':'Team Lead francophone pour l’intégration climat-santé dans les rapports pays et le renforcement des systèmes de santé.',
+        'role.4':'Affiliation de recherche avec l’École Supérieure Polytechnique, Université Cheikh Anta Diop, Sénégal.',
         'role.5':'Co-président du réseau Applied Malaria Modeling Network au Sénégal.',
         'role.6':'Appui technique à des projets climat-santé avec des partenaires tels que l’OMS, l’UNICEF, l’USAID, l’IIED et des collaborations liées à la NOAA.',
         'research.title':'Axes de recherche','research.1.h':'Climat & Santé','research.1.p':'Comprendre comment la variabilité et le changement climatiques affectent les risques sanitaires en Afrique.',
@@ -498,14 +554,17 @@
         'research.3.h':'Systèmes d’alerte précoce','research.3.p':'Développer des outils climato-informés pour la préparation, le ciblage et la prise de décision.',
         'research.4.h':'IA & science des données','research.4.p':'Intégrer les données climatiques, sanitaires et le machine learning pour l’analyse du risque et la prévision.',
         'timeline.title':'Parcours',
-        'time.1':'Incidence saisonnière du paludisme, prévision et modélisation climat-santé au Sénégal et au Sahel.',
-        'time.2':'Travaux postdoctoraux sur les interactions climat-paludisme et les systèmes d’alerte précoce.',
-        'time.3':'Appui à la planification de l’adaptation, aux travaux liés à l’UNICEF/USAID et aux évaluations climat-santé.',
-        'time.4':'Enseignant-chercheur en climat-santé, encadrement et renforcement des capacités.',
-        'time.5':'Auteur principal pour le chapitre Afrique du Septième Rapport d’évaluation.',
+        'time.1':'Auteur principal pour le chapitre Afrique du Septième Rapport d’évaluation.',
+        'time.2':'Enseignant-chercheur en climat-santé, encadrement et renforcement des capacités.',
+        'time.3':'Analyse de données climatiques, cartographie du risque et recommandations pour la surveillance et le contrôle des maladies vectorielles.',
+        'time.4':'Appui à la résilience des systèmes de santé, aux évaluations de vulnérabilité climatique et à la conception de stratégies.',
+        'time.5':'Appui à la planification nationale de l’adaptation, à la formation et aux évaluations climat-santé.',
+        'time.6':'Travaux postdoctoraux sur les interactions climat-paludisme et les systèmes d’alerte précoce.',
+        'time.7':'Recherche sur la variabilité climatique de l’Atlantique tropical et les risques sanitaires en Afrique de l’Ouest.',
+        'time.8':'Incidence saisonnière du paludisme, prévision et modélisation climat-santé au Sénégal et au Sahel.',
         'dash.title':'Tableaux de bord','dash.heading':'Tableaux de bord climat & santé','dash.text':'Tous les tableaux de bord interactifs, outils de risque climatique et applications de données sont disponibles sur mon profil Hugging Face.','dash.btn':'Ouvrir Hugging Face →',
         'pubs.title':'Publications sélectionnées','pubs.btn':'Voir toutes les publications',
-        'contact.title':'Contact','contact.emails':'Emails :','contact.profiles':'Profils :','contact.back':'↑ Haut de page',
+        'contact.title':'Contact','contact.primary':'Affiliation principale :','contact.emails':'Emails :','contact.profiles':'Profils :','contact.back':'↑ Haut de page',
         'footer.text':'Dr Ibrahima Diouf — Scientifique climat & santé.'
       }
     };
