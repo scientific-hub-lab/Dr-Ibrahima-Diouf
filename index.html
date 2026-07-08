@@ -8,7 +8,7 @@
   <meta property="og:title" content="Dr. Ibrahima DIOUF — Climate & Health Scientist" />
   <meta property="og:description" content="Climate & health, early warning systems, malaria modelling, adaptation, dashboards, publications and CV." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="photo_profile.jpeg" />
+  <meta property="og:image" content="hero_climate_health.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,6 +113,20 @@
         linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%);
       border-bottom:1px solid var(--line);
       padding:76px 0 72px;
+    }
+
+    .hero-banner{
+      margin-bottom:42px;
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:var(--card);
+    }
+    .hero-banner img{
+      display:block;
+      width:100%;
+      height:auto;
     }
     .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:44px;align-items:center}
     .eyebrow{
@@ -228,6 +242,7 @@
       nav ul.open{display:flex;flex-direction:column;align-items:flex-start;padding:12px 0}
       .social{flex-wrap:wrap}
       .hero{padding:50px 0}
+      .hero-banner{border-radius:20px;margin-bottom:30px}
       .timeline-item{grid-template-columns:1fr}
     }
     @media (max-width:560px){
@@ -297,6 +312,11 @@
 
   <main id="home">
     <section class="hero">
+      <div class="container">
+        <div class="hero-banner">
+          <img src="hero_climate_health.png" alt="Climate-Health Interactions and the Dynamics of Malaria in West Africa">
+        </div>
+      </div>
       <div class="container hero-grid">
         <div>
           <div class="eyebrow" data-i18n="hero.eyebrow">IPCC AR7 Lead Author • Climate & Health</div>
