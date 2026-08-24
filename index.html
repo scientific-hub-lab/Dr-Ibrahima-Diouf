@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Dr. Ibrahima DIOUF — Climate & Health Scientist</title>
-<meta name="description" content="Dr. Ibrahima Diouf — scientifique climat & santé, auteur principal GIEC AR7 (WGII, chapitre Afrique), enseignant-chercheur et consultant international. Modélisation du paludisme, systèmes d'alerte précoce, services climatiques et adaptation en Afrique." />
+<meta name="description" content="Dr. Ibrahima Diouf — climate &amp; health scientist, IPCC AR7 Lead Author (WGII, Africa chapter), lecturer-researcher and international consultant." />
 <meta property="og:title" content="Dr. Ibrahima DIOUF — Climate & Health Scientist" />
 <meta property="og:description" content="Climat & santé, alerte précoce, modélisation du paludisme, adaptation, tableaux de bord et publications." />
 <meta property="og:type" content="profile" />
@@ -13,13 +13,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#fbf9f5;
-  --paper2:#f4f0e8;
-  --surface:#ffffff;
+  --paper:#f6f1e7;
+  --paper2:#efe7d9;
+  --surface:#fffdf8;
   --ink:#0f1c2b;
   --ink-soft:#2b3b4d;
   --muted:#5f6f80;
-  --rule:#e4ddd1;
+  --rule:#e0d6c4;
   --gold:#a4761b;
   --gold-soft:rgba(164,118,27,.12);
   --navy:#123252;
@@ -27,13 +27,17 @@
   --shadow:0 1px 2px rgba(16,30,48,.05), 0 14px 40px rgba(16,30,48,.07);
   --shadow-lg:0 2px 4px rgba(16,30,48,.06), 0 30px 70px rgba(16,30,48,.12);
   --maxw:1160px;
+  --glow1:rgba(164,118,27,.16);
+  --glow2:rgba(15,111,104,.10);
+  --glow3:rgba(18,50,82,.07);
+  --noise:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='.05'/></svg>");
   --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
   --sans:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 html[data-theme="dark"]{
-  --paper:#0a141f;
-  --paper2:#0e1c2a;
-  --surface:#0f1e2d;
+  --paper:#070e18;
+  --paper2:#0b1826;
+  --surface:#101f2f;
   --ink:#f1f6fb;
   --ink-soft:#dbe6f1;
   --muted:#9db0c3;
@@ -44,15 +48,27 @@ html[data-theme="dark"]{
   --teal:#4fd1c5;
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 40px rgba(0,0,0,.35);
   --shadow-lg:0 2px 4px rgba(0,0,0,.45), 0 30px 70px rgba(0,0,0,.5);
+  --glow1:rgba(226,184,105,.13);
+  --glow2:rgba(79,209,197,.09);
+  --glow3:rgba(90,150,220,.08);
+  --noise:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='.045'/></svg>");
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{
-  background:var(--paper);color:var(--ink);
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(1000px 620px at 6% -10%, var(--glow1), transparent 60%),
+    radial-gradient(820px 520px at 100% 2%, var(--glow2), transparent 58%),
+    radial-gradient(900px 700px at 50% 108%, var(--glow3), transparent 62%),
+    var(--noise);
+  background-attachment:fixed,fixed,fixed,fixed;
+  background-repeat:no-repeat,no-repeat,no-repeat,repeat;
+  color:var(--ink);
   font-family:var(--sans);font-size:17px;line-height:1.7;
   -webkit-font-smoothing:antialiased;
-  transition:background .3s ease,color .3s ease;
+  transition:background-color .35s ease,color .35s ease;
 }
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
@@ -91,7 +107,7 @@ nav.main a:hover::after{right:0}
 .hero{padding:74px 0 10px;position:relative;overflow:hidden}
 .hero::before{
   content:"";position:absolute;inset:-160px 0 auto 0;height:420px;pointer-events:none;
-  background:radial-gradient(60% 100% at 12% 0%, var(--gold-soft), transparent 70%);
+  background:radial-gradient(60% 100% at 12% 0%, var(--gold-soft), transparent 72%);opacity:.6;
 }
 .hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:56px;align-items:center;position:relative}
 .kicker{display:flex;align-items:center;gap:12px;margin-bottom:20px}
@@ -142,7 +158,7 @@ figure.banner figcaption{
 figure.banner figcaption b{color:var(--gold);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem}
 
 /* ---------- sections ---------- */
-section{padding:88px 0;position:relative}
+section{padding:88px 0;position:relative;background:transparent}
 .sec-head{margin-bottom:42px;max-width:760px}
 .sec-num{
   font-family:var(--serif);font-size:.85rem;font-weight:700;color:var(--gold);
@@ -154,7 +170,7 @@ section{padding:88px 0;position:relative}
 }
 .sec-head p{color:var(--muted);margin:0;font-size:1.03rem;max-width:64ch}
 .rule{height:1px;background:var(--rule);border:0;margin:0}
-.alt{background:var(--paper2)}
+.alt{background:linear-gradient(180deg, color-mix(in srgb, var(--paper2) 92%, transparent), var(--paper2));border-block:1px solid var(--rule)}
 
 /* ---------- metrics ---------- */
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
@@ -170,12 +186,12 @@ section{padding:88px 0;position:relative}
 
 /* ---------- pillars ---------- */
 .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.pillar{background:var(--paper);padding:34px 28px;transition:.3s ease}
+.pillar{background:color-mix(in srgb, var(--surface) 55%, transparent);padding:34px 28px;transition:.3s ease}
 .pillar:hover{background:var(--surface)}
 .pillar svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.4;margin-bottom:18px}
 .pillar h3{font-family:var(--serif);font-size:1.22rem;margin:0 0 10px;font-weight:700}
 .pillar p{margin:0;color:var(--muted);font-size:.95rem}
-.alt .pillar{background:var(--paper2)}
+.alt .pillar{background:color-mix(in srgb, var(--surface) 45%, transparent)}
 .alt .pillar:hover{background:var(--surface)}
 
 /* ---------- dashboards ---------- */
@@ -319,6 +335,36 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
   .ident .rl{display:none}
   figure.banner{margin-top:44px}
 }
+
+/* ---------- additions v3 ---------- */
+.chips-line{display:grid;gap:14px;margin-top:44px;padding-top:30px;border-top:1px solid var(--rule)}
+.chips-line .row{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline}
+.chips-line .rlab{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;min-width:130px}
+.chips-line code{
+  font-family:var(--sans);font-size:.79rem;font-weight:600;color:var(--ink-soft);
+  border:1px solid var(--rule);background:var(--surface);padding:4px 10px;border-radius:4px;
+}
+.dist{display:grid;gap:20px;margin-top:46px}
+.dist-row .dt{display:flex;justify-content:space-between;align-items:baseline;font-size:.9rem;font-weight:600;margin-bottom:8px;gap:16px}
+.dist-row .dt b{font-family:var(--serif);font-size:1.05rem;color:var(--gold);font-weight:700;white-space:nowrap}
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:14px}
+.edu{border-left:2px solid var(--gold);padding:4px 0 4px 18px}
+.edu h4{font-family:var(--serif);font-size:1.06rem;margin:0 0 4px}
+.edu p{margin:0;color:var(--muted);font-size:.88rem}
+.mini{display:grid;gap:0;border-top:1px solid var(--rule);margin-top:8px}
+.mini div{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--rule);font-size:.92rem}
+.mini div b{font-size:.73rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);font-weight:700;padding-top:3px}
+.memb{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 26px;margin-top:16px}
+.memb li{list-style:none;font-size:.92rem;color:var(--ink-soft);padding-left:16px;position:relative}
+.memb li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+.memb{padding:0;margin-left:0}
+@media (max-width:900px){
+  .edu-grid{grid-template-columns:1fr}
+  .memb{grid-template-columns:1fr}
+  .mini div{grid-template-columns:1fr;gap:4px}
+  .chips-line .rlab{min-width:0;width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -336,7 +382,7 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
       <nav class="main" id="nav">
         <a href="#profil" data-i18n="nav.1">Profil</a>
         <a href="#recherche" data-i18n="nav.2">Recherche</a>
-        <a href="#dashboards" data-i18n="nav.3">Tableaux de bord</a>
+        <a href="#dashboards" data-i18n="nav.3">Outils</a>
         <a href="#impact" data-i18n="nav.4">Impact</a>
         <a href="#publications" data-i18n="nav.5">Publications</a>
         <a href="#parcours" data-i18n="nav.6">Parcours</a>
@@ -345,8 +391,8 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
       <div class="tools">
         <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
         <button class="tbtn" id="theme" aria-label="Theme">☾</button>
-        <button class="tbtn" id="lang-fr" data-lang="fr" aria-pressed="true">FR</button>
-        <button class="tbtn" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+        <button class="tbtn" id="lang-fr" data-lang="fr" aria-pressed="false">FR</button>
+        <button class="tbtn" id="lang-en" data-lang="en" aria-pressed="true">EN</button>
       </div>
     </div>
   </div>
@@ -359,18 +405,18 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="kicker"><span data-i18n="hero.kicker">Auteur principal GIEC AR7 · WGII, chapitre Afrique</span><i></i></div>
+        <div class="kicker"><span data-i18n="hero.kicker">Auteur principal GIEC AR7 · Chapitre 7 — Afrique, WGII</span><i></i></div>
         <h1 class="display" data-i18n="hero.h1">Transformer les données climatiques en <em>décisions de santé publique</em>.</h1>
-        <p class="lead" data-i18n="hero.lead">Scientifique climat &amp; santé, enseignant-chercheur et consultant international. Je conçois des modèles, des services climatiques et des systèmes d'alerte précoce qui aident les systèmes de santé africains à anticiper plutôt qu'à subir.</p>
+        <p class="lead" data-i18n="hero.lead">Enseignant-chercheur en climat &amp; santé et consultant international. Depuis quinze ans, je modélise le lien entre variabilité climatique et maladies à transmission vectorielle, et je transforme ces modèles en systèmes d'alerte précoce utilisables par les systèmes de santé africains.</p>
         <div class="cred">
-          <a href="https://univ-labe.edu.gn/" target="_blank" rel="noopener" data-i18n="cred.1">Université de Labé — affiliation principale</a>
-          <a href="https://www.ucad.sn/" target="_blank" rel="noopener" data-i18n="cred.2">UCAD — affiliation de recherche</a>
-          <a href="https://www.ipcc.ch/" target="_blank" rel="noopener">GIEC AR7 · WGII</a>
+          <a href="https://www.ucad.sn/" target="_blank" rel="noopener">ESP/UCAD — Dakar</a>
+          <a href="https://univ-labe.edu.gn/" target="_blank" rel="noopener" data-i18n="cred.2">Université de Labé — Guinée</a>
+          <a href="https://www.ipcc.ch/" target="_blank" rel="noopener" data-i18n="cred.3">GIEC AR7 · WGII</a>
           <span data-i18n="cred.4">HMST — Fonds mondial</span>
         </div>
         <div class="cta">
           <a class="btn solid" href="CV_Dr_Ibrahima_DIOUF.pdf" target="_blank" rel="noopener" data-i18n="hero.cv">Télécharger le CV ↓</a>
-          <a class="btn ghost" href="#dashboards" data-i18n="hero.work">Voir les travaux</a>
+          <a class="btn ghost" href="#publications" data-i18n="hero.work">Voir les publications</a>
           <a class="btn ghost" href="#contact" data-i18n="hero.contact">Me contacter</a>
         </div>
       </div>
@@ -386,34 +432,57 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
   </div>
 </div>
 
-<!-- PROFIL / METRICS -->
+<!-- 01 PROFIL -->
 <section id="profil">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num">01</span>
       <h2 data-i18n="s1.h">Un profil à l'interface du climat, de la santé et de la donnée</h2>
-      <p data-i18n="s1.p">Quinze années à relier la variabilité climatique aux risques sanitaires en Afrique de l'Ouest — de la recherche fondamentale sur l'Atlantique tropical jusqu'aux outils opérationnels utilisés par les programmes nationaux de lutte contre le paludisme.</p>
+      <p data-i18n="s1.p">Quinze années de recherche interdisciplinaire, de la thèse sur le paludisme saisonnier au Sahel jusqu'aux évaluations du GIEC — avec des projets financés par l'Union européenne (FP7), l'USAID, l'OMS, l'UNICEF, la NOAA et l'IRD.</p>
     </div>
     <div class="metrics rv">
-      <div class="metric"><div class="val" data-count="15" data-suffix="+">0</div><div class="lbl" data-i18n="m.1">Années d'expérience</div></div>
-      <div class="metric"><div class="val" data-static="AR7">AR7</div><div class="lbl" data-i18n="m.2">Auteur principal GIEC</div></div>
-      <div class="metric"><div class="val" data-count="40" data-suffix="+">0</div><div class="lbl" data-i18n="m.3">Tableaux de bord &amp; outils</div></div>
-      <div class="metric"><div class="val" data-count="25" data-suffix="+">0</div><div class="lbl" data-i18n="m.4">Pays &amp; institutions engagés</div></div>
+      <div class="metric"><div class="val" data-count="29">0</div><div class="lbl" data-i18n="m.1">Articles scientifiques</div></div>
+      <div class="metric"><div class="val" data-count="15" data-suffix="+">0</div><div class="lbl" data-i18n="m.2">Années d'expérience</div></div>
+      <div class="metric"><div class="val">AR7</div><div class="lbl" data-i18n="m.3">Auteur principal GIEC</div></div>
+      <div class="metric"><div class="val" data-count="30" data-suffix="+">0</div><div class="lbl" data-i18n="m.4">Conférences &amp; ateliers</div></div>
     </div>
-    <div class="bars rv">
-      <div class="bar-row"><div class="bt"><span data-i18n="b.1">Modélisation climat–maladie</span><span>95%</span></div><div class="track"><div class="fill" data-w="95"></div></div></div>
-      <div class="bar-row"><div class="bt"><span data-i18n="b.2">Systèmes d'alerte précoce</span><span>92%</span></div><div class="track"><div class="fill" data-w="92"></div></div></div>
-      <div class="bar-row"><div class="bt"><span data-i18n="b.3">Données climatiques &amp; IA</span><span>88%</span></div><div class="track"><div class="fill" data-w="88"></div></div></div>
-      <div class="bar-row"><div class="bt"><span data-i18n="b.4">Politiques d'adaptation</span><span>85%</span></div><div class="track"><div class="fill" data-w="85"></div></div></div>
-      <div class="bar-row"><div class="bt"><span data-i18n="b.5">Renforcement des capacités</span><span>90%</span></div><div class="track"><div class="fill" data-w="90"></div></div></div>
-      <div class="bar-row"><div class="bt"><span data-i18n="b.6">Services climatiques opérationnels</span><span>87%</span></div><div class="track"><div class="fill" data-w="87"></div></div></div>
+
+    <div class="dist rv">
+      <div class="dist-row">
+        <div class="dt"><span data-i18n="dist.1">Paludisme &amp; climat</span><b>14 <span data-i18n="dist.art">articles</span></b></div>
+        <div class="track"><div class="fill" data-w="100"></div></div>
+      </div>
+      <div class="dist-row">
+        <div class="dt"><span data-i18n="dist.2">Autres maladies climato-sensibles — méningite, canicules, COVID-19</span><b>6 <span data-i18n="dist.art">articles</span></b></div>
+        <div class="track"><div class="fill" data-w="43"></div></div>
+      </div>
+      <div class="dist-row">
+        <div class="dt"><span data-i18n="dist.3">Extrêmes pluviométriques &amp; hydrologie</span><b>5 <span data-i18n="dist.art">articles</span></b></div>
+        <div class="track"><div class="fill" data-w="36"></div></div>
+      </div>
+      <div class="dist-row">
+        <div class="dt"><span data-i18n="dist.4">Services climatiques, données &amp; adaptation</span><b>4 <span data-i18n="dist.art">articles</span></b></div>
+        <div class="track"><div class="fill" data-w="29"></div></div>
+      </div>
+    </div>
+
+    <div class="chips-line rv">
+      <div class="row"><span class="rlab" data-i18n="tk.1">Programmation</span>
+        <code>Python</code><code>R</code><code>MATLAB</code><code>FORTRAN</code><code data-i18n="tk.gis">SIG</code><code>Linux</code>
+      </div>
+      <div class="row"><span class="rlab" data-i18n="tk.2">Modèles</span>
+        <code>VECTRI</code><code>LMM</code><code>S4CAST</code><code>CPT</code><code>CMT</code><code>CMIP5/6</code>
+      </div>
+      <div class="row"><span class="rlab" data-i18n="tk.3">Financements</span>
+        <code data-i18n="tk.eu">UE FP7 — QWeCI, PREFACE</code><code>GEF</code><code>USAID</code><code>UNICEF</code><code>NOAA / UCAR</code><code>Erasmus Mundus</code>
+      </div>
     </div>
   </div>
 </section>
 
 <hr class="rule">
 
-<!-- RECHERCHE -->
+<!-- 02 RECHERCHE -->
 <section id="recherche" class="alt">
   <div class="wrap">
     <div class="sec-head rv">
@@ -425,28 +494,28 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
       <article class="pillar">
         <svg viewBox="0 0 24 24"><path d="M12 3v10"/><circle cx="12" cy="17" r="3.4"/><path d="M9 6h6M9 9h6"/></svg>
         <h3 data-i18n="p1.h">Climat &amp; santé</h3>
-        <p data-i18n="p1.p">Quantifier l'effet de la variabilité et du changement climatiques sur les risques sanitaires, de l'échelle saisonnière aux projections CMIP6.</p>
+        <p data-i18n="p1.p">Interactions climat-santé et prévision saisonnière en Afrique de l'Ouest : effets de la variabilité et du changement climatiques sur les maladies à transmission vectorielle.</p>
       </article>
       <article class="pillar">
         <svg viewBox="0 0 24 24"><path d="M3 17c3-6 6-9 9-9s6 3 9 9"/><circle cx="12" cy="8" r="2"/><path d="M6 21h12"/></svg>
         <h3 data-i18n="p2.h">Modélisation du paludisme</h3>
-        <p data-i18n="p2.p">Coupler modèles atmosphère–hydrologie–vecteur et données de surveillance (PNLP/DHIS2) pour reproduire et anticiper la transmission.</p>
+        <p data-i18n="p2.p">Modèles dynamiques VECTRI et LMM couplés à l'atmosphère et à l'hydrologie, forcés par observations, réanalyses et projections CMIP5/CMIP6 corrigées de biais.</p>
       </article>
       <article class="pillar">
         <svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 9v5"/><circle cx="12" cy="16.5" r=".6" fill="currentColor" stroke="none"/></svg>
-        <h3 data-i18n="p3.h">Alerte précoce</h3>
-        <p data-i18n="p3.p">Concevoir des systèmes d'alerte précoce opérationnels : seuils, cartographie du risque, ciblage des campagnes et aide à la décision.</p>
+        <h3 data-i18n="p3.h">Alerte précoce &amp; adaptation</h3>
+        <p data-i18n="p3.p">Outils d'alerte précoce, cartographie du risque, évaluations de vulnérabilité et appui aux plans nationaux d'adaptation et à la résilience des systèmes de santé.</p>
       </article>
       <article class="pillar">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 15l3-4 3 3 4-6"/></svg>
-        <h3 data-i18n="p4.h">Données &amp; IA</h3>
-        <p data-i18n="p4.p">Intégrer réanalyses, satellites, données sanitaires et apprentissage automatique pour la prévision et l'analyse du risque.</p>
+        <h3 data-i18n="p4.h">IA &amp; science des données</h3>
+        <p data-i18n="p4.p">Apprentissage automatique appliqué à la prévision climat-santé : incidence du paludisme, hospitalisations liées aux canicules, qualité des produits de pluie maillés.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- DASHBOARDS -->
+<!-- 03 OUTILS -->
 <section id="dashboards">
   <div class="wrap">
     <div class="sec-head rv">
@@ -480,15 +549,13 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
               <path d="M10 100 Q40 40 70 74 T130 52 T190 30 L230 44" opacity=".9"/>
               <path d="M10 112 Q46 84 78 96 T140 78 T196 66 L230 74" opacity=".45"/>
             </g>
-            <g fill="var(--teal)" opacity=".55">
-              <circle cx="70" cy="74" r="3"/><circle cx="130" cy="52" r="3"/><circle cx="190" cy="30" r="3"/>
-            </g>
+            <g fill="var(--teal)" opacity=".55"><circle cx="70" cy="74" r="3"/><circle cx="130" cy="52" r="3"/><circle cx="190" cy="30" r="3"/></g>
             <g stroke="var(--rule)" stroke-width="1"><path d="M10 118h220M10 88h220M10 58h220"/></g>
           </svg>
         </div>
         <div class="body">
           <h4 data-i18n="dc1.h">Indices pluviométriques</h4>
-          <p data-i18n="dc1.p">Tendances spatio-temporelles des extrêmes de pluie au Sénégal.</p>
+          <p data-i18n="dc1.p">Tendances des extrêmes de pluie au Sénégal, validation CMIP6.</p>
         </div>
       </a>
       <a class="dash-card" href="https://huggingface.co/idiouf" target="_blank" rel="noopener">
@@ -501,15 +568,13 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
         </div>
         <div class="body">
           <h4 data-i18n="dc2.h">Projections CMIP6</h4>
-          <p data-i18n="dc2.p">Évolution des précipitations extrêmes à l'horizon du siècle.</p>
+          <p data-i18n="dc2.p">Paludisme et précipitations extrêmes sous scénarios futurs.</p>
         </div>
       </a>
       <a class="dash-card" href="https://huggingface.co/idiouf" target="_blank" rel="noopener">
         <div class="thumb">
           <svg viewBox="0 0 240 132">
-            <g fill="none" stroke="var(--rule)" stroke-width="1.1">
-              <path d="M70 24h44l16 16v22l-14 18v20l-20 14H80l-18-16V52z"/>
-            </g>
+            <g fill="none" stroke="var(--rule)" stroke-width="1.1"><path d="M70 24h44l16 16v22l-14 18v20l-20 14H80l-18-16V52z"/></g>
             <g fill="var(--gold)" opacity=".18"><path d="M70 24h44l16 16v22l-14 18v20l-20 14H80l-18-16V52z"/></g>
             <g fill="var(--teal)"><circle cx="92" cy="52" r="5" opacity=".9"/><circle cx="112" cy="76" r="7" opacity=".7"/><circle cx="84" cy="92" r="4" opacity=".8"/></g>
             <g stroke="var(--gold)" stroke-width="1.2" fill="none" opacity=".7"><circle cx="112" cy="76" r="14"/><circle cx="112" cy="76" r="22"/></g>
@@ -543,142 +608,304 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
 
 <hr class="rule">
 
-<!-- IMPACT -->
+<!-- 04 IMPACT -->
 <section id="impact" class="alt">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num">04</span>
-      <h2 data-i18n="s4.h">Impact &amp; partenaires</h2>
+      <h2 data-i18n="s4.h">Impact &amp; engagements</h2>
       <p data-i18n="s4.p">Une recherche pensée pour être utilisée : évaluations internationales, appui aux programmes nationaux et outils opérationnels.</p>
     </div>
     <div class="impact rv">
       <article class="case">
         <div class="yr">2025 — <span data-i18n="c.now">en cours</span></div>
         <h3 data-i18n="c1.h">Évaluation mondiale du GIEC</h3>
-        <p data-i18n="c1.p">Auteur principal du chapitre Afrique (AR7, Groupe de travail II) : synthèse des risques climat-santé et des options d'adaptation destinées aux gouvernements et aux négociateurs.</p>
+        <p data-i18n="c1.p">Auteur principal du chapitre 7 « Afrique » du Septième Rapport d'évaluation (Groupe de travail II) : synthèse des risques climat-santé et des options d'adaptation pour les gouvernements.</p>
       </article>
       <article class="case">
         <div class="yr">2024 — <span data-i18n="c.now">en cours</span></div>
-        <h3 data-i18n="c2.h">Intégration climat-santé, Fonds mondial</h3>
-        <p data-i18n="c2.p">Team Lead francophone (HMST) : intégration de la dimension climatique dans les rapports pays et le renforcement des systèmes de santé.</p>
+        <h3 data-i18n="c2.h">Fonds mondial — équipe HMST</h3>
+        <p data-i18n="c2.p">Team Lead francophone pour l'intégration climat-santé : missions d'assistance technique au Sénégal, au Niger, en RCA, au Burundi et en Guinée-Bissau.</p>
       </article>
       <article class="case">
-        <div class="yr">2017 — <span data-i18n="c.now">en cours</span></div>
-        <h3 data-i18n="c3.h">Du modèle à l'alerte opérationnelle</h3>
-        <p data-i18n="c3.p">Transformation de modèles climat-paludisme en outils de surveillance et d'alerte précoce mobilisables par les programmes nationaux et leurs partenaires.</p>
+        <div class="yr">2023 — <span data-i18n="c.now">en cours</span></div>
+        <h3 data-i18n="c3.h">Expert climat, Institut Pasteur de Dakar &amp; OMS</h3>
+        <p data-i18n="c3.p">Surveillance intégrée des maladies vectorielles liées au climat : analyse de données, cartographie du risque et recommandations de politique publique.</p>
       </article>
     </div>
+
+    <div class="partners rv">
+      <div class="plabel" data-i18n="eng.l">Engagements récents</div>
+      <div class="mini">
+        <div><b data-i18n="e.d1">Mai 2026</b><span data-i18n="e.1">2ᵉ réunion des auteurs principaux du GIEC AR7 (WGII) — Nassau, Bahamas</span></div>
+        <div><b data-i18n="e.d2">Avril 2026</b><span data-i18n="e.2">Atelier de mise en œuvre de l'Objectif mondial d'adaptation (GGA), IIED — Addis-Abeba</span></div>
+        <div><b data-i18n="e.d3">Mars 2026</b><span data-i18n="e.3">CORDEX-Africa — littératie climatique partagée, Université du Cap</span></div>
+        <div><b data-i18n="e.d4">Févr.–mars 2026</b><span data-i18n="e.4">Missions d'assistance technique climat &amp; santé, HMST / Fonds mondial — 5 pays</span></div>
+        <div><b data-i18n="e.d5">Janv. 2026</b><span data-i18n="e.5">Réunion d'experts Changement climatique &amp; Santé, Wellcome Trust — Londres</span></div>
+        <div><b data-i18n="e.d6">Déc. 2025</b><span data-i18n="e.6">1ʳᵉ réunion des auteurs principaux du GIEC AR7 — Paris</span></div>
+      </div>
+    </div>
+
     <div class="partners rv">
       <div class="plabel" data-i18n="pt.l">Institutions &amp; partenaires</div>
       <div class="plist">
         <span>GIEC / IPCC</span><span>OMS / WHO</span><span>UNICEF</span><span>USAID</span>
-        <span data-i18n="pt.gf">Fonds mondial</span><span>NOAA</span><span>UCAR</span><span>IIED</span>
-        <span>UCAD</span><span data-i18n="pt.labe">Université de Labé</span><span>Institut Pasteur de Dakar</span>
-        <span>MSAS</span><span>Save the Children</span><span>GEF</span><span>AMMnet</span>
+        <span data-i18n="pt.gf">Fonds mondial</span><span>NOAA · UCAR</span><span>IIED</span><span>IRD</span>
+        <span>UE FP7</span><span>UCAD · LPAO-SF</span><span data-i18n="pt.labe">Université de Labé</span>
+        <span>Institut Pasteur de Dakar</span><span>MSAS</span><span>CSE</span><span>APHRC</span>
+        <span>Save the Children</span><span>GEF</span><span>AMMnet</span><span>CORDEX-Africa</span><span>CMIP-PO</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
+<!-- 05 PUBLICATIONS -->
 <section id="publications">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num">05</span>
-      <h2 data-i18n="s5.h">Publications sélectionnées</h2>
-      <p data-i18n="s5.p">Travaux revus par les pairs sur le climat, les extrêmes hydro-climatiques et la santé en Afrique de l'Ouest.</p>
+      <h2 data-i18n="s5.h">Publications</h2>
+      <p data-i18n="s5.p">29 articles sur le climat, les extrêmes hydro-climatiques et la santé en Afrique de l'Ouest, dont 5 en cours de révision. Sélection ci-dessous.</p>
     </div>
     <div class="filters rv">
       <button class="fbtn on" data-f="all" data-i18n="f.all">Tout</button>
       <button class="fbtn" data-f="paludisme" data-i18n="f.mal">Paludisme</button>
-      <button class="fbtn" data-f="extremes" data-i18n="f.ext">Climat &amp; extrêmes</button>
-      <button class="fbtn" data-f="projections" data-i18n="f.proj">Projections</button>
+      <button class="fbtn" data-f="maladies" data-i18n="f.dis">Autres maladies</button>
+      <button class="fbtn" data-f="extremes" data-i18n="f.ext">Extrêmes &amp; hydrologie</button>
+      <button class="fbtn" data-f="ia" data-i18n="f.ai">IA &amp; données</button>
       <button class="fbtn" data-f="services" data-i18n="f.serv">Services climatiques</button>
     </div>
     <div class="pubs rv" id="publist">
-      <article class="pub" data-tags="projections extremes">
+
+      <article class="pub" data-tags="extremes">
         <div class="yr">2026</div>
         <div>
           <h4>Spatio-Temporal Changes in Extreme Precipitation over Guinea Using CMIP6 Climate Projections</h4>
           <div class="src">International Journal of Climatology — <span data-i18n="pub.rev">en révision</span></div>
-          <div class="tags"><b data-i18n="f.proj">Projections</b><b>CMIP6</b><b data-i18n="pub.gn">Guinée</b></div>
+          <div class="tags"><b data-i18n="f.ext">Extrêmes</b><b>CMIP6</b><b data-i18n="pub.gn">Guinée</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
+
+      <article class="pub" data-tags="paludisme ia">
+        <div class="yr">2026</div>
+        <div>
+          <h4>Impact of Climate Change on Malaria Incidence in Senegal and Nigeria: A Machine Learning Approach</h4>
+          <div class="src">Frontiers in Artificial Intelligence — <span data-i18n="pub.rev">en révision</span></div>
+          <div class="tags"><b data-i18n="f.mal">Paludisme</b><b data-i18n="f.ai">IA</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="maladies">
+        <div class="yr">2026</div>
+        <div>
+          <h4>Meningitis Variability in West Africa: Changes and Drivers</h4>
+          <div class="src"><span data-i18n="pub.rev">en révision</span></div>
+          <div class="tags"><b data-i18n="pub.men">Méningite</b><b data-i18n="pub.wa">Afrique de l'Ouest</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
       <article class="pub" data-tags="services">
         <div class="yr">2026</div>
         <div>
-          <h4>Stakeholder values, power relationships and language in constructing trustworthy climate information</h4>
-          <div class="src">Earth's Future</div>
+          <h4>The Importance of Accounting for Stakeholder Values, Power Relationships and Language in Constructing Relevant and Trustworthy Climate Information</h4>
+          <div class="src">Earth's Future, 14(1), e2024EF005618 — Maraun et al.</div>
           <div class="tags"><b data-i18n="f.serv">Services climatiques</b><b data-i18n="pub.co">Co-auteur</b></div>
         </div>
-        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+        <a class="go" href="https://doi.org/10.1029/2024EF005618" target="_blank" rel="noopener">DOI →</a>
       </article>
+
       <article class="pub" data-tags="extremes">
         <div class="yr">2025</div>
         <div>
-          <h4>Assessment of Spatio-Temporal Trends in Rainfall Indices in Senegal</h4>
-          <div class="src">Climate</div>
-          <div class="tags"><b data-i18n="f.ext">Climat &amp; extrêmes</b><b data-i18n="pub.sn">Sénégal</b></div>
+          <h4>Assessment of Spatio-Temporal Trends in Rainfall Indices in Senegal: Validation of CMIP6 Models and Future Projections</h4>
+          <div class="src">Climate, 13(12), 247</div>
+          <div class="tags"><b data-i18n="f.ext">Extrêmes</b><b data-i18n="pub.sn">Sénégal</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
+
+      <article class="pub" data-tags="services ia">
+        <div class="yr">2025</div>
+        <div>
+          <h4>CMIP7 Data Request: Impacts and Adaptation Priorities and Opportunities</h4>
+          <div class="src">Geoscientific Model Development, 18(23), 9497–9540 — Ruane et al.</div>
+          <div class="tags"><b>CMIP7</b><b data-i18n="pub.co">Co-auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="paludisme">
+        <div class="yr">2025</div>
+        <div>
+          <h4>Impact of Climatic Factors on Malaria in Senegal Based on the Surveillance System between 2015 and 2022</h4>
+          <div class="src">Frontiers in Tropical Diseases, 6, 1631996 — Talla et al.</div>
+          <div class="tags"><b data-i18n="f.mal">Paludisme</b><b data-i18n="pub.surv">Surveillance</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="maladies ia">
+        <div class="yr">2025</div>
+        <div>
+          <h4>Machine Learning-Based Prediction of Heatwave-Related Hospitalizations: A Case Study in Matam, Senegal</h4>
+          <div class="src">Int. Journal of Environmental Research and Public Health, 22, 1349</div>
+          <div class="tags"><b data-i18n="pub.heat">Canicules</b><b data-i18n="f.ai">IA</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="maladies">
+        <div class="yr">2025</div>
+        <div>
+          <h4>Influence of Environmental Variability on Meningitis in West African Countries: Pre- and Post-Vaccination</h4>
+          <div class="src">Frontiers in Environmental Health, 4, 1531076</div>
+          <div class="tags"><b data-i18n="pub.men">Méningite</b><b data-i18n="pub.wa">Afrique de l'Ouest</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="extremes">
+        <div class="yr">2025</div>
+        <div>
+          <h4>Hydrological Evaluation of Gridded Rainfall Products for Streamflow Simulation in West Africa</h4>
+          <div class="src">Journal of Hydrology: Regional Studies, 62, 102984</div>
+          <div class="tags"><b data-i18n="pub.hyd">Hydrologie</b><b data-i18n="pub.co">Co-auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
       <article class="pub" data-tags="paludisme">
         <div class="yr">2024</div>
         <div>
-          <h4>Process-based atmosphere–hydrology–malaria modelling in Sub-Saharan Africa</h4>
-          <div class="src">Water Resources Research</div>
-          <div class="tags"><b data-i18n="f.mal">Paludisme</b><b data-i18n="pub.mod">Modélisation</b></div>
+          <h4>Process-Based Atmosphere–Hydrology–Malaria Modeling: Spatio-Temporal Malaria Transmission Dynamics in Sub-Saharan Africa</h4>
+          <div class="src">Water Resources Research, 60(6), e2023WR034975</div>
+          <div class="tags"><b data-i18n="f.mal">Paludisme</b><b data-i18n="pub.mod">Modélisation</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+        </div>
+        <a class="go" href="https://doi.org/10.1029/2023WR034975" target="_blank" rel="noopener">DOI →</a>
+      </article>
+
+      <article class="pub" data-tags="maladies">
+        <div class="yr">2024</div>
+        <div>
+          <h4>Assessing Climate Change Impacts on Public Health in Haiti: Disease Distribution, Modeling and Adaptation Strategies</h4>
+          <div class="src">Frontiers in Tropical Diseases, 4, 1287499</div>
+          <div class="tags"><b data-i18n="pub.pub">Santé publique</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
+
+      <article class="pub" data-tags="paludisme">
+        <div class="yr">2022</div>
+        <div>
+          <h4>Malaria in Senegal: Recent and Future Changes Based on Bias-Corrected CMIP6 Simulations</h4>
+          <div class="src">Tropical Medicine and Infectious Disease, 7(11), 345</div>
+          <div class="tags"><b data-i18n="f.mal">Paludisme</b><b>CMIP6</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
       <article class="pub" data-tags="paludisme">
         <div class="yr">2021</div>
         <div>
           <h4>Oceanic Influence on Seasonal Malaria Incidence in West Africa</h4>
-          <div class="src">Weather, Climate, and Society</div>
-          <div class="tags"><b data-i18n="f.mal">Paludisme</b><b data-i18n="pub.prev">Prévision saisonnière</b></div>
+          <div class="src">Weather, Climate, and Society, 14</div>
+          <div class="tags"><b data-i18n="f.mal">Paludisme</b><b data-i18n="pub.prev">Prévision saisonnière</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
+
+      <article class="pub" data-tags="maladies">
+        <div class="yr">2021</div>
+        <div>
+          <h4>Impact of Different Heat Wave Definitions on Daily Mortality in Bandafassi, Senegal</h4>
+          <div class="src">PLoS ONE, 16(4), e0249199</div>
+          <div class="tags"><b data-i18n="pub.heat">Canicules</b><b data-i18n="pub.mort">Mortalité</b></div>
+        </div>
+        <a class="go" href="https://doi.org/10.1371/journal.pone.0249199" target="_blank" rel="noopener">DOI →</a>
+      </article>
+
+      <article class="pub" data-tags="paludisme">
+        <div class="yr">2020</div>
+        <div>
+          <h4>Climate Variability and Malaria over West Africa</h4>
+          <div class="src">American Journal of Tropical Medicine and Hygiene, 102(5), 1037–1047</div>
+          <div class="tags"><b data-i18n="f.mal">Paludisme</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="paludisme">
+        <div class="yr">2013</div>
+        <div>
+          <h4>Climate and Health: Observation and Modeling of Malaria in the Ferlo (Senegal)</h4>
+          <div class="src">Comptes Rendus Biologies, 336(5-6), 253–260</div>
+          <div class="tags"><b data-i18n="f.mal">Paludisme</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
     </div>
     <p style="margin-top:28px" class="rv">
-      <a class="btn ghost" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener" data-i18n="s5.btn">Toutes les publications sur Google Scholar →</a>
+      <a class="btn ghost" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener" data-i18n="s5.btn">Les 29 publications sur Google Scholar →</a>
     </p>
   </div>
 </section>
 
 <hr class="rule">
 
-<!-- PARCOURS -->
+<!-- 06 PARCOURS -->
 <section id="parcours" class="alt">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num">06</span>
-      <h2 data-i18n="s6.h">Parcours</h2>
+      <h2 data-i18n="s6.h">Parcours &amp; formation</h2>
       <p data-i18n="s6.p">De la thèse sur le paludisme saisonnier au Sahel aux évaluations internationales du climat.</p>
     </div>
     <div class="tl rv">
-      <div class="tl-item"><div class="yr" data-i18n="t.now1">2025 — aujourd'hui</div><h4>GIEC / IPCC — AR7, WGII</h4><p data-i18n="tl.1">Auteur principal du chapitre Afrique du Septième Rapport d'évaluation.</p></div>
-      <div class="tl-item"><div class="yr" data-i18n="t.now2">2024 — aujourd'hui</div><h4 data-i18n="tl.2h">Université de Labé (Guinée)</h4><p data-i18n="tl.2">Enseignant-chercheur en climat et santé : enseignement, encadrement et renforcement des capacités.</p></div>
-      <div class="tl-item"><div class="yr" data-i18n="t.now3">2023 — aujourd'hui</div><h4 data-i18n="tl.3h">Institut Pasteur de Dakar · travaux climat-santé liés à l'OMS</h4><p data-i18n="tl.3">Analyse de données climatiques, cartographie du risque et recommandations pour la surveillance des maladies vectorielles.</p></div>
-      <div class="tl-item"><div class="yr">2023 — 2024</div><h4>MSAS · Save the Children · UNICEF</h4><p data-i18n="tl.4">Appui à la résilience des systèmes de santé, évaluation de la vulnérabilité climatique et conception de stratégies.</p></div>
-      <div class="tl-item"><div class="yr">2021 — 2023</div><h4 data-i18n="tl.5h">Plan National d'Adaptation · GEF</h4><p data-i18n="tl.5">Appui à la planification nationale de l'adaptation, formation et évaluations climat-santé.</p></div>
-      <div class="tl-item"><div class="yr">2017 — 2021</div><h4>NOAA CPC · UCAR</h4><p data-i18n="tl.6">Recherche postdoctorale sur les interactions climat-paludisme et les systèmes d'alerte précoce.</p></div>
-      <div class="tl-item"><div class="yr">2013 — 2017</div><h4>Universidad Complutense de Madrid · PREFACE</h4><p data-i18n="tl.7">Variabilité climatique de l'Atlantique tropical et risques sanitaires en Afrique de l'Ouest.</p></div>
-      <div class="tl-item"><div class="yr">2010 — 2016</div><h4 data-i18n="tl.8h">Doctorat — Climat &amp; impacts sanitaires</h4><p data-i18n="tl.8">Incidence saisonnière du paludisme, prévision et modélisation climat-santé au Sénégal et au Sahel.</p></div>
+      <div class="tl-item"><div class="yr" data-i18n="t.n1">Depuis déc. 2025</div><h4>GIEC / IPCC — AR7, WGII</h4><p data-i18n="tl.1">Auteur principal du chapitre 7 « Afrique » du Septième Rapport d'évaluation.</p></div>
+      <div class="tl-item"><div class="yr" data-i18n="t.n2">Depuis oct. 2024</div><h4 data-i18n="tl.2h">Enseignant-chercheur — Université de Labé, Guinée</h4><p data-i18n="tl.2">Enseignement et recherche en climat et santé ; encadrement de masters et de doctorants ; coordination de modules en sciences de l'environnement.</p></div>
+      <div class="tl-item"><div class="yr" data-i18n="t.n3">Depuis mai 2023</div><h4 data-i18n="tl.3h">Expert climat — Institut Pasteur de Dakar / OMS</h4><p data-i18n="tl.3">Surveillance et contrôle intégrés des maladies vectorielles liées au changement climatique : analyse de données, cartographie du risque, recommandations de politique publique.</p></div>
+      <div class="tl-item"><div class="yr" data-i18n="t.d4">Juin 2023 — août 2024</div><h4 data-i18n="tl.4h">Consultant — MSAS &amp; Save the Children / UNICEF</h4><p data-i18n="tl.4">Renforcement de la résilience du système de santé face aux risques climatiques ; conduite des évaluations de vulnérabilité et appui à la conception des stratégies.</p></div>
+      <div class="tl-item"><div class="yr" data-i18n="t.d5">Août 2023 — janv. 2024</div><h4 data-i18n="tl.5h">Expert climat — Centre de Suivi Écologique (CSE), Sénégal</h4><p data-i18n="tl.5">Expertise sur les liens climat-santé, évaluations de vulnérabilité communautaire et appui à la planification de l'adaptation.</p></div>
+      <div class="tl-item"><div class="yr" data-i18n="t.d6">Juil. 2021 — déc. 2023</div><h4 data-i18n="tl.6h">Chercheur postdoctoral — Ministère de l'Environnement, PNA-GEF</h4><p data-i18n="tl.6">Contribution au Plan National d'Adaptation du Sénégal : formation des parties prenantes, matériels pédagogiques et conseil aux ministères sur l'usage des données d'adaptation.</p></div>
+      <div class="tl-item"><div class="yr" data-i18n="t.d7">Juil. 2017 — juil. 2021</div><h4 data-i18n="tl.7h">Postdoc &amp; Associate Scientist — NOAA CPC / UCAR, États-Unis</h4><p data-i18n="tl.7">Modélisation du paludisme et de la variabilité climatique en Afrique ; développement d'outils d'alerte précoce ; coordination de collaborations internationales.</p></div>
+      <div class="tl-item"><div class="yr" data-i18n="t.d8">Nov. 2013 — oct. 2017</div><h4 data-i18n="tl.8h">Chercheur — PREFACE, Universidad Complutense de Madrid</h4><p data-i18n="tl.8">Influence de l'Atlantique tropical sur la santé publique en Afrique de l'Ouest ; intégration d'indicateurs climatiques dans les politiques de santé.</p></div>
+      <div class="tl-item"><div class="yr" data-i18n="t.d9">Janv. 2010 — juil. 2013</div><h4 data-i18n="tl.9h">Doctorant — University of Liverpool, projet QWeCI</h4><p data-i18n="tl.9">Construction de bases de données climat-paludisme et test de modèles dynamiques ; intégration des prévisions saisonnières dans les systèmes de santé ouest-africains.</p></div>
+    </div>
+
+    <div class="rv" style="margin-top:56px">
+      <div class="plabel" style="font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700" data-i18n="edu.l">Formation</div>
+      <div class="edu-grid">
+        <div class="edu"><h4 data-i18n="edu.1h">Doctorat — Impacts climat &amp; santé</h4><p>ESP/UCAD · 2010 — 2016</p></div>
+        <div class="edu"><h4 data-i18n="edu.2h">Master — Météorologie, océanographie, gestion des zones arides</h4><p>ESP/UCAD · 2009 — 2010</p></div>
+        <div class="edu"><h4 data-i18n="edu.3h">Master — Physique et chimie</h4><p>FST/UCAD · 2006 — 2008</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- 07 CONTACT -->
 <section id="contact">
   <div class="wrap">
     <div class="contact-grid">
       <div class="rv">
         <span class="sec-num">07</span>
         <h2 class="serif" style="font-size:clamp(1.9rem,3.3vw,2.9rem);line-height:1.12;letter-spacing:-.9px;margin:0 0 16px" data-i18n="s7.h">Travaillons ensemble</h2>
-        <p style="color:var(--muted);max-width:56ch;margin:0 0 26px" data-i18n="s7.p">Expertise, évaluation, formation, encadrement doctoral ou développement d'outils climat-santé : je réponds aux sollicitations institutionnelles et académiques.</p>
+        <p style="color:var(--muted);max-width:56ch;margin:0 0 24px" data-i18n="s7.p">Expertise, évaluation, formation, encadrement doctoral ou développement d'outils climat-santé : je réponds aux sollicitations institutionnelles et académiques.</p>
+        <div class="plabel" style="font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:26px" data-i18n="memb.l">Affiliations professionnelles</div>
+        <ul class="memb">
+          <li data-i18n="mb.1">Team Lead francophone, HMST — Fonds mondial</li>
+          <li data-i18n="mb.2">Auteur principal, GIEC AR7 (ch. 7 — Afrique), WGII</li>
+          <li data-i18n="mb.3">Expert, IIED — indicateurs inclusifs pour le GGA</li>
+          <li data-i18n="mb.4">Co-président, AMMnet Sénégal</li>
+          <li data-i18n="mb.5">Membre, American Meteorological Society (AMS)</li>
+          <li data-i18n="mb.6">Membre, African Meteorological Society (AfMS)</li>
+          <li data-i18n="mb.7">Membre, IECCCH — Centre international d'experts climat &amp; santé</li>
+          <li data-i18n="mb.8">Auteur contributeur, CMIP Project Office</li>
+        </ul>
         <div class="slinks">
           <a href="https://orcid.org/0000-0002-3157-0925" target="_blank" rel="noopener">ORCID</a>
           <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Google Scholar</a>
@@ -688,11 +915,12 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
         </div>
       </div>
       <div class="cbox rv">
-        <div class="cline"><b data-i18n="ct.1">Affiliation</b><span><a href="https://univ-labe.edu.gn/" target="_blank" rel="noopener">Université de Labé</a> · <a href="https://www.ucad.sn/" target="_blank" rel="noopener">UCAD</a></span></div>
+        <div class="cline"><b data-i18n="ct.1">Affiliations</b><span data-i18n="ct.1v"><a href="https://www.ucad.sn/" target="_blank" rel="noopener">ESP/UCAD, Sénégal</a> · <a href="https://univ-labe.edu.gn/" target="_blank" rel="noopener">Université de Labé, Guinée</a></span></div>
         <div class="cline"><b data-i18n="ct.2">Email</b><span><a href="mailto:ibrahima23.diouf@ucad.edu.sn">ibrahima23.diouf@ucad.edu.sn</a></span></div>
         <div class="cline"><b data-i18n="ct.3">Email</b><span><a href="mailto:ibrahima.diouf@univ-labe.edu.gn">ibrahima.diouf@univ-labe.edu.gn</a></span></div>
         <div class="cline"><b data-i18n="ct.4">Domaines</b><span data-i18n="ct.4v">Climat &amp; santé · Alerte précoce · Adaptation · IA</span></div>
-        <div class="cline"><b data-i18n="ct.5">Langues</b><span data-i18n="ct.5v">Français · Anglais · Espagnol</span></div>
+        <div class="cline"><b data-i18n="ct.5">Langues</b><span data-i18n="ct.5v">Français (langue maternelle) · Anglais (avancé) · Espagnol (intermédiaire supérieur)</span></div>
+        <div class="cline"><b>CV</b><span><a href="CV_Dr_Ibrahima_DIOUF.pdf" target="_blank" rel="noopener" data-i18n="ct.6v">Curriculum vitæ (PDF, août 2026)</a></span></div>
       </div>
     </div>
   </div>
@@ -712,7 +940,6 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 
-/* ---------- menu ---------- */
 document.getElementById('burger').addEventListener('click', () => {
   document.getElementById('nav').classList.toggle('open');
 });
@@ -720,7 +947,6 @@ document.querySelectorAll('nav.main a').forEach(a =>
   a.addEventListener('click', () => document.getElementById('nav').classList.remove('open'))
 );
 
-/* ---------- theme ---------- */
 const themeBtn = document.getElementById('theme');
 function setTheme(t){
   document.documentElement.setAttribute('data-theme', t);
@@ -734,7 +960,6 @@ themeBtn.addEventListener('click', () =>
   setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')
 );
 
-/* ---------- reveal + counters ---------- */
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if(!e.isIntersecting) return;
@@ -755,85 +980,98 @@ const io = new IntersectionObserver((entries) => {
     });
     io.unobserve(e.target);
   });
-}, {threshold:.18, rootMargin:'0px 0px -60px 0px'});
+}, {threshold:.15, rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-/* ---------- publication filters ---------- */
 document.querySelectorAll('.fbtn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
     const f = btn.dataset.f;
     document.querySelectorAll('#publist .pub').forEach(p => {
-      const show = f === 'all' || (p.dataset.tags || '').includes(f);
+      const show = f === 'all' || (p.dataset.tags || '').split(' ').includes(f);
       p.style.display = show ? '' : 'none';
     });
   });
 });
 
-/* ---------- i18n ---------- */
 const I18N = {
   fr: {},
   en: {
     'hdr.role':'Climate &amp; Health Scientist',
-    'nav.1':'Profile','nav.2':'Research','nav.3':'Dashboards','nav.4':'Impact','nav.5':'Publications','nav.6':'Career','nav.7':'Contact',
-    'hero.kicker':'IPCC AR7 Lead Author · WGII, Africa chapter',
+    'nav.1':'Profile','nav.2':'Research','nav.3':'Tools','nav.4':'Impact','nav.5':'Publications','nav.6':'Career','nav.7':'Contact',
+    'hero.kicker':'IPCC AR7 Lead Author · Chapter 7 — Africa, WGII',
     'hero.h1':'Turning climate data into <em>public-health decisions</em>.',
-    'hero.lead':'Climate &amp; health scientist, lecturer-researcher and international consultant. I build the models, climate services and early warning systems that help African health systems anticipate rather than react.',
-    'cred.1':'University of Labé — primary affiliation',
-    'cred.2':'UCAD — research affiliation',
-    'cred.4':'HMST — Global Fund',
-    'hero.cv':'Download CV ↓','hero.work':'See the work','hero.contact':'Get in touch',
+    'hero.lead':'Lecturer-researcher in climate &amp; health and international consultant. For fifteen years I have modelled the link between climate variability and vector-borne disease, and turned those models into early warning systems African health systems can act on.',
+    'cred.2':'University of Labé — Guinea','cred.3':'IPCC AR7 · WGII','cred.4':'HMST — Global Fund',
+    'tk.gis':'GIS','tk.eu':'EU FP7 — QWeCI, PREFACE',
+    'ct.1v':'<a href="https://www.ucad.sn/" target="_blank" rel="noopener">ESP/UCAD, Senegal</a> · <a href="https://univ-labe.edu.gn/" target="_blank" rel="noopener">University of Labé, Guinea</a>',
+    'hero.cv':'Download CV ↓','hero.work':'See publications','hero.contact':'Get in touch',
     'hero.pcap':'Dakar · Labé · Field &amp; data',
     'fig.b':'Motto','fig.t':'“Turning data into knowledge for a resilient and healthy future.”',
     's1.h':'A profile at the interface of climate, health and data',
-    's1.p':'Fifteen years connecting climate variability to health risks in West Africa — from fundamental research on the tropical Atlantic to operational tools used by national malaria control programmes.',
-    'm.1':'Years of experience','m.2':'IPCC Lead Author','m.3':'Dashboards &amp; tools','m.4':'Countries &amp; institutions engaged',
-    'b.1':'Climate–disease modelling','b.2':'Early warning systems','b.3':'Climate data &amp; AI','b.4':'Adaptation policy','b.5':'Capacity building','b.6':'Operational climate services',
+    's1.p':'Fifteen years of interdisciplinary research, from a PhD on seasonal malaria in the Sahel to IPCC assessments — with projects funded by the European Union (FP7), USAID, WHO, UNICEF, NOAA and IRD.',
+    'm.1':'Scientific articles','m.2':'Years of experience','m.3':'IPCC Lead Author','m.4':'Conferences &amp; workshops',
+    'dist.1':'Malaria &amp; climate','dist.2':'Other climate-sensitive diseases — meningitis, heatwaves, COVID-19',
+    'dist.3':'Rainfall extremes &amp; hydrology','dist.4':'Climate services, data &amp; adaptation','dist.art':'articles',
+    'tk.1':'Programming','tk.2':'Models','tk.3':'Funding',
     's2.h':'Four research pillars',
     's2.p':'One question runs through all of my work: how do you turn a climate signal into a useful health decision, in time and at the right scale?',
-    'p1.h':'Climate &amp; health','p1.p':'Quantifying how climate variability and change shape health risks, from the seasonal scale to CMIP6 projections.',
-    'p2.h':'Malaria modelling','p2.p':'Coupling atmosphere–hydrology–vector models with surveillance data (NMCP/DHIS2) to reproduce and anticipate transmission.',
-    'p3.h':'Early warning','p3.p':'Designing operational early warning systems: thresholds, risk mapping, campaign targeting and decision support.',
-    'p4.h':'Data &amp; AI','p4.p':'Integrating reanalyses, satellite products, health data and machine learning for forecasting and risk analysis.',
+    'p1.h':'Climate &amp; health','p1.p':'Climate-health interactions and seasonal forecasting in West Africa: how climate variability and change shape vector-borne disease risk.',
+    'p2.h':'Malaria modelling','p2.p':'Dynamical VECTRI and LMM models coupled to atmosphere and hydrology, driven by observations, reanalyses and bias-corrected CMIP5/CMIP6 projections.',
+    'p3.h':'Early warning &amp; adaptation','p3.p':'Early warning tools, risk mapping, vulnerability assessments and support to national adaptation plans and health system resilience.',
+    'p4.h':'AI &amp; data science','p4.p':'Machine learning for climate-health forecasting: malaria incidence, heatwave-related hospitalisations, and the quality of gridded rainfall products.',
     's3.h':'From models to tools people actually use',
     's3.p':'My work does not stop at the paper: it becomes interactive, open and reproducible applications hosted on Hugging Face.',
-    'd.tag':'Flagship application',
-    'd.h':'Malaria Early Warning System (EWS) — Senegal',
+    'd.tag':'Flagship application','d.h':'Malaria Early Warning System (EWS) — Senegal',
     'd.p':'A national dashboard combining malaria incidence, population and climate to identify at-risk regions and track regional trends over a decade.',
     'd.k1':'14 regions','d.k2':'NMCP / DHIS2','d.btn':'Open the application →',
-    'dc1.h':'Rainfall indices','dc1.p':'Spatio-temporal trends in rainfall extremes across Senegal.',
-    'dc2.h':'CMIP6 projections','dc2.p':'Changes in extreme precipitation through the century.',
+    'dc1.h':'Rainfall indices','dc1.p':'Trends in rainfall extremes over Senegal, CMIP6 validation.',
+    'dc2.h':'CMIP6 projections','dc2.p':'Malaria and extreme precipitation under future scenarios.',
     'dc3.h':'Risk mapping','dc3.p':'Climate-health vulnerability by region and season.',
     'dc4.h':'All spaces','dc4.p':'Every application and tool on my Hugging Face profile.',
-    's4.h':'Impact &amp; partners',
-    's4.p':'Research designed to be used: international assessments, support to national programmes and operational tools.',
+    's4.h':'Impact &amp; engagements','s4.p':'Research designed to be used: international assessments, support to national programmes and operational tools.',
     'c.now':'ongoing',
-    'c1.h':'IPCC global assessment','c1.p':'Lead Author of the Africa chapter (AR7, Working Group II): synthesising climate-health risks and adaptation options for governments and negotiators.',
-    'c2.h':'Climate-health integration, Global Fund','c2.p':'Francophone Team Lead (HMST): embedding the climate dimension into country reports and health system strengthening.',
-    'c3.h':'From model to operational alert','c3.p':'Turning climate-malaria models into surveillance and early warning tools that national programmes and their partners can act on.',
+    'c1.h':'IPCC global assessment','c1.p':'Lead Author of Chapter 7 “Africa” of the Seventh Assessment Report (Working Group II): synthesising climate-health risks and adaptation options for governments.',
+    'c2.h':'Global Fund — HMST team','c2.p':'Francophone Team Lead for climate-health integration: technical assistance missions in Senegal, Niger, CAR, Burundi and Guinea-Bissau.',
+    'c3.h':'Climate expert, Institut Pasteur de Dakar &amp; WHO','c3.p':'Integrated surveillance of climate-linked vector-borne diseases: data analysis, risk mapping and policy recommendations.',
+    'eng.l':'Recent engagements',
+    'e.d1':'May 2026','e.d2':'April 2026','e.d3':'March 2026','e.d4':'Feb.–March 2026','e.d5':'January 2026','e.d6':'December 2025','t.d4':'June 2023 — Aug. 2024','t.d5':'Aug. 2023 — Jan. 2024','t.d6':'July 2021 — Dec. 2023','t.d7':'July 2017 — July 2021','t.d8':'Nov. 2013 — Oct. 2017','t.d9':'Jan. 2010 — July 2013',
+    'e.1':'Second Lead Author Meeting, IPCC AR7 (WGII) — Nassau, Bahamas',
+    'e.2':'Global Goal on Adaptation implementation workshop, IIED — Addis Ababa',
+    'e.3':'CORDEX-Africa — developing a shared African climate literacy, University of Cape Town',
+    'e.4':'Climate &amp; health technical assistance missions, HMST / Global Fund — 5 countries',
+    'e.5':'Expert meeting on Climate Change and Health, Wellcome Trust — London',
+    'e.6':'First Lead Author Meeting, IPCC AR7 — Paris',
     'pt.l':'Institutions &amp; partners','pt.gf':'Global Fund','pt.labe':'University of Labé',
-    's5.h':'Selected publications','s5.p':'Peer-reviewed work on climate, hydro-climatic extremes and health in West Africa.',
-    'f.all':'All','f.mal':'Malaria','f.ext':'Climate &amp; extremes','f.proj':'Projections','f.serv':'Climate services',
+    's5.h':'Publications','s5.p':'29 articles on climate, hydro-climatic extremes and health in West Africa, five of them under review. Selection below.',
+    'f.all':'All','f.mal':'Malaria','f.dis':'Other diseases','f.ext':'Extremes &amp; hydrology','f.ai':'AI &amp; data','f.serv':'Climate services',
     'pub.rev':'in review','pub.gn':'Guinea','pub.co':'Co-author','pub.sn':'Senegal','pub.mod':'Modelling','pub.prev':'Seasonal forecasting',
-    's5.btn':'All publications on Google Scholar →',
-    's6.h':'Career','s6.p':'From a PhD on seasonal malaria in the Sahel to international climate assessments.',
-    't.now1':'2025 — present','t.now2':'2024 — present','t.now3':'2023 — present',
-    'tl.1':'Lead Author of the Africa chapter of the Seventh Assessment Report.',
-    'tl.2h':'University of Labé (Guinea)','tl.2':'Lecturer-researcher in climate and health: teaching, supervision and capacity building.',
-    'tl.3h':'Institut Pasteur de Dakar · WHO-linked climate-health work','tl.3':'Climate data analysis, risk mapping and recommendations for vector-borne disease surveillance.',
-    'tl.4':'Support to health system resilience, climate vulnerability assessment and strategy design.',
-    'tl.5h':'National Adaptation Plan · GEF','tl.5':'Support to national adaptation planning, training and climate-health assessments.',
-    'tl.6':'Postdoctoral research on climate-malaria interactions and early warning systems.',
-    'tl.7':'Tropical Atlantic climate variability and health risks in West Africa.',
-    'tl.8h':'PhD — Climate &amp; health impacts','tl.8':'Seasonal malaria incidence, forecasting and climate-health modelling in Senegal and the Sahel.',
+    'pub.men':'Meningitis','pub.wa':'West Africa','pub.heat':'Heatwaves','pub.mort':'Mortality','pub.hyd':'Hydrology','pub.surv':'Surveillance','pub.pub':'Public health','pub.first':'First author',
+    's5.btn':'All 29 publications on Google Scholar →',
+    's6.h':'Career &amp; education','s6.p':'From a PhD on seasonal malaria in the Sahel to international climate assessments.',
+    't.n1':'Since Dec. 2025','t.n2':'Since Oct. 2024','t.n3':'Since May 2023',
+    'tl.1':'Lead Author of Chapter 7 “Africa” of the Seventh Assessment Report.',
+    'tl.2h':'Lecturer-Researcher — University of Labé, Guinea','tl.2':'Teaching and research in climate and health; supervision of Master’s and PhD students; coordination of environmental science modules.',
+    'tl.3h':'Climate Expert — Institut Pasteur de Dakar / WHO','tl.3':'Integrated surveillance and control of climate-linked vector-borne diseases: data analysis, risk mapping, policy recommendations.',
+    'tl.4h':'Consultant — MSAS &amp; Save the Children / UNICEF','tl.4':'Strengthened health system resilience to climate risks; led climate vulnerability assessments and supported strategy design.',
+    'tl.5h':'Climate Expert — Centre de Suivi Écologique (CSE), Senegal','tl.5':'Technical expertise on climate-health links, community vulnerability assessments and adaptation policy planning.',
+    'tl.6h':'Postdoctoral Researcher — Ministry of Environment, NAP-GEF','tl.6':'Contributed to Senegal’s National Adaptation Plan: stakeholder training, educational materials and ministry advice on adaptation data.',
+    'tl.7h':'Postdoc &amp; Associate Scientist — NOAA CPC / UCAR, USA','tl.7':'Led modelling of malaria and climate variability in Africa; developed early-warning tools; coordinated international collaborations.',
+    'tl.8h':'Researcher — PREFACE, Universidad Complutense de Madrid','tl.8':'Studied the tropical Atlantic’s influence on public health in West Africa; integrated climate indicators into health policy.',
+    'tl.9h':'PhD Researcher — University of Liverpool, QWeCI project','tl.9':'Built malaria-climate databases and tested dynamic disease models; integrated seasonal forecasts into West African health systems.',
+    'edu.l':'Education',
+    'edu.1h':'Ph.D. — Climate and Health Impacts','edu.2h':'M.Sc. — Meteorology, Oceanography, Arid Zones Management','edu.3h':'M.Sc. — Physics and Chemistry',
     's7.h':'Let’s work together',
     's7.p':'Expert review, assessment, training, doctoral supervision or the development of climate-health tools: I welcome institutional and academic enquiries.',
-    'ct.1':'Affiliation','ct.2':'Email','ct.3':'Email','ct.4':'Areas','ct.4v':'Climate &amp; health · Early warning · Adaptation · AI','ct.5':'Languages','ct.5v':'French · English · Spanish',
+    'memb.l':'Professional affiliations',
+    'mb.1':'Francophone Team Lead, HMST — Global Fund','mb.2':'Lead Author, IPCC AR7 (Ch. 7 — Africa), WGII','mb.3':'Expert, IIED — inclusive indicators for the GGA','mb.4':'Co-Chair, AMMnet Senegal','mb.5':'Member, American Meteorological Society (AMS)','mb.6':'Member, African Meteorological Society (AfMS)','mb.7':'Member, International Expert Centre on Climate Change and Health','mb.8':'Contributing Author, CMIP Project Office',
+    'ct.1':'Affiliations','ct.2':'Email','ct.3':'Email','ct.4':'Areas','ct.4v':'Climate &amp; health · Early warning · Adaptation · AI',
+    'ct.5':'Languages','ct.5v':'French (native) · English (advanced) · Spanish (upper-intermediate)',
+    'ct.6v':'Curriculum vitæ (PDF, August 2026)',
     'ft.role':'Climate &amp; Health Scientist','ft.rights':'All rights reserved','ft.top':'Back to top ↑'
   }
 };
-/* snapshot the French source strings so we can switch back */
 document.querySelectorAll('[data-i18n]').forEach(el => { I18N.fr[el.getAttribute('data-i18n')] = el.innerHTML; });
 
 function setLang(lang){
@@ -850,7 +1088,7 @@ function setLang(lang){
 }
 let storedLang = null;
 try { storedLang = localStorage.getItem('idd_lang'); } catch(e){}
-if(storedLang === 'en') setLang('en');
+setLang(storedLang === 'fr' ? 'fr' : 'en');
 document.querySelectorAll('[data-lang]').forEach(b =>
   b.addEventListener('click', () => setLang(b.dataset.lang))
 );
