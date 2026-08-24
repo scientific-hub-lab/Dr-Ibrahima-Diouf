@@ -373,6 +373,27 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
 .mini a:hover{color:var(--gold);border-bottom-color:var(--gold)}
 .mini a .ext{font-style:normal;font-size:.72em;color:var(--gold);opacity:.75}
 
+/* metrics: 6 cells, 3 columns */
+.metrics{grid-template-columns:repeat(3,1fr)}
+.metric{border-right:1px solid var(--rule)}
+.metric:nth-child(3n){border-right:0}
+.metric:nth-child(-n+3){border-bottom:1px solid var(--rule)}
+.metric .val{font-size:2.6rem}
+.msource{margin-top:16px;font-size:.8rem;color:var(--muted);font-weight:600}
+.msource a{color:var(--gold);border-bottom:1px solid transparent}
+.msource a:hover{border-bottom-color:var(--gold)}
+@media (max-width:900px){
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .metric{border-right:1px solid var(--rule)!important;border-bottom:1px solid var(--rule)!important}
+  .metric:nth-child(2n){border-right:0!important}
+  .metric:nth-child(n+5){border-bottom:0!important}
+}
+@media (max-width:600px){
+  .metrics{grid-template-columns:1fr}
+  .metric{border-right:0!important}
+  .metric:last-child{border-bottom:0!important}
+}
+
 </style>
 </head>
 <body>
@@ -449,28 +470,31 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
       <p data-i18n="s1.p">Quinze années de recherche interdisciplinaire, de la thèse sur le paludisme saisonnier au Sahel jusqu'aux évaluations du GIEC — avec des projets financés par l'Union européenne (FP7), l'USAID, l'OMS, l'UNICEF, la NOAA et l'IRD.</p>
     </div>
     <div class="metrics rv">
-      <div class="metric"><div class="val" data-count="29">0</div><div class="lbl" data-i18n="m.1">Articles scientifiques</div></div>
-      <div class="metric"><div class="val" data-count="15" data-suffix="+">0</div><div class="lbl" data-i18n="m.2">Années d'expérience</div></div>
-      <div class="metric"><div class="val">AR7</div><div class="lbl" data-i18n="m.3">Auteur principal GIEC</div></div>
-      <div class="metric"><div class="val" data-count="30" data-suffix="+">0</div><div class="lbl" data-i18n="m.4">Conférences &amp; ateliers</div></div>
+      <div class="metric"><div class="val" data-count="50" data-suffix="+">0</div><div class="lbl" data-i18n="m.1">Publications &amp; communications</div></div>
+      <div class="metric"><div class="val" data-count="568">0</div><div class="lbl" data-i18n="m.2">Citations</div></div>
+      <div class="metric"><div class="val" data-count="12">0</div><div class="lbl" data-i18n="m.3">Indice h</div></div>
+      <div class="metric"><div class="val" data-count="16">0</div><div class="lbl" data-i18n="m.4">Indice i10</div></div>
+      <div class="metric"><div class="val" data-count="15" data-suffix="+">0</div><div class="lbl" data-i18n="m.5">Années d'expérience</div></div>
+      <div class="metric"><div class="val">AR7</div><div class="lbl" data-i18n="m.6">Auteur principal GIEC</div></div>
     </div>
+    <p class="msource rv" data-i18n="m.src">Indicateurs bibliométriques — <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&amp;hl=fr" target="_blank" rel="noopener">Google Scholar</a>, août 2026.</p>
 
     <div class="dist rv">
       <div class="dist-row">
-        <div class="dt"><span data-i18n="dist.1">Paludisme &amp; climat</span><b>14 <span data-i18n="dist.art">articles</span></b></div>
+        <div class="dt"><span data-i18n="dist.1">Paludisme &amp; climat</span><b>17 <span data-i18n="dist.art">articles</span></b></div>
         <div class="track"><div class="fill" data-w="100"></div></div>
       </div>
       <div class="dist-row">
-        <div class="dt"><span data-i18n="dist.2">Autres maladies climato-sensibles — méningite, canicules, COVID-19</span><b>7 <span data-i18n="dist.art">articles</span></b></div>
-        <div class="track"><div class="fill" data-w="50"></div></div>
+        <div class="dt"><span data-i18n="dist.3">Extrêmes pluviométriques &amp; hydrologie</span><b>10 <span data-i18n="dist.art">articles</span></b></div>
+        <div class="track"><div class="fill" data-w="59"></div></div>
       </div>
       <div class="dist-row">
-        <div class="dt"><span data-i18n="dist.3">Extrêmes pluviométriques &amp; hydrologie</span><b>5 <span data-i18n="dist.art">articles</span></b></div>
-        <div class="track"><div class="fill" data-w="36"></div></div>
+        <div class="dt"><span data-i18n="dist.2">Autres maladies climato-sensibles — méningite, canicules, COVID-19</span><b>9 <span data-i18n="dist.art">articles</span></b></div>
+        <div class="track"><div class="fill" data-w="53"></div></div>
       </div>
       <div class="dist-row">
-        <div class="dt"><span data-i18n="dist.4">Services climatiques, données &amp; adaptation</span><b>3 <span data-i18n="dist.art">articles</span></b></div>
-        <div class="track"><div class="fill" data-w="21"></div></div>
+        <div class="dt"><span data-i18n="dist.4">Services climatiques, données &amp; adaptation</span><b>4 <span data-i18n="dist.art">articles</span></b></div>
+        <div class="track"><div class="fill" data-w="24"></div></div>
       </div>
     </div>
 
@@ -673,7 +697,7 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
     <div class="sec-head rv">
       <span class="sec-num">05</span>
       <h2 data-i18n="s5.h">Publications</h2>
-      <p data-i18n="s5.p">Liste complète : 29 articles sur le climat, les extrêmes hydro-climatiques et la santé en Afrique de l'Ouest, dont 5 en cours de révision — 16 en premier auteur.</p>
+      <p data-i18n="s5.p">Plus de 50 publications et communications recensées sur Google Scholar — 568 citations, indice h 12. Les 40 travaux revus par les pairs ci-dessous, dont 4 en cours de révision.</p>
     </div>
     <div class="filters rv">
       <button class="fbtn on" data-f="all" data-i18n="f.all">Tout</button>
@@ -686,12 +710,32 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
     </div>
     <div class="pubs rv" id="publist">
 
+      <article class="pub" data-tags="paludisme">
+        <div class="yr">2026</div>
+        <div>
+          <h4>Climate Change and Malaria Control in Africa: Country Experiences and Strategic Responses</h4>
+          <div class="src">Malaria Journal, 25(1), 148 — Yahouedo et al.</div>
+          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.pol">Politiques</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="services">
+        <div class="yr">2026</div>
+        <div>
+          <h4>The Importance of Accounting for Stakeholder Values, Power Relationships and Language in Constructing Relevant and Trustworthy Climate Information</h4>
+          <div class="src">Earth's Future, 14(1), e2024EF005618 — Maraun et al.</div>
+          <div class="tags"><b data-i18n="pub.serv">Services climatiques</b><b data-i18n="pub.co">Co-auteur</b></div>
+        </div>
+        <a class="go" href="https://doi.org/10.1029/2024EF005618" target="_blank" rel="noopener">DOI →</a>
+      </article>
+
       <article class="pub" data-tags="extremes">
         <div class="yr">2026</div>
         <div>
           <h4>Spatio-Temporal Changes in Extreme Precipitation over Guinea Using CMIP6 Climate Projections</h4>
           <div class="src">International Journal of Climatology — <span data-i18n="pub.rev">en révision</span></div>
-          <div class="tags"><b>CMIP6</b><b data-i18n="pub.gn">Guinée</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+          <div class="tags"><b data-i18n="pub.ext">Extrêmes</b><b>CMIP6</b><b data-i18n="pub.gn">Guinée</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
@@ -699,7 +743,7 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
       <article class="pub" data-tags="paludisme">
         <div class="yr">2026</div>
         <div>
-          <h4>Environmental Factors Associated with Malaria During the Rainy Season 2011–2016: The Case of Djiddah Thiaroye Kao, Pikine, Dakar, Senegal</h4>
+          <h4>Environmental Factors Associated with Malaria During the Rainy Season 2011–2016: The Case of Djiddah Thiaroye Kao, Pikine, Dakar</h4>
           <div class="src">Environmental and Water Sciences, Public Health &amp; Territorial Intelligence — <span data-i18n="pub.rev">en révision</span></div>
           <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.sn">Sénégal</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
         </div>
@@ -716,42 +760,52 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
 
-      <article class="pub" data-tags="paludisme">
-        <div class="yr">2026</div>
-        <div>
-          <h4>Climate Change and Malaria Control in Africa: Country Experiences and Strategic Responses</h4>
-          <div class="src"><span data-i18n="pub.rev">en révision</span></div>
-          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.pol">Politiques</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
-        </div>
-        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
-      </article>
-
       <article class="pub" data-tags="maladies">
         <div class="yr">2026</div>
         <div>
           <h4>Meningitis Variability in West Africa: Changes and Drivers</h4>
-          <div class="src"><span data-i18n="pub.rev">en révision</span></div>
-          <div class="tags"><b data-i18n="pub.men">Méningite</b><b data-i18n="pub.wa">Afrique de l'Ouest</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+          <div class="src"><span data-i18n="pub.rev">en révision</span> — Diouf, D. et al.</div>
+          <div class="tags"><b data-i18n="pub.men">Méningite</b><b data-i18n="pub.wa">Afrique de l'Ouest</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
 
-      <article class="pub" data-tags="services">
-        <div class="yr">2026</div>
+      <article class="pub" data-tags="paludisme">
+        <div class="yr">2025</div>
         <div>
-          <h4>The Importance of Accounting for Stakeholder Values, Power Relationships and Language in Constructing Relevant and Trustworthy Climate Information</h4>
-          <div class="src">Earth's Future, 14(1), e2024EF005618 — Maraun et al.</div>
-          <div class="tags"><b data-i18n="pub.serv">Services climatiques</b><b data-i18n="pub.co">Co-auteur</b></div>
+          <h4>Diagnostic Study of Seasonal Prediction of Malaria: A Case Study in Senegal, West Africa</h4>
+          <div class="src">Journal of Applied Meteorology and Climatology, 64(3), 221–235</div>
+          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.prev">Prévision saisonnière</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
         </div>
-        <a class="go" href="https://doi.org/10.1029/2024EF005618" target="_blank" rel="noopener">DOI →</a>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
 
       <article class="pub" data-tags="extremes">
         <div class="yr">2025</div>
         <div>
-          <h4>Assessment of Spatio-Temporal Trends in Rainfall Indices in Senegal: Validation of CMIP6 Models over the Historical Period and Projections under Future Scenarios</h4>
+          <h4>Assessment of Spatio-Temporal Trends in Rainfall Indices in Senegal: Validation of CMIP6 Models and Future Projections</h4>
           <div class="src">Climate, 13(12), 247</div>
           <div class="tags"><b data-i18n="pub.ext">Extrêmes</b><b data-i18n="pub.sn">Sénégal</b><b>CMIP6</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="paludisme">
+        <div class="yr">2025</div>
+        <div>
+          <h4>Climate Change and Malaria Control: A Call to Urgent Action from Africa's Frontlines</h4>
+          <div class="src">Malaria Journal, 24(1), 179 — Caminade et al.</div>
+          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.pol">Politiques</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="services ia">
+        <div class="yr">2025</div>
+        <div>
+          <h4>CMIP7 Data Request: Impacts and Adaptation Priorities and Opportunities</h4>
+          <div class="src">Geoscientific Model Development, 18(23), 9497–9540 — Ruane et al.</div>
+          <div class="tags"><b>CMIP7</b><b data-i18n="pub.co">Co-auteur</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
@@ -780,7 +834,7 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
         <div class="yr">2025</div>
         <div>
           <h4>Machine Learning-Based Prediction of Heatwave-Related Hospitalizations: A Case Study in Matam, Senegal</h4>
-          <div class="src">International Journal of Environmental Research and Public Health, 22, 1349 — Touré et al.</div>
+          <div class="src">International Journal of Environmental Research and Public Health, 22(9), 1349 — Touré et al.</div>
           <div class="tags"><b data-i18n="pub.heat">Canicules</b><b data-i18n="pub.ai">IA</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
@@ -796,24 +850,24 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
 
+      <article class="pub" data-tags="maladies">
+        <div class="yr">2025</div>
+        <div>
+          <h4>Integrating Climate Information into Meningitis Preparedness in West Africa: Insights from Saharan Dust and Large-Scale Atmospheric Drivers</h4>
+          <div class="src">WASCAL — Diouf, D. et al.</div>
+          <div class="tags"><b data-i18n="pub.men">Méningite</b><b data-i18n="pub.serv">Services climatiques</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
       <article class="pub" data-tags="paludisme">
         <div class="yr">2024</div>
         <div>
           <h4>Process-Based Atmosphere–Hydrology–Malaria Modeling: Performance for Spatio-Temporal Malaria Transmission Dynamics in Sub-Saharan Africa</h4>
-          <div class="src">Water Resources Research, 60(6), e2023WR034975</div>
-          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.mod">Modélisation</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+          <div class="src">Water Resources Research, 60(6), e2023WR034975 — Dieng et al.</div>
+          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.mod">Modélisation</b></div>
         </div>
         <a class="go" href="https://doi.org/10.1029/2023WR034975" target="_blank" rel="noopener">DOI →</a>
-      </article>
-
-      <article class="pub" data-tags="services ia">
-        <div class="yr">2024</div>
-        <div>
-          <h4>CMIP7 Data Request: Impacts and Adaptation Priorities and Opportunities</h4>
-          <div class="src">Geoscientific Model Development, 18(23), 9497–9540 — Ruane et al.</div>
-          <div class="tags"><b>CMIP7</b><b data-i18n="pub.co">Co-auteur</b></div>
-        </div>
-        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
 
       <article class="pub" data-tags="extremes">
@@ -826,12 +880,12 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
 
-      <article class="pub" data-tags="services">
+      <article class="pub" data-tags="maladies">
         <div class="yr">2024</div>
         <div>
-          <h4>An Overview of Climate Change Impacts on the Health Sector for the Research Program of the National Adaptation Plan Support Project in Senegal</h4>
-          <div class="src">J. P. Soaphys, Vol. 3, N°2, C23N22</div>
-          <div class="tags"><b data-i18n="pub.adapt">Adaptation</b><b data-i18n="pub.sn">Sénégal</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+          <h4>Assessing Climate Change Impacts on Public Health in Haiti: Disease Distribution, Modeling and Adaptation Strategies</h4>
+          <div class="src">Frontiers in Tropical Diseases, 4, 1287499</div>
+          <div class="tags"><b data-i18n="pub.pub">Santé publique</b><b data-i18n="pub.mod">Modélisation</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
@@ -839,9 +893,9 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
       <article class="pub" data-tags="maladies">
         <div class="yr">2024</div>
         <div>
-          <h4>Assessing Climate Change Impacts on Public Health in Haiti: A Comprehensive Study of Disease Distribution, Modeling, and Adaptation Strategies</h4>
-          <div class="src">Frontiers in Tropical Diseases, 4, 1287499</div>
-          <div class="tags"><b data-i18n="pub.pub">Santé publique</b><b data-i18n="pub.mod">Modélisation</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+          <h4>Serological Survey in a University Community after the Fourth Wave of COVID-19 in Senegal</h4>
+          <div class="src">PLoS One, 19(11), e0298509 — Thiam et al.</div>
+          <div class="tags"><b>COVID-19</b><b data-i18n="pub.co">Co-auteur</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
@@ -866,6 +920,36 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
 
+      <article class="pub" data-tags="ia">
+        <div class="yr">2023</div>
+        <div>
+          <h4>An Evaluation of the Performance of Imputation Methods for Missing Meteorological Data in Burkina Faso and Senegal</h4>
+          <div class="src">African Journal of Environmental Science and Technology, 17(10), 252–274 — Diouf, S. et al.</div>
+          <div class="tags"><b data-i18n="pub.data">Données</b><b data-i18n="pub.co">Co-auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="services">
+        <div class="yr">2023</div>
+        <div>
+          <h4>An Overview of Climate Change Impacts on the Health Sector for the Research Program of the National Adaptation Plan Support Project in Senegal</h4>
+          <div class="src">Chapman Conference on Climate and Health · J. P. Soaphys, 3(2), C23N22</div>
+          <div class="tags"><b data-i18n="pub.adapt">Adaptation</b><b data-i18n="pub.sn">Sénégal</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="paludisme">
+        <div class="yr">2022</div>
+        <div>
+          <h4>Impact of Future Climate Change on Malaria in West Africa</h4>
+          <div class="src">Theoretical and Applied Climatology, 147(3), 853–865</div>
+          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.wa">Afrique de l'Ouest</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
       <article class="pub" data-tags="paludisme">
         <div class="yr">2022</div>
         <div>
@@ -879,29 +963,19 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
       <article class="pub" data-tags="paludisme">
         <div class="yr">2022</div>
         <div>
-          <h4>Assessment of Climate-Driven Variations in Malaria Transmission in Senegal Using the VECTRI Model</h4>
-          <div class="src">Atmosphere, 13, 418 — Fall et al.</div>
-          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b>VECTRI</b></div>
-        </div>
-        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
-      </article>
-
-      <article class="pub" data-tags="paludisme">
-        <div class="yr">2021</div>
-        <div>
           <h4>Oceanic Influence on Seasonal Malaria Incidence in West Africa</h4>
-          <div class="src">Weather, Climate, and Society, 14</div>
+          <div class="src">Weather, Climate, and Society, 14(1), 287–302</div>
           <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.prev">Prévision saisonnière</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
 
       <article class="pub" data-tags="paludisme">
-        <div class="yr">2021</div>
+        <div class="yr">2022</div>
         <div>
-          <h4>Impact of Future Climate Change on Malaria in West Africa</h4>
-          <div class="src">Theoretical and Applied Climatology</div>
-          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.wa">Afrique de l'Ouest</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+          <h4>Assessment of Climate-Driven Variations in Malaria Transmission in Senegal Using the VECTRI Model</h4>
+          <div class="src">Atmosphere, 13(3), 418 — Fall et al.</div>
+          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b>VECTRI</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
@@ -909,19 +983,9 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
       <article class="pub" data-tags="maladies">
         <div class="yr">2021</div>
         <div>
-          <h4>Potential Contribution of Climate Conditions on COVID-19 Transmission over West and North African Countries</h4>
-          <div class="src">Atmosphere, 13(1)</div>
+          <h4>Potential Contribution of Climate Conditions on COVID-19 Pandemic Transmission over West and North African Countries</h4>
+          <div class="src">Atmosphere, 13(1), 34</div>
           <div class="tags"><b>COVID-19</b><b data-i18n="pub.wa">Afrique de l'Ouest</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
-        </div>
-        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
-      </article>
-
-      <article class="pub" data-tags="maladies">
-        <div class="yr">2021</div>
-        <div>
-          <h4>COVID-19 in Conakry, Guinea: Analysis and Relationship with Meteorological Factors</h4>
-          <div class="src">Atmospheric and Climate Sciences, 11 — Kanté et al.</div>
-          <div class="tags"><b>COVID-19</b><b data-i18n="pub.gn">Guinée</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
@@ -934,6 +998,26 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
           <div class="tags"><b data-i18n="pub.heat">Canicules</b><b data-i18n="pub.mort">Mortalité</b></div>
         </div>
         <a class="go" href="https://doi.org/10.1371/journal.pone.0249199" target="_blank" rel="noopener">DOI →</a>
+      </article>
+
+      <article class="pub" data-tags="maladies">
+        <div class="yr">2021</div>
+        <div>
+          <h4>COVID-19 in Conakry, Republic of Guinea: Analysis and Relationship with Meteorological Factors</h4>
+          <div class="src">Atmospheric and Climate Sciences, 11 — Kanté et al.</div>
+          <div class="tags"><b>COVID-19</b><b data-i18n="pub.gn">Guinée</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="extremes">
+        <div class="yr">2021</div>
+        <div>
+          <h4>Evolution of Dam Lakes in the Kayanga/Geba Basin: Contribution of Remote Sensing and GIS</h4>
+          <div class="src">Journal of Geoscience and Environment Protection, 9(12), 225–243 — Sambou et al.</div>
+          <div class="tags"><b data-i18n="pub.hyd">Hydrologie</b><b data-i18n="pub.co">Co-auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
 
       <article class="pub" data-tags="paludisme">
@@ -949,9 +1033,49 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
       <article class="pub" data-tags="extremes">
         <div class="yr">2020</div>
         <div>
-          <h4>Analysis of Rainfall Dynamics in Conakry, Guinea</h4>
-          <div class="src">Atmospheric and Climate Sciences, 10(1), 1 — Kanté et al.</div>
+          <h4>Recent Trend in Hydroclimatic Conditions in the Senegal River Basin</h4>
+          <div class="src">Water, 12(2), 436 — Bodian et al.</div>
+          <div class="tags"><b data-i18n="pub.hyd">Hydrologie</b><b data-i18n="pub.sn">Sénégal</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="extremes">
+        <div class="yr">2020</div>
+        <div>
+          <h4>Analysis of Rainfall Dynamics in Conakry, Republic of Guinea</h4>
+          <div class="src">Atmospheric and Climate Sciences, 10(1), 1–20 — Kanté et al.</div>
           <div class="tags"><b data-i18n="pub.ext">Extrêmes</b><b data-i18n="pub.gn">Guinée</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="extremes">
+        <div class="yr">2020</div>
+        <div>
+          <h4>Hydropluviometric Variability in Non-Sahelian West Africa: The Koliba/Corubal River Basin</h4>
+          <div class="src">Proceedings of IAHS, 383 — Sambou et al.</div>
+          <div class="tags"><b data-i18n="pub.hyd">Hydrologie</b><b data-i18n="pub.co">Co-auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="extremes">
+        <div class="yr">2019</div>
+        <div>
+          <h4>Seasonal Variability of Rainfall and Thunderstorm in Guinea over the Period 1981–2010</h4>
+          <div class="src">African Journal of Environmental Science and Technology, 13(9), 324–341 — Kanté et al.</div>
+          <div class="tags"><b data-i18n="pub.ext">Extrêmes</b><b data-i18n="pub.gn">Guinée</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="extremes">
+        <div class="yr">2018</div>
+        <div>
+          <h4>Contribution of TRMM 3B42 Data to Improve Knowledge on Rainfall in the Kayanga/Geba River Basin</h4>
+          <div class="src">European Scientific Institute — Sambou et al.</div>
+          <div class="tags"><b data-i18n="pub.hyd">Hydrologie</b><b data-i18n="pub.co">Co-auteur</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
       </article>
@@ -961,6 +1085,16 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
         <div>
           <h4>Comparison of Malaria Simulations Driven by Meteorological Observations and Reanalysis Products in Senegal</h4>
           <div class="src">International Journal of Environmental Research and Public Health, 14(10), 1119</div>
+          <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.mod">Modélisation</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
+        </div>
+        <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
+      </article>
+
+      <article class="pub" data-tags="paludisme">
+        <div class="yr">2015</div>
+        <div>
+          <h4>Détermination des paramètres du paludisme au Sénégal à partir de données météorologiques de stations et de réanalyses</h4>
+          <div class="src">XXVIIIᵉ Colloque de l'Association Internationale de Climatologie, Liège</div>
           <div class="tags"><b data-i18n="pub.mal">Paludisme</b><b data-i18n="pub.mod">Modélisation</b><b data-i18n="pub.first">1ᵉʳ auteur</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&hl=fr" target="_blank" rel="noopener">Scholar →</a>
@@ -1160,7 +1294,8 @@ const I18N = {
     'fig.b':'Motto','fig.t':'“Turning data into knowledge for a resilient and healthy future.”',
     's1.h':'A profile at the interface of climate, health and data',
     's1.p':'Fifteen years of interdisciplinary research, from a PhD on seasonal malaria in the Sahel to IPCC assessments — with projects funded by the European Union (FP7), USAID, WHO, UNICEF, NOAA and IRD.',
-    'm.1':'Scientific articles','m.2':'Years of experience','m.3':'IPCC Lead Author','m.4':'Conferences &amp; workshops',
+    'm.1':'Publications &amp; communications','m.2':'Citations','m.3':'h-index','m.4':'i10-index','m.5':'Years of experience','m.6':'IPCC Lead Author',
+    'm.src':'Bibliometric indicators — <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>, August 2026.',
     'dist.1':'Malaria &amp; climate','dist.2':'Other climate-sensitive diseases — meningitis, heatwaves, COVID-19',
     'dist.3':'Rainfall extremes &amp; hydrology','dist.4':'Climate services, data &amp; adaptation','dist.art':'articles',
     'tk.1':'Programming','tk.2':'Models','tk.3':'Funding',
@@ -1193,10 +1328,10 @@ const I18N = {
     'e.5':'Expert meeting on Climate Change and Health, Wellcome Trust — London',
     'e.6':'First Lead Author Meeting, IPCC AR7 — Paris',
     'pt.l':'Institutions &amp; partners','pt.gf':'Global Fund','pt.labe':'University of Labé',
-    's5.h':'Publications','s5.p':'Complete list: 29 articles on climate, hydro-climatic extremes and health in West Africa, five of them under review — 16 as first author.',
+    's5.h':'Publications','s5.p':'More than 50 publications and communications listed on Google Scholar — 568 citations, h-index 12. The 40 peer-reviewed works below, four of them under review.',
     'f.all':'All','f.mal':'Malaria','f.dis':'Other diseases','f.ext':'Extremes &amp; hydrology','f.ai':'AI &amp; data','f.serv':'Climate services',
     'pub.rev':'in review','pub.gn':'Guinea','pub.co':'Co-author','pub.sn':'Senegal','pub.mod':'Modelling','pub.prev':'Seasonal forecasting',
-    'pub.men':'Meningitis','pub.wa':'West Africa','pub.heat':'Heatwaves','pub.mort':'Mortality','pub.mal':'Malaria','pub.ext':'Extremes','pub.ai':'AI','pub.serv':'Climate services','pub.pol':'Policy','pub.adapt':'Adaptation','pub.hyd':'Hydrology','pub.surv':'Surveillance','pub.pub':'Public health','pub.first':'First author',
+    'pub.men':'Meningitis','pub.wa':'West Africa','pub.heat':'Heatwaves','pub.mort':'Mortality','pub.mal':'Malaria','pub.ext':'Extremes','pub.ai':'AI','pub.serv':'Climate services','pub.data':'Data','pub.pol':'Policy','pub.pol':'Policy','pub.adapt':'Adaptation','pub.hyd':'Hydrology','pub.surv':'Surveillance','pub.pub':'Public health','pub.first':'First author',
     's5.btn':'Google Scholar profile →',
     's6.h':'Career &amp; education','s6.p':'From a PhD on seasonal malaria in the Sahel to international climate assessments.',
     't.n1':'Since Dec. 2025','t.n2':'Since Oct. 2024','t.n3':'Since May 2023',
