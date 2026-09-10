@@ -394,6 +394,43 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
   .metric:last-child{border-bottom:0!important}
 }
 
+/* ---------- gallery ---------- */
+.gfilters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.gbtn{border:1px solid var(--rule);background:var(--surface);color:var(--ink-soft);font-family:var(--sans);font-size:.82rem;font-weight:600;padding:7px 15px;border-radius:999px;cursor:pointer;transition:.2s ease}
+.gbtn:hover{border-color:var(--gold);color:var(--gold)}
+.gbtn.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.gallery{columns:3 300px;column-gap:20px}
+.gitem{break-inside:avoid;margin:0 0 20px;background:var(--surface);border:1px solid var(--rule);border-radius:6px;overflow:hidden;transition:.28s ease}
+.gitem:hover{box-shadow:var(--shadow-lg);border-color:var(--gold)}
+.gitem[hidden],.lb[hidden]{display:none}
+.gopen{display:block;width:100%;padding:0;border:0;background:var(--paper2);cursor:zoom-in;overflow:hidden}
+.gopen img{width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.75,.25,1)}
+.gitem:hover .gopen img{transform:scale(1.03)}
+.gopen:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.gitem figcaption{padding:14px 16px 16px;display:grid;gap:4px}
+.gtag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.gtitle{font-family:var(--serif);font-size:1rem;font-weight:600;line-height:1.35;color:var(--ink)}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(6,12,20,.93);display:flex;align-items:center;justify-content:center;padding:56px 70px}
+.lb figure{margin:0;max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:14px}
+.lb img{max-width:100%;max-height:calc(100vh - 170px);object-fit:contain;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.lb figcaption{color:#e8eef5;text-align:center;max-width:70ch;display:grid;gap:4px}
+.lb figcaption .gtag{color:#e2b869}
+.lb figcaption .gtitle{color:#f1f6fb}
+.lb-x,.lb-nav{position:absolute;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.2s ease;font-family:var(--sans)}
+.lb-x{top:16px;right:18px;width:42px;height:42px;font-size:1.6rem;line-height:1}
+.lb-nav{top:50%;transform:translateY(-50%);width:48px;height:48px;font-size:2rem;line-height:1}
+.lb-prev{left:14px}.lb-next{right:14px}
+.lb-x:hover,.lb-nav:hover{border-color:#e2b869;color:#e2b869}
+@media (max-width:640px){
+  .gallery{columns:2;column-gap:12px}
+  .gitem{margin-bottom:12px}
+  .gitem figcaption{padding:10px 11px 12px}
+  .gtag{font-size:.62rem;letter-spacing:.1em}
+  .gtitle{font-size:.86rem}
+  .lb{padding:56px 12px 20px}
+  .lb-nav{top:auto;bottom:14px;transform:none;width:42px;height:42px}
+  .lb img{max-height:calc(100vh - 220px)}
+}
 </style>
 </head>
 <body>
@@ -415,6 +452,7 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
         <a href="#impact" data-i18n="nav.4">Impact</a>
         <a href="#publications" data-i18n="nav.5">Publications</a>
         <a href="#parcours" data-i18n="nav.6">Parcours</a>
+        <a href="#galerie" data-i18n="nav.8">Galerie</a>
         <a href="#contact" data-i18n="nav.7">Contact</a>
       </nav>
       <div class="tools">
@@ -1150,12 +1188,105 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
   </div>
 </section>
 
-<!-- 07 CONTACT -->
+<!-- 07 GALERIE -->
+<section id="galerie">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">07</span>
+      <h2 data-i18n="s8.h">En images</h2>
+      <p data-i18n="s8.p">Ateliers, séminaires, réunions du GIEC et missions d’assistance technique : quelques moments de terrain.</p>
+    </div>
+    <div class="gfilters rv" role="group" aria-label="Filtrer les photos">
+      <button type="button" class="gbtn on" data-g="all" data-i18n="g.f0">Toutes</button>
+      <button type="button" class="gbtn" data-g="giec" data-i18n="g.f1">GIEC</button>
+      <button type="button" class="gbtn" data-g="atelier" data-i18n="g.f2">Ateliers &amp; séminaires</button>
+      <button type="button" class="gbtn" data-g="mission" data-i18n="g.f3">Missions</button>
+      <button type="button" class="gbtn" data-g="residence" data-i18n="g.f4">Résidence Bellagio</button>
+    </div>
+    <div class="gallery rv" id="gallery">
+      <figure class="gitem" data-cat="residence">
+        <button type="button" class="gopen" data-full="images/gallery/2026-09-bellagio-talk.jpg"><img src="images/gallery/2026-09-bellagio-talk-t.jpg" width="660" height="820" loading="lazy" decoding="async" alt="Conférence « Building Climate–Health Early Warning Systems for West Africa »"></button>
+        <figcaption><span class="gtag" data-i18n="g.t1">Bellagio Center, Italie · 7 sept. 2026</span><span class="gtitle" data-i18n="g.h1">Conférence « Building Climate–Health Early Warning Systems for West Africa »</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="residence">
+        <button type="button" class="gopen" data-full="images/gallery/2026-09-bellagio-studio.jpg"><img src="images/gallery/2026-09-bellagio-studio-t.jpg" width="626" height="820" loading="lazy" decoding="async" alt="Résidence de la Fondation Rockefeller — travail sur les systèmes d’alerte précoce climat-santé"></button>
+        <figcaption><span class="gtag" data-i18n="g.t2">Bellagio Center, Italie · sept. 2026</span><span class="gtitle" data-i18n="g.h2">Résidence de la Fondation Rockefeller — travail sur les systèmes d’alerte précoce climat-santé</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="residence">
+        <button type="button" class="gopen" data-full="images/gallery/2026-09-bellagio-garden.jpg"><img src="images/gallery/2026-09-bellagio-garden-t.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Dans les jardins du Bellagio Center"></button>
+        <figcaption><span class="gtag" data-i18n="g.t3">Bellagio, Italie · sept. 2026</span><span class="gtitle" data-i18n="g.h3">Dans les jardins du Bellagio Center</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="atelier">
+        <button type="button" class="gopen" data-full="images/gallery/2026-06-acclimatise-talk.jpg"><img src="images/gallery/2026-06-acclimatise-talk-t.jpg" width="820" height="649" loading="lazy" decoding="async" alt="Intervention à l’atelier de lancement du projet ACCLIMATISE"></button>
+        <figcaption><span class="gtag" data-i18n="g.t4">Dakar, Sénégal · juin 2026</span><span class="gtitle" data-i18n="g.h4">Intervention à l’atelier de lancement du projet ACCLIMATISE</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="atelier">
+        <button type="button" class="gopen" data-full="images/gallery/2026-06-acclimatise-group.jpg"><img src="images/gallery/2026-06-acclimatise-group-t.jpg" width="820" height="590" loading="lazy" decoding="async" alt="Partenaires du projet ACCLIMATISE (UCAD, Wellcome, ICTP, NYU, PNLP, Swiss TPH…)"></button>
+        <figcaption><span class="gtag" data-i18n="g.t5">Dakar, Sénégal · 8–11 juin 2026</span><span class="gtitle" data-i18n="g.h5">Partenaires du projet ACCLIMATISE (UCAD, Wellcome, ICTP, NYU, PNLP, Swiss TPH…)</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="atelier">
+        <button type="button" class="gopen" data-full="images/gallery/2026-06-acclimatise-banner.jpg"><img src="images/gallery/2026-06-acclimatise-banner-t.jpg" width="820" height="811" loading="lazy" decoding="async" alt="Atelier de lancement ACCLIMATISE"></button>
+        <figcaption><span class="gtag" data-i18n="g.t6">Hôtel Fleur de Lys, Almadies · juin 2026</span><span class="gtitle" data-i18n="g.h6">Atelier de lancement ACCLIMATISE</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="giec">
+        <button type="button" class="gopen" data-full="images/gallery/2026-05-ipcc-lam2-nassau.jpg"><img src="images/gallery/2026-05-ipcc-lam2-nassau-t.jpg" width="820" height="811" loading="lazy" decoding="async" alt="2ᵉ réunion des auteurs principaux du GIEC AR7 (Groupe de travail II)"></button>
+        <figcaption><span class="gtag" data-i18n="g.t7">Nassau, Bahamas · 18–22 mai 2026</span><span class="gtitle" data-i18n="g.h7">2ᵉ réunion des auteurs principaux du GIEC AR7 (Groupe de travail II)</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="giec">
+        <button type="button" class="gopen" data-full="images/gallery/2026-05-ipcc-lam2-beach.jpg"><img src="images/gallery/2026-05-ipcc-lam2-beach-t.jpg" width="820" height="535" loading="lazy" decoding="async" alt="Avec des collègues auteurs du GIEC AR7"></button>
+        <figcaption><span class="gtag" data-i18n="g.t8">Nassau, Bahamas · mai 2026</span><span class="gtitle" data-i18n="g.h8">Avec des collègues auteurs du GIEC AR7</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="giec">
+        <button type="button" class="gopen" data-full="images/gallery/2026-05-ipcc-lam2-nassau-2.jpg"><img src="images/gallery/2026-05-ipcc-lam2-nassau-2-t.jpg" width="701" height="820" loading="lazy" decoding="async" alt="GIEC AR7 WGII — Lead Author Meeting 2"></button>
+        <figcaption><span class="gtag" data-i18n="g.t9">Nassau, Bahamas · mai 2026</span><span class="gtitle" data-i18n="g.h9">GIEC AR7 WGII — Lead Author Meeting 2</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/workshop-group-1.jpg"><img src="images/gallery/workshop-group-1-t.jpg" width="820" height="461" loading="lazy" decoding="async" alt="Photo de groupe des participants"></button>
+        <figcaption><span class="gtag" data-i18n="g.t10">Atelier international</span><span class="gtitle" data-i18n="g.h10">Photo de groupe des participants</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/workshop-group-2.jpg"><img src="images/gallery/workshop-group-2-t.jpg" width="820" height="456" loading="lazy" decoding="async" alt="Photo de groupe des participants"></button>
+        <figcaption><span class="gtag" data-i18n="g.t11">Réunion scientifique</span><span class="gtitle" data-i18n="g.h11">Photo de groupe des participants</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="mission">
+        <button type="button" class="gopen" data-full="images/gallery/2026-hmst-bissau.jpg"><img src="images/gallery/2026-hmst-bissau-t.jpg" width="805" height="820" loading="lazy" decoding="async" alt="Ministère de la Santé publique — mission d’assistance technique HMST / Fonds mondial"></button>
+        <figcaption><span class="gtag" data-i18n="g.t12">Bissau, Guinée-Bissau · 2026</span><span class="gtitle" data-i18n="g.h12">Ministère de la Santé publique — mission d’assistance technique HMST / Fonds mondial</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="mission">
+        <button type="button" class="gopen" data-full="images/gallery/2026-hmst-iom-burundi.jpg"><img src="images/gallery/2026-hmst-iom-burundi-t.jpg" width="820" height="614" loading="lazy" decoding="async" alt="Réunion à l’OIM Burundi — mission d’assistance technique HMST / Fonds mondial"></button>
+        <figcaption><span class="gtag" data-i18n="g.t13">Burundi · 2026</span><span class="gtitle" data-i18n="g.h13">Réunion à l’OIM Burundi — mission d’assistance technique HMST / Fonds mondial</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="mission"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/2026-02-hmst-workshop.jpg"><img src="images/gallery/2026-02-hmst-workshop-t.jpg" width="820" height="617" loading="lazy" decoding="async" alt="Séance de travail climat-santé avec les équipes nationales"></button>
+        <figcaption><span class="gtag" data-i18n="g.t14">18 févr. 2026</span><span class="gtitle" data-i18n="g.h14">Séance de travail climat-santé avec les équipes nationales</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="mission">
+        <button type="button" class="gopen" data-full="images/gallery/2026-hmst-acmad-niamey.jpg"><img src="images/gallery/2026-hmst-acmad-niamey-t.jpg" width="579" height="820" loading="lazy" decoding="async" alt="Au Centre africain pour les applications de la météorologie au développement (ACMAD)"></button>
+        <figcaption><span class="gtag" data-i18n="g.t15">Niamey, Niger · 2026</span><span class="gtitle" data-i18n="g.h15">Au Centre africain pour les applications de la météorologie au développement (ACMAD)</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/lab-session.jpg"><img src="images/gallery/lab-session-t.jpg" width="790" height="799" loading="lazy" decoding="async" alt="Séance de travail en laboratoire"></button>
+        <figcaption><span class="gtag" data-i18n="g.t16">Laboratoire</span><span class="gtitle" data-i18n="g.h16">Séance de travail en laboratoire</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo">
+  <button type="button" class="lb-x" id="lbx" aria-label="Fermer">×</button>
+  <button type="button" class="lb-nav lb-prev" id="lbp" aria-label="Précédente">‹</button>
+  <figure><img id="lbimg" alt=""><figcaption id="lbcap"></figcaption></figure>
+  <button type="button" class="lb-nav lb-next" id="lbn" aria-label="Suivante">›</button>
+</div>
+
+<hr class="rule">
+
+<!-- 08 CONTACT -->
 <section id="contact">
   <div class="wrap">
     <div class="contact-grid">
       <div class="rv">
-        <span class="sec-num">07</span>
+        <span class="sec-num">08</span>
         <h2 class="serif" style="font-size:clamp(1.9rem,3.3vw,2.9rem);line-height:1.12;letter-spacing:-.9px;margin:0 0 16px" data-i18n="s7.h">Travaillons ensemble</h2>
         <p style="color:var(--muted);max-width:56ch;margin:0 0 24px" data-i18n="s7.p">Expertise, évaluation, formation, encadrement doctoral ou développement d'outils climat-santé : je réponds aux sollicitations institutionnelles et académiques.</p>
         <div class="plabel" style="font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:26px" data-i18n="memb.l">Affiliations professionnelles</div>
@@ -1353,6 +1484,46 @@ const I18N = {
     'ct.1':'Affiliations','ct.2':'Email','ct.3':'Email','ct.4':'Areas','ct.4v':'Climate &amp; health · Early warning · Adaptation · AI',
     'ct.5':'Languages','ct.5v':'French (native) · English (advanced) · Spanish (upper-intermediate)',
     'ct.6v':'Curriculum vitæ (PDF, August 2026)',
+    'g.t1':"Bellagio Center, Italy · 7 Sept 2026",
+    'g.h1':"Talk: “Building Climate–Health Early Warning Systems for West Africa”",
+    'g.t2':"Bellagio Center, Italy · Sept 2026",
+    'g.h2':"Rockefeller Foundation residency — work on climate-health early warning systems",
+    'g.t3':"Bellagio, Italy · Sept 2026",
+    'g.h3':"In the gardens of the Bellagio Center",
+    'g.t4':"Dakar, Senegal · June 2026",
+    'g.h4':"Presenting at the ACCLIMATISE project kick-off workshop",
+    'g.t5':"Dakar, Senegal · 8–11 June 2026",
+    'g.h5':"ACCLIMATISE project partners (UCAD, Wellcome, ICTP, NYU, PNLP, Swiss TPH…)",
+    'g.t6':"Hôtel Fleur de Lys, Almadies · June 2026",
+    'g.h6':"ACCLIMATISE kick-off meeting",
+    'g.t7':"Nassau, The Bahamas · 18–22 May 2026",
+    'g.h7':"Second Lead Author Meeting, IPCC AR7 (Working Group II)",
+    'g.t8':"Nassau, The Bahamas · May 2026",
+    'g.h8':"With fellow IPCC AR7 authors",
+    'g.t9':"Nassau, The Bahamas · May 2026",
+    'g.h9':"IPCC AR7 WGII — Lead Author Meeting 2",
+    'g.t10':"International workshop",
+    'g.h10':"Group photo of participants",
+    'g.t11':"Scientific meeting",
+    'g.h11':"Group photo of participants",
+    'g.t12':"Bissau, Guinea-Bissau · 2026",
+    'g.h12':"Ministry of Public Health — HMST / Global Fund technical assistance mission",
+    'g.t13':"Burundi · 2026",
+    'g.h13':"Meeting at IOM Burundi — HMST / Global Fund technical assistance mission",
+    'g.t14':"18 Feb 2026",
+    'g.h14':"Climate-health working session with national teams",
+    'g.t15':"Niamey, Niger · 2026",
+    'g.h15':"At the African Centre of Meteorological Applications for Development (ACMAD)",
+    'g.t16':"Laboratory",
+    'g.h16':"Laboratory working session",
+    'nav.8':"Gallery",
+    's8.h':"In pictures",
+    's8.p':"Workshops, seminars, IPCC meetings and technical assistance missions: moments from the field.",
+    'g.f0':"All",
+    'g.f1':"IPCC",
+    'g.f2':"Workshops &amp; seminars",
+    'g.f3':"Missions",
+    'g.f4':"Bellagio residency",
     'ft.role':'Climate &amp; Health Scientist','ft.rights':'All rights reserved','ft.top':'Back to top ↑'
   }
 };
@@ -1379,6 +1550,44 @@ document.querySelectorAll('[data-lang]').forEach(b =>
   b.addEventListener('click', () => setLang(b.dataset.lang))
 );
 
+
+/* ---------- gallery: filters + lightbox ---------- */
+(function(){
+  const items = Array.from(document.querySelectorAll('#gallery .gitem'));
+  if(!items.length) return;
+  document.querySelectorAll('.gbtn').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.gbtn').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    items.forEach(it => { it.hidden = !(b.dataset.g === 'all' || it.dataset.cat === b.dataset.g); });
+  }));
+  const lb = document.getElementById('lb'), img = document.getElementById('lbimg'), cap = document.getElementById('lbcap');
+  let cur = 0, last = null;
+  const visible = () => items.filter(it => !it.hidden);
+  function show(it){
+    const btn = it.querySelector('.gopen');
+    img.src = btn.dataset.full;
+    img.alt = btn.querySelector('img').alt;
+    cap.innerHTML = it.querySelector('figcaption').innerHTML;
+    cur = visible().indexOf(it);
+  }
+  function open(it){ last = document.activeElement; show(it); lb.hidden = false; document.body.style.overflow = 'hidden'; document.getElementById('lbx').focus(); }
+  function close(){ lb.hidden = true; img.src = ''; document.body.style.overflow = ''; if(last) last.focus(); }
+  function step(d){ const v = visible(); if(v.length) show(v[(cur + d + v.length) % v.length]); }
+  items.forEach(it => it.querySelector('.gopen').addEventListener('click', () => open(it)));
+  document.getElementById('lbx').addEventListener('click', close);
+  document.getElementById('lbp').addEventListener('click', () => step(-1));
+  document.getElementById('lbn').addEventListener('click', () => step(1));
+  lb.addEventListener('click', e => { if(e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if(lb.hidden) return;
+    if(e.key === 'Escape') close();
+    else if(e.key === 'ArrowLeft') step(-1);
+    else if(e.key === 'ArrowRight') step(1);
+  });
+  let x0 = null;
+  lb.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', e => { if(x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if(Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); x0 = null; });
+})();
 /* ---------- embedded CV (works with no separate file on the server) ---------- */
 function initCv(){
   const node = document.getElementById('cvdata');
