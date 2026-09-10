@@ -403,6 +403,9 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
 .gitem{break-inside:avoid;margin:0 0 20px;background:var(--surface);border:1px solid var(--rule);border-radius:6px;overflow:hidden;transition:.28s ease}
 .gitem:hover{box-shadow:var(--shadow-lg);border-color:var(--gold)}
 .gitem[hidden],.lb[hidden]{display:none}
+.gallery.collapsed .gitem.more{display:none}
+.gmore-wrap{display:flex;justify-content:center;margin-top:10px}
+.gmore-wrap[hidden]{display:none}
 .gopen{display:block;width:100%;padding:0;border:0;background:var(--paper2);cursor:zoom-in;overflow:hidden}
 .gopen img{width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.75,.25,1)}
 .gitem:hover .gopen img{transform:scale(1.03)}
@@ -446,13 +449,13 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
         </span>
       </a>
       <nav class="main" id="nav">
+        <a href="#galerie" data-i18n="nav.8">Galerie</a>
         <a href="#profil" data-i18n="nav.1">Profil</a>
         <a href="#recherche" data-i18n="nav.2">Recherche</a>
         <a href="#dashboards" data-i18n="nav.3">Outils</a>
         <a href="#impact" data-i18n="nav.4">Impact</a>
         <a href="#publications" data-i18n="nav.5">Publications</a>
         <a href="#parcours" data-i18n="nav.6">Parcours</a>
-        <a href="#galerie" data-i18n="nav.8">Galerie</a>
         <a href="#contact" data-i18n="nav.7">Contact</a>
       </nav>
       <div class="tools">
@@ -499,11 +502,164 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
   </div>
 </div>
 
-<!-- 01 PROFIL -->
-<section id="profil">
+<!-- 01 GALERIE -->
+<section id="galerie">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="sec-num">01</span>
+      <h2 data-i18n="s8.h">En images</h2>
+      <p data-i18n="s8.p">Réunions du GIEC, conférences, ateliers, formations et missions d’assistance technique : quelques moments de terrain.</p>
+    </div>
+    <div class="gfilters rv" role="group" aria-label="Filtrer les photos">
+      <button type="button" class="gbtn on" data-g="all" data-i18n="g.f0">Toutes</button>
+      <button type="button" class="gbtn" data-g="giec" data-i18n="g.f1">GIEC</button>
+      <button type="button" class="gbtn" data-g="conference" data-i18n="g.f5">Conférences</button>
+      <button type="button" class="gbtn" data-g="atelier" data-i18n="g.f2">Ateliers &amp; formations</button>
+      <button type="button" class="gbtn" data-g="mission" data-i18n="g.f3">Missions &amp; institutions</button>
+      <button type="button" class="gbtn" data-g="universite" data-i18n="g.f6">Vie universitaire</button>
+      <button type="button" class="gbtn" data-g="residence" data-i18n="g.f4">Résidence Bellagio</button>
+    </div>
+    <div class="gallery collapsed rv" id="gallery">
+      <figure class="gitem" data-cat="residence">
+        <button type="button" class="gopen" data-full="images/gallery/2026-09-bellagio-talk.jpg"><img src="images/gallery/2026-09-bellagio-talk-t.jpg" width="660" height="820" loading="lazy" decoding="async" alt="Conférence « Building Climate–Health Early Warning Systems for West Africa »"></button>
+        <figcaption><span class="gtag" data-i18n="g.t1">Bellagio Center, Italie · 7 sept. 2026</span><span class="gtitle" data-i18n="g.h1">Conférence « Building Climate–Health Early Warning Systems for West Africa »</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="giec">
+        <button type="button" class="gopen" data-full="images/gallery/2026-05-ipcc-lam2-nassau.jpg"><img src="images/gallery/2026-05-ipcc-lam2-nassau-t.jpg" width="820" height="811" loading="lazy" decoding="async" alt="2ᵉ réunion des auteurs principaux du GIEC AR7 (Groupe de travail II)"></button>
+        <figcaption><span class="gtag" data-i18n="g.t2">Nassau, Bahamas · 18–22 mai 2026</span><span class="gtitle" data-i18n="g.h2">2ᵉ réunion des auteurs principaux du GIEC AR7 (Groupe de travail II)</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="atelier">
+        <button type="button" class="gopen" data-full="images/gallery/2026-06-acclimatise-group.jpg"><img src="images/gallery/2026-06-acclimatise-group-t.jpg" width="820" height="590" loading="lazy" decoding="async" alt="Partenaires du projet ACCLIMATISE (UCAD, Wellcome, ICTP, NYU, PNLP, Swiss TPH…)"></button>
+        <figcaption><span class="gtag" data-i18n="g.t3">Dakar, Sénégal · 8–11 juin 2026</span><span class="gtitle" data-i18n="g.h3">Partenaires du projet ACCLIMATISE (UCAD, Wellcome, ICTP, NYU, PNLP, Swiss TPH…)</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="conference">
+        <button type="button" class="gopen" data-full="images/gallery/2024-09-wohc-poster.jpg"><img src="images/gallery/2024-09-wohc-poster-t.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Poster « Enhancing Climate-Health Resilience in Senegal: Integrating Predictive Modelling and Adaptation Strategies » — 8ᵉ Congrès mondial One Health"></button>
+        <figcaption><span class="gtag" data-i18n="g.t4">Le Cap, Afrique du Sud · 20–23 sept. 2024</span><span class="gtitle" data-i18n="g.h4">Poster « Enhancing Climate-Health Resilience in Senegal: Integrating Predictive Modelling and Adaptation Strategies » — 8ᵉ Congrès mondial One Health</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="giec">
+        <button type="button" class="gopen" data-full="images/gallery/2026-05-ipcc-lam2-beach.jpg"><img src="images/gallery/2026-05-ipcc-lam2-beach-t.jpg" width="820" height="535" loading="lazy" decoding="async" alt="Avec des collègues auteurs du GIEC AR7"></button>
+        <figcaption><span class="gtag" data-i18n="g.t5">Nassau, Bahamas · mai 2026</span><span class="gtitle" data-i18n="g.h5">Avec des collègues auteurs du GIEC AR7</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="mission">
+        <button type="button" class="gopen" data-full="images/gallery/2026-hmst-bissau.jpg"><img src="images/gallery/2026-hmst-bissau-t.jpg" width="805" height="820" loading="lazy" decoding="async" alt="Ministère de la Santé publique — mission d’assistance technique HMST / Fonds mondial"></button>
+        <figcaption><span class="gtag" data-i18n="g.t6">Bissau, Guinée-Bissau · 2026</span><span class="gtitle" data-i18n="g.h6">Ministère de la Santé publique — mission d’assistance technique HMST / Fonds mondial</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="atelier">
+        <button type="button" class="gopen" data-full="images/gallery/2023-05-ictp-trieste.jpg"><img src="images/gallery/2023-05-ictp-trieste-t.jpg" width="820" height="615" loading="lazy" decoding="async" alt="À l’Abdus Salam International Centre for Theoretical Physics (ICTP)"></button>
+        <figcaption><span class="gtag" data-i18n="g.t7">Trieste, Italie</span><span class="gtitle" data-i18n="g.h7">À l’Abdus Salam International Centre for Theoretical Physics (ICTP)</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="conference">
+        <button type="button" class="gopen" data-full="images/gallery/2023-11-onehealth-panel.jpg"><img src="images/gallery/2023-11-onehealth-panel-t.jpg" width="820" height="615" loading="lazy" decoding="async" alt="Panel — Journée mondiale One Health 2023 : « Connecter l’Air, la Terre et l’Eau ! »"></button>
+        <figcaption><span class="gtag" data-i18n="g.t8">Hôtel Le Ndiambour, Dakar · 3 nov. 2023</span><span class="gtitle" data-i18n="g.h8">Panel — Journée mondiale One Health 2023 : « Connecter l’Air, la Terre et l’Eau ! »</span></figcaption>
+      </figure>
+      <figure class="gitem" data-cat="atelier">
+        <button type="button" class="gopen" data-full="images/gallery/2026-06-acclimatise-talk.jpg"><img src="images/gallery/2026-06-acclimatise-talk-t.jpg" width="820" height="649" loading="lazy" decoding="async" alt="Intervention à l’atelier de lancement du projet ACCLIMATISE"></button>
+        <figcaption><span class="gtag" data-i18n="g.t9">Dakar, Sénégal · juin 2026</span><span class="gtitle" data-i18n="g.h9">Intervention à l’atelier de lancement du projet ACCLIMATISE</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="residence">
+        <button type="button" class="gopen" data-full="images/gallery/2026-09-bellagio-studio.jpg"><img src="images/gallery/2026-09-bellagio-studio-t.jpg" width="626" height="820" loading="lazy" decoding="async" alt="Résidence de la Fondation Rockefeller — travail sur les systèmes d’alerte précoce climat-santé"></button>
+        <figcaption><span class="gtag" data-i18n="g.t10">Bellagio Center, Italie · sept. 2026</span><span class="gtitle" data-i18n="g.h10">Résidence de la Fondation Rockefeller — travail sur les systèmes d’alerte précoce climat-santé</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="residence">
+        <button type="button" class="gopen" data-full="images/gallery/2026-09-bellagio-garden.jpg"><img src="images/gallery/2026-09-bellagio-garden-t.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Dans les jardins du Bellagio Center"></button>
+        <figcaption><span class="gtag" data-i18n="g.t11">Bellagio, Italie · sept. 2026</span><span class="gtitle" data-i18n="g.h11">Dans les jardins du Bellagio Center</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="atelier">
+        <button type="button" class="gopen" data-full="images/gallery/2026-06-acclimatise-banner.jpg"><img src="images/gallery/2026-06-acclimatise-banner-t.jpg" width="820" height="811" loading="lazy" decoding="async" alt="Atelier de lancement ACCLIMATISE"></button>
+        <figcaption><span class="gtag" data-i18n="g.t12">Hôtel Fleur de Lys, Almadies · juin 2026</span><span class="gtitle" data-i18n="g.h12">Atelier de lancement ACCLIMATISE</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="giec">
+        <button type="button" class="gopen" data-full="images/gallery/2026-05-ipcc-lam2-nassau-2.jpg"><img src="images/gallery/2026-05-ipcc-lam2-nassau-2-t.jpg" width="701" height="820" loading="lazy" decoding="async" alt="GIEC AR7 WGII — Lead Author Meeting 2"></button>
+        <figcaption><span class="gtag" data-i18n="g.t13">Nassau, Bahamas · mai 2026</span><span class="gtitle" data-i18n="g.h13">GIEC AR7 WGII — Lead Author Meeting 2</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="mission">
+        <button type="button" class="gopen" data-full="images/gallery/2026-hmst-iom-burundi.jpg"><img src="images/gallery/2026-hmst-iom-burundi-t.jpg" width="820" height="614" loading="lazy" decoding="async" alt="Réunion à l’OIM Burundi — mission d’assistance technique HMST / Fonds mondial"></button>
+        <figcaption><span class="gtag" data-i18n="g.t14">Burundi · 2026</span><span class="gtitle" data-i18n="g.h14">Réunion à l’OIM Burundi — mission d’assistance technique HMST / Fonds mondial</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="mission"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/2026-02-hmst-workshop.jpg"><img src="images/gallery/2026-02-hmst-workshop-t.jpg" width="820" height="617" loading="lazy" decoding="async" alt="Séance de travail climat-santé avec les équipes nationales"></button>
+        <figcaption><span class="gtag" data-i18n="g.t15">18 févr. 2026</span><span class="gtitle" data-i18n="g.h15">Séance de travail climat-santé avec les équipes nationales</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="mission">
+        <button type="button" class="gopen" data-full="images/gallery/2026-hmst-acmad-niamey.jpg"><img src="images/gallery/2026-hmst-acmad-niamey-t.jpg" width="579" height="820" loading="lazy" decoding="async" alt="Au Centre africain pour les applications de la météorologie au développement (ACMAD)"></button>
+        <figcaption><span class="gtag" data-i18n="g.t16">Niamey, Niger · 2026</span><span class="gtitle" data-i18n="g.h16">Au Centre africain pour les applications de la météorologie au développement (ACMAD)</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/workshop-group-1.jpg"><img src="images/gallery/workshop-group-1-t.jpg" width="820" height="461" loading="lazy" decoding="async" alt="Photo de groupe des participants"></button>
+        <figcaption><span class="gtag" data-i18n="g.t17">Atelier international</span><span class="gtitle" data-i18n="g.h17">Photo de groupe des participants</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/workshop-group-2.jpg"><img src="images/gallery/workshop-group-2-t.jpg" width="820" height="456" loading="lazy" decoding="async" alt="Photo de groupe des participants"></button>
+        <figcaption><span class="gtag" data-i18n="g.t18">Réunion scientifique</span><span class="gtitle" data-i18n="g.h18">Photo de groupe des participants</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/initiative-group.jpg"><img src="images/gallery/initiative-group-t.jpg" width="820" height="408" loading="lazy" decoding="async" alt="Participants à la formation sur le changement climatique"></button>
+        <figcaption><span class="gtag" data-i18n="g.t19">L’Initiative — Expertise France</span><span class="gtitle" data-i18n="g.h19">Participants à la formation sur le changement climatique</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/initiative-workshop.jpg"><img src="images/gallery/initiative-workshop-t.jpg" width="820" height="547" loading="lazy" decoding="async" alt="Travaux pratiques pendant la formation"></button>
+        <figcaption><span class="gtag" data-i18n="g.t20">L’Initiative — Expertise France</span><span class="gtitle" data-i18n="g.h20">Travaux pratiques pendant la formation</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/initiative-attestation.jpg"><img src="images/gallery/initiative-attestation-t.jpg" width="820" height="615" loading="lazy" decoding="async" alt="Remise des attestations de formation"></button>
+        <figcaption><span class="gtag" data-i18n="g.t21">Formation</span><span class="gtitle" data-i18n="g.h21">Remise des attestations de formation</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="conference">
+        <button type="button" class="gopen" data-full="images/gallery/2024-09-wohc-panel.jpg"><img src="images/gallery/2024-09-wohc-panel-t.jpg" width="763" height="820" loading="lazy" decoding="async" alt="8ᵉ Congrès mondial One Health — intervention en séance plénière"></button>
+        <figcaption><span class="gtag" data-i18n="g.t22">Le Cap, Afrique du Sud · sept. 2024</span><span class="gtitle" data-i18n="g.h22">8ᵉ Congrès mondial One Health — intervention en séance plénière</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="universite"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/guinea-mesrsi-ceremony.jpg"><img src="images/gallery/guinea-mesrsi-ceremony-t.jpg" width="773" height="820" loading="lazy" decoding="async" alt="Cérémonie d’accueil des nouveaux enseignants-chercheurs — Ministère de l’Enseignement supérieur, de la Recherche scientifique et de l’Innovation"></button>
+        <figcaption><span class="gtag" data-i18n="g.t23">Guinée</span><span class="gtitle" data-i18n="g.h23">Cérémonie d’accueil des nouveaux enseignants-chercheurs — Ministère de l’Enseignement supérieur, de la Recherche scientifique et de l’Innovation</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="universite"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/guinea-office-visit.jpg"><img src="images/gallery/guinea-office-visit-t.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Rencontre institutionnelle"></button>
+        <figcaption><span class="gtag" data-i18n="g.t24">Rencontre</span><span class="gtitle" data-i18n="g.h24">Rencontre institutionnelle</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/guinea-training-group.jpg"><img src="images/gallery/guinea-training-group-t.jpg" width="820" height="615" loading="lazy" decoding="async" alt="Photo de groupe des participants"></button>
+        <figcaption><span class="gtag" data-i18n="g.t25">Formation</span><span class="gtitle" data-i18n="g.h25">Photo de groupe des participants</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="universite">
+        <button type="button" class="gopen" data-full="images/gallery/lpao-presentation.jpg"><img src="images/gallery/lpao-presentation-t.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Présentation de résultats : climatologie des précipitations 1985–2014, ERA5 et modèles CMIP6"></button>
+        <figcaption><span class="gtag" data-i18n="g.t26">LPAO-SF, UCAD · Dakar</span><span class="gtitle" data-i18n="g.h26">Présentation de résultats : climatologie des précipitations 1985–2014, ERA5 et modèles CMIP6</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="mission">
+        <button type="button" class="gopen" data-full="images/gallery/cse-dakar.jpg"><img src="images/gallery/cse-dakar-t.jpg" width="741" height="820" loading="lazy" decoding="async" alt="Au Centre de Suivi Écologique (CSE)"></button>
+        <figcaption><span class="gtag" data-i18n="g.t27">Dakar, Sénégal</span><span class="gtitle" data-i18n="g.h27">Au Centre de Suivi Écologique (CSE)</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="conference">
+        <button type="button" class="gopen" data-full="images/gallery/2023-11-onehealth-session.jpg"><img src="images/gallery/2023-11-onehealth-session-t.jpg" width="820" height="561" loading="lazy" decoding="async" alt="Journée mondiale One Health — Haut Conseil national de la sécurité sanitaire mondiale"></button>
+        <figcaption><span class="gtag" data-i18n="g.t28">Hôtel Le Ndiambour, Dakar · 3 nov. 2023</span><span class="gtitle" data-i18n="g.h28">Journée mondiale One Health — Haut Conseil national de la sécurité sanitaire mondiale</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="conference"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/2023-dakar-conference.jpg"><img src="images/gallery/2023-dakar-conference-t.jpg" width="820" height="549" loading="lazy" decoding="async" alt="Photo de groupe — conférence de Dakar sur les épidémies"></button>
+        <figcaption><span class="gtag" data-i18n="g.t29">Dakar · 2023</span><span class="gtitle" data-i18n="g.h29">Photo de groupe — conférence de Dakar sur les épidémies</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="atelier">
+        <button type="button" class="gopen" data-full="images/gallery/2023-05-ictp-iaea-workshop.jpg"><img src="images/gallery/2023-05-ictp-iaea-workshop-t.jpg" width="820" height="585" loading="lazy" decoding="async" alt="Atelier conjoint ICTP-AIEA : prise en compte du climat dans la planification des interventions contre les maladies vectorielles (technique de l’insecte stérile)"></button>
+        <figcaption><span class="gtag" data-i18n="g.t30">Trieste, Italie · 22–26 mai 2023</span><span class="gtitle" data-i18n="g.h30">Atelier conjoint ICTP-AIEA : prise en compte du climat dans la planification des interventions contre les maladies vectorielles (technique de l’insecte stérile)</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="conference"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/stage-talk.jpg"><img src="images/gallery/stage-talk-t.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Intervention lors d’une séance"></button>
+        <figcaption><span class="gtag" data-i18n="g.t31">Présentation</span><span class="gtitle" data-i18n="g.h31">Intervention lors d’une séance</span></figcaption>
+      </figure>
+      <figure class="gitem more" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
+        <button type="button" class="gopen" data-full="images/gallery/lab-session.jpg"><img src="images/gallery/lab-session-t.jpg" width="790" height="799" loading="lazy" decoding="async" alt="Séance de travail en laboratoire"></button>
+        <figcaption><span class="gtag" data-i18n="g.t32">Laboratoire</span><span class="gtitle" data-i18n="g.h32">Séance de travail en laboratoire</span></figcaption>
+      </figure>
+    </div>
+    <div class="gmore-wrap"><button type="button" class="btn ghost gmore" id="gmore"><span data-i18n="g.more">Voir toutes les photos</span> (32)</button></div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- 02 PROFIL -->
+<section id="profil">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">02</span>
       <h2 data-i18n="s1.h">Un profil à l'interface du climat, de la santé et de la donnée</h2>
       <p data-i18n="s1.p">Quinze années de recherche interdisciplinaire, de la thèse sur le paludisme saisonnier au Sahel jusqu'aux évaluations du GIEC — avec des projets financés par l'Union européenne (FP7), l'USAID, l'OMS, l'UNICEF, la NOAA et l'IRD.</p>
     </div>
@@ -552,11 +708,11 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
 
 <hr class="rule">
 
-<!-- 02 RECHERCHE -->
+<!-- 03 RECHERCHE -->
 <section id="recherche" class="alt">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">02</span>
+      <span class="sec-num">03</span>
       <h2 data-i18n="s2.h">Quatre axes de recherche</h2>
       <p data-i18n="s2.p">Une même question traverse tous mes travaux : comment convertir un signal climatique en une décision sanitaire utile, à temps et à la bonne échelle ?</p>
     </div>
@@ -585,11 +741,11 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
   </div>
 </section>
 
-<!-- 03 OUTILS -->
+<!-- 04 OUTILS -->
 <section id="dashboards">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">03</span>
+      <span class="sec-num">04</span>
       <h2 data-i18n="s3.h">Des modèles aux outils que l'on utilise</h2>
       <p data-i18n="s3.p">Mes travaux ne s'arrêtent pas à l'article : ils deviennent des applications interactives, ouvertes et reproductibles, hébergées sur Hugging Face.</p>
     </div>
@@ -678,11 +834,11 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
 
 <hr class="rule">
 
-<!-- 04 IMPACT -->
+<!-- 05 IMPACT -->
 <section id="impact" class="alt">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">04</span>
+      <span class="sec-num">05</span>
       <h2 data-i18n="s4.h">Impact &amp; engagements</h2>
       <p data-i18n="s4.p">Une recherche pensée pour être utilisée : évaluations internationales, appui aux programmes nationaux et outils opérationnels.</p>
     </div>
@@ -729,11 +885,11 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
   </div>
 </section>
 
-<!-- 05 PUBLICATIONS -->
+<!-- 06 PUBLICATIONS -->
 <section id="publications">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">05</span>
+      <span class="sec-num">06</span>
       <h2 data-i18n="s5.h">Publications</h2>
       <p data-i18n="s5.p">Plus de 50 publications et communications recensées sur Google Scholar — 568 citations, indice h 12. Les 40 travaux revus par les pairs ci-dessous, dont 4 en cours de révision.</p>
     </div>
@@ -1157,11 +1313,11 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
 
 <hr class="rule">
 
-<!-- 06 PARCOURS -->
+<!-- 07 PARCOURS -->
 <section id="parcours" class="alt">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="sec-num">06</span>
+      <span class="sec-num">07</span>
       <h2 data-i18n="s6.h">Parcours &amp; formation</h2>
       <p data-i18n="s6.p">De la thèse sur le paludisme saisonnier au Sahel aux évaluations internationales du climat.</p>
     </div>
@@ -1188,89 +1344,7 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
   </div>
 </section>
 
-<!-- 07 GALERIE -->
-<section id="galerie">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="sec-num">07</span>
-      <h2 data-i18n="s8.h">En images</h2>
-      <p data-i18n="s8.p">Ateliers, séminaires, réunions du GIEC et missions d’assistance technique : quelques moments de terrain.</p>
-    </div>
-    <div class="gfilters rv" role="group" aria-label="Filtrer les photos">
-      <button type="button" class="gbtn on" data-g="all" data-i18n="g.f0">Toutes</button>
-      <button type="button" class="gbtn" data-g="giec" data-i18n="g.f1">GIEC</button>
-      <button type="button" class="gbtn" data-g="atelier" data-i18n="g.f2">Ateliers &amp; séminaires</button>
-      <button type="button" class="gbtn" data-g="mission" data-i18n="g.f3">Missions</button>
-      <button type="button" class="gbtn" data-g="residence" data-i18n="g.f4">Résidence Bellagio</button>
-    </div>
-    <div class="gallery rv" id="gallery">
-      <figure class="gitem" data-cat="residence">
-        <button type="button" class="gopen" data-full="images/gallery/2026-09-bellagio-talk.jpg"><img src="images/gallery/2026-09-bellagio-talk-t.jpg" width="660" height="820" loading="lazy" decoding="async" alt="Conférence « Building Climate–Health Early Warning Systems for West Africa »"></button>
-        <figcaption><span class="gtag" data-i18n="g.t1">Bellagio Center, Italie · 7 sept. 2026</span><span class="gtitle" data-i18n="g.h1">Conférence « Building Climate–Health Early Warning Systems for West Africa »</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="residence">
-        <button type="button" class="gopen" data-full="images/gallery/2026-09-bellagio-studio.jpg"><img src="images/gallery/2026-09-bellagio-studio-t.jpg" width="626" height="820" loading="lazy" decoding="async" alt="Résidence de la Fondation Rockefeller — travail sur les systèmes d’alerte précoce climat-santé"></button>
-        <figcaption><span class="gtag" data-i18n="g.t2">Bellagio Center, Italie · sept. 2026</span><span class="gtitle" data-i18n="g.h2">Résidence de la Fondation Rockefeller — travail sur les systèmes d’alerte précoce climat-santé</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="residence">
-        <button type="button" class="gopen" data-full="images/gallery/2026-09-bellagio-garden.jpg"><img src="images/gallery/2026-09-bellagio-garden-t.jpg" width="615" height="820" loading="lazy" decoding="async" alt="Dans les jardins du Bellagio Center"></button>
-        <figcaption><span class="gtag" data-i18n="g.t3">Bellagio, Italie · sept. 2026</span><span class="gtitle" data-i18n="g.h3">Dans les jardins du Bellagio Center</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="atelier">
-        <button type="button" class="gopen" data-full="images/gallery/2026-06-acclimatise-talk.jpg"><img src="images/gallery/2026-06-acclimatise-talk-t.jpg" width="820" height="649" loading="lazy" decoding="async" alt="Intervention à l’atelier de lancement du projet ACCLIMATISE"></button>
-        <figcaption><span class="gtag" data-i18n="g.t4">Dakar, Sénégal · juin 2026</span><span class="gtitle" data-i18n="g.h4">Intervention à l’atelier de lancement du projet ACCLIMATISE</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="atelier">
-        <button type="button" class="gopen" data-full="images/gallery/2026-06-acclimatise-group.jpg"><img src="images/gallery/2026-06-acclimatise-group-t.jpg" width="820" height="590" loading="lazy" decoding="async" alt="Partenaires du projet ACCLIMATISE (UCAD, Wellcome, ICTP, NYU, PNLP, Swiss TPH…)"></button>
-        <figcaption><span class="gtag" data-i18n="g.t5">Dakar, Sénégal · 8–11 juin 2026</span><span class="gtitle" data-i18n="g.h5">Partenaires du projet ACCLIMATISE (UCAD, Wellcome, ICTP, NYU, PNLP, Swiss TPH…)</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="atelier">
-        <button type="button" class="gopen" data-full="images/gallery/2026-06-acclimatise-banner.jpg"><img src="images/gallery/2026-06-acclimatise-banner-t.jpg" width="820" height="811" loading="lazy" decoding="async" alt="Atelier de lancement ACCLIMATISE"></button>
-        <figcaption><span class="gtag" data-i18n="g.t6">Hôtel Fleur de Lys, Almadies · juin 2026</span><span class="gtitle" data-i18n="g.h6">Atelier de lancement ACCLIMATISE</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="giec">
-        <button type="button" class="gopen" data-full="images/gallery/2026-05-ipcc-lam2-nassau.jpg"><img src="images/gallery/2026-05-ipcc-lam2-nassau-t.jpg" width="820" height="811" loading="lazy" decoding="async" alt="2ᵉ réunion des auteurs principaux du GIEC AR7 (Groupe de travail II)"></button>
-        <figcaption><span class="gtag" data-i18n="g.t7">Nassau, Bahamas · 18–22 mai 2026</span><span class="gtitle" data-i18n="g.h7">2ᵉ réunion des auteurs principaux du GIEC AR7 (Groupe de travail II)</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="giec">
-        <button type="button" class="gopen" data-full="images/gallery/2026-05-ipcc-lam2-beach.jpg"><img src="images/gallery/2026-05-ipcc-lam2-beach-t.jpg" width="820" height="535" loading="lazy" decoding="async" alt="Avec des collègues auteurs du GIEC AR7"></button>
-        <figcaption><span class="gtag" data-i18n="g.t8">Nassau, Bahamas · mai 2026</span><span class="gtitle" data-i18n="g.h8">Avec des collègues auteurs du GIEC AR7</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="giec">
-        <button type="button" class="gopen" data-full="images/gallery/2026-05-ipcc-lam2-nassau-2.jpg"><img src="images/gallery/2026-05-ipcc-lam2-nassau-2-t.jpg" width="701" height="820" loading="lazy" decoding="async" alt="GIEC AR7 WGII — Lead Author Meeting 2"></button>
-        <figcaption><span class="gtag" data-i18n="g.t9">Nassau, Bahamas · mai 2026</span><span class="gtitle" data-i18n="g.h9">GIEC AR7 WGII — Lead Author Meeting 2</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
-        <button type="button" class="gopen" data-full="images/gallery/workshop-group-1.jpg"><img src="images/gallery/workshop-group-1-t.jpg" width="820" height="461" loading="lazy" decoding="async" alt="Photo de groupe des participants"></button>
-        <figcaption><span class="gtag" data-i18n="g.t10">Atelier international</span><span class="gtitle" data-i18n="g.h10">Photo de groupe des participants</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
-        <button type="button" class="gopen" data-full="images/gallery/workshop-group-2.jpg"><img src="images/gallery/workshop-group-2-t.jpg" width="820" height="456" loading="lazy" decoding="async" alt="Photo de groupe des participants"></button>
-        <figcaption><span class="gtag" data-i18n="g.t11">Réunion scientifique</span><span class="gtitle" data-i18n="g.h11">Photo de groupe des participants</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="mission">
-        <button type="button" class="gopen" data-full="images/gallery/2026-hmst-bissau.jpg"><img src="images/gallery/2026-hmst-bissau-t.jpg" width="805" height="820" loading="lazy" decoding="async" alt="Ministère de la Santé publique — mission d’assistance technique HMST / Fonds mondial"></button>
-        <figcaption><span class="gtag" data-i18n="g.t12">Bissau, Guinée-Bissau · 2026</span><span class="gtitle" data-i18n="g.h12">Ministère de la Santé publique — mission d’assistance technique HMST / Fonds mondial</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="mission">
-        <button type="button" class="gopen" data-full="images/gallery/2026-hmst-iom-burundi.jpg"><img src="images/gallery/2026-hmst-iom-burundi-t.jpg" width="820" height="614" loading="lazy" decoding="async" alt="Réunion à l’OIM Burundi — mission d’assistance technique HMST / Fonds mondial"></button>
-        <figcaption><span class="gtag" data-i18n="g.t13">Burundi · 2026</span><span class="gtitle" data-i18n="g.h13">Réunion à l’OIM Burundi — mission d’assistance technique HMST / Fonds mondial</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="mission"><!-- À COMPLÉTER : lieu / événement / date -->
-        <button type="button" class="gopen" data-full="images/gallery/2026-02-hmst-workshop.jpg"><img src="images/gallery/2026-02-hmst-workshop-t.jpg" width="820" height="617" loading="lazy" decoding="async" alt="Séance de travail climat-santé avec les équipes nationales"></button>
-        <figcaption><span class="gtag" data-i18n="g.t14">18 févr. 2026</span><span class="gtitle" data-i18n="g.h14">Séance de travail climat-santé avec les équipes nationales</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="mission">
-        <button type="button" class="gopen" data-full="images/gallery/2026-hmst-acmad-niamey.jpg"><img src="images/gallery/2026-hmst-acmad-niamey-t.jpg" width="579" height="820" loading="lazy" decoding="async" alt="Au Centre africain pour les applications de la météorologie au développement (ACMAD)"></button>
-        <figcaption><span class="gtag" data-i18n="g.t15">Niamey, Niger · 2026</span><span class="gtitle" data-i18n="g.h15">Au Centre africain pour les applications de la météorologie au développement (ACMAD)</span></figcaption>
-      </figure>
-      <figure class="gitem" data-cat="atelier"><!-- À COMPLÉTER : lieu / événement / date -->
-        <button type="button" class="gopen" data-full="images/gallery/lab-session.jpg"><img src="images/gallery/lab-session-t.jpg" width="790" height="799" loading="lazy" decoding="async" alt="Séance de travail en laboratoire"></button>
-        <figcaption><span class="gtag" data-i18n="g.t16">Laboratoire</span><span class="gtitle" data-i18n="g.h16">Séance de travail en laboratoire</span></figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
+
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo">
   <button type="button" class="lb-x" id="lbx" aria-label="Fermer">×</button>
@@ -1486,44 +1560,79 @@ const I18N = {
     'ct.6v':'Curriculum vitæ (PDF, August 2026)',
     'g.t1':"Bellagio Center, Italy · 7 Sept 2026",
     'g.h1':"Talk: “Building Climate–Health Early Warning Systems for West Africa”",
-    'g.t2':"Bellagio Center, Italy · Sept 2026",
-    'g.h2':"Rockefeller Foundation residency — work on climate-health early warning systems",
-    'g.t3':"Bellagio, Italy · Sept 2026",
-    'g.h3':"In the gardens of the Bellagio Center",
-    'g.t4':"Dakar, Senegal · June 2026",
-    'g.h4':"Presenting at the ACCLIMATISE project kick-off workshop",
-    'g.t5':"Dakar, Senegal · 8–11 June 2026",
-    'g.h5':"ACCLIMATISE project partners (UCAD, Wellcome, ICTP, NYU, PNLP, Swiss TPH…)",
-    'g.t6':"Hôtel Fleur de Lys, Almadies · June 2026",
-    'g.h6':"ACCLIMATISE kick-off meeting",
-    'g.t7':"Nassau, The Bahamas · 18–22 May 2026",
-    'g.h7':"Second Lead Author Meeting, IPCC AR7 (Working Group II)",
-    'g.t8':"Nassau, The Bahamas · May 2026",
-    'g.h8':"With fellow IPCC AR7 authors",
-    'g.t9':"Nassau, The Bahamas · May 2026",
-    'g.h9':"IPCC AR7 WGII — Lead Author Meeting 2",
-    'g.t10':"International workshop",
-    'g.h10':"Group photo of participants",
-    'g.t11':"Scientific meeting",
-    'g.h11':"Group photo of participants",
-    'g.t12':"Bissau, Guinea-Bissau · 2026",
-    'g.h12':"Ministry of Public Health — HMST / Global Fund technical assistance mission",
-    'g.t13':"Burundi · 2026",
-    'g.h13':"Meeting at IOM Burundi — HMST / Global Fund technical assistance mission",
-    'g.t14':"18 Feb 2026",
-    'g.h14':"Climate-health working session with national teams",
-    'g.t15':"Niamey, Niger · 2026",
-    'g.h15':"At the African Centre of Meteorological Applications for Development (ACMAD)",
-    'g.t16':"Laboratory",
-    'g.h16':"Laboratory working session",
+    'g.t2':"Nassau, The Bahamas · 18–22 May 2026",
+    'g.h2':"Second Lead Author Meeting, IPCC AR7 (Working Group II)",
+    'g.t3':"Dakar, Senegal · 8–11 June 2026",
+    'g.h3':"ACCLIMATISE project partners (UCAD, Wellcome, ICTP, NYU, PNLP, Swiss TPH…)",
+    'g.t4':"Cape Town, South Africa · 20–23 Sept 2024",
+    'g.h4':"Poster “Enhancing Climate-Health Resilience in Senegal: Integrating Predictive Modelling and Adaptation Strategies” — 8th World One Health Congress",
+    'g.t5':"Nassau, The Bahamas · May 2026",
+    'g.h5':"With fellow IPCC AR7 authors",
+    'g.t6':"Bissau, Guinea-Bissau · 2026",
+    'g.h6':"Ministry of Public Health — HMST / Global Fund technical assistance mission",
+    'g.t7':"Trieste, Italy",
+    'g.h7':"At the Abdus Salam International Centre for Theoretical Physics (ICTP)",
+    'g.t8':"Hôtel Le Ndiambour, Dakar · 3 Nov 2023",
+    'g.h8':"Panel — World One Health Day 2023: “Connecting Air, Land and Water!”",
+    'g.t9':"Dakar, Senegal · June 2026",
+    'g.h9':"Presenting at the ACCLIMATISE project kick-off workshop",
+    'g.t10':"Bellagio Center, Italy · Sept 2026",
+    'g.h10':"Rockefeller Foundation residency — work on climate-health early warning systems",
+    'g.t11':"Bellagio, Italy · Sept 2026",
+    'g.h11':"In the gardens of the Bellagio Center",
+    'g.t12':"Hôtel Fleur de Lys, Almadies · June 2026",
+    'g.h12':"ACCLIMATISE kick-off meeting",
+    'g.t13':"Nassau, The Bahamas · May 2026",
+    'g.h13':"IPCC AR7 WGII — Lead Author Meeting 2",
+    'g.t14':"Burundi · 2026",
+    'g.h14':"Meeting at IOM Burundi — HMST / Global Fund technical assistance mission",
+    'g.t15':"18 Feb 2026",
+    'g.h15':"Climate-health working session with national teams",
+    'g.t16':"Niamey, Niger · 2026",
+    'g.h16':"At the African Centre of Meteorological Applications for Development (ACMAD)",
+    'g.t17':"International workshop",
+    'g.h17':"Group photo of participants",
+    'g.t18':"Scientific meeting",
+    'g.h18':"Group photo of participants",
+    'g.t19':"L’Initiative — Expertise France",
+    'g.h19':"Participants in the climate change training",
+    'g.t20':"L’Initiative — Expertise France",
+    'g.h20':"Hands-on session during the training",
+    'g.t21':"Training",
+    'g.h21':"Presentation of training certificates",
+    'g.t22':"Cape Town, South Africa · Sept 2024",
+    'g.h22':"8th World One Health Congress — contribution to a plenary session",
+    'g.t23':"Guinea",
+    'g.h23':"Welcome ceremony for new lecturer-researchers — Ministry of Higher Education, Scientific Research and Innovation",
+    'g.t24':"Meeting",
+    'g.h24':"Institutional meeting",
+    'g.t25':"Training",
+    'g.h25':"Group photo of participants",
+    'g.t26':"LPAO-SF, UCAD · Dakar",
+    'g.h26':"Presenting results: 1985–2014 precipitation climatology, ERA5 and CMIP6 models",
+    'g.t27':"Dakar, Senegal",
+    'g.h27':"At the Centre de Suivi Écologique (CSE)",
+    'g.t28':"Hôtel Le Ndiambour, Dakar · 3 Nov 2023",
+    'g.h28':"World One Health Day — National High Council for Global Health Security",
+    'g.t29':"Dakar · 2023",
+    'g.h29':"Group photo — Dakar conference on epidemics",
+    'g.t30':"Trieste, Italy · 22–26 May 2023",
+    'g.h30':"Joint ICTP-IAEA Workshop on Accounting for Climate in Vector-borne Disease Intervention Planning, including the Sterile Insect Technique",
+    'g.t31':"Presentation",
+    'g.h31':"Speaking at a session",
+    'g.t32':"Laboratory",
+    'g.h32':"Laboratory working session",
     'nav.8':"Gallery",
     's8.h':"In pictures",
-    's8.p':"Workshops, seminars, IPCC meetings and technical assistance missions: moments from the field.",
+    's8.p':"IPCC meetings, conferences, workshops, training courses and technical assistance missions: moments from the field.",
     'g.f0':"All",
     'g.f1':"IPCC",
-    'g.f2':"Workshops &amp; seminars",
-    'g.f3':"Missions",
+    'g.f5':"Conferences",
+    'g.f2':"Workshops &amp; training",
+    'g.f3':"Missions &amp; institutions",
+    'g.f6':"Academic life",
     'g.f4':"Bellagio residency",
+    'g.more':"See all photos",
     'ft.role':'Climate &amp; Health Scientist','ft.rights':'All rights reserved','ft.top':'Back to top ↑'
   }
 };
@@ -1555,14 +1664,18 @@ document.querySelectorAll('[data-lang]').forEach(b =>
 (function(){
   const items = Array.from(document.querySelectorAll('#gallery .gitem'));
   if(!items.length) return;
+  const gal = document.getElementById('gallery'), more = document.getElementById('gmore');
+  const expand = () => { gal.classList.remove('collapsed'); if(more) more.parentElement.hidden = true; };
+  if(more) more.addEventListener('click', expand);
   document.querySelectorAll('.gbtn').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('.gbtn').forEach(x => x.classList.remove('on'));
     b.classList.add('on');
+    if(b.dataset.g !== 'all') expand();
     items.forEach(it => { it.hidden = !(b.dataset.g === 'all' || it.dataset.cat === b.dataset.g); });
   }));
   const lb = document.getElementById('lb'), img = document.getElementById('lbimg'), cap = document.getElementById('lbcap');
   let cur = 0, last = null;
-  const visible = () => items.filter(it => !it.hidden);
+  const visible = () => items.filter(it => !it.hidden && it.offsetParent !== null);
   function show(it){
     const btn = it.querySelector('.gopen');
     img.src = btn.dataset.full;
