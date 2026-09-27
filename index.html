@@ -697,14 +697,14 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
       <p data-i18n="s1.p">Quinze années de recherche interdisciplinaire, de la thèse sur le paludisme saisonnier au Sahel jusqu'aux évaluations du GIEC — avec des projets financés par l'Union européenne (FP7), l'USAID, l'OMS, l'UNICEF, la NOAA et l'IRD.</p>
     </div>
     <div class="metrics rv">
-      <div class="metric"><div class="val" data-count="50" data-suffix="+">0</div><div class="lbl" data-i18n="m.1">Publications &amp; communications</div></div>
-      <div class="metric"><div class="val" data-count="568">0</div><div class="lbl" data-i18n="m.2">Citations</div></div>
-      <div class="metric"><div class="val" data-count="12">0</div><div class="lbl" data-i18n="m.3">Indice h</div></div>
-      <div class="metric"><div class="val" data-count="16">0</div><div class="lbl" data-i18n="m.4">Indice i10</div></div>
+      <div class="metric"><div class="val" id="sch-pubs" data-count="50" data-suffix="+">0</div><div class="lbl" data-i18n="m.1">Publications &amp; communications</div></div>
+      <div class="metric"><div class="val" id="sch-cit" data-count="683">0</div><div class="lbl" data-i18n="m.2">Citations</div></div>
+      <div class="metric"><div class="val" id="sch-h" data-count="12">0</div><div class="lbl" data-i18n="m.3">Indice h</div></div>
+      <div class="metric"><div class="val" id="sch-i10" data-count="16">0</div><div class="lbl" data-i18n="m.4">Indice i10</div></div>
       <div class="metric"><div class="val" data-count="15" data-suffix="+">0</div><div class="lbl" data-i18n="m.5">Années d'expérience</div></div>
       <div class="metric"><div class="val">AR7</div><div class="lbl" data-i18n="m.6">Auteur principal GIEC</div></div>
     </div>
-    <p class="msource rv" data-i18n="m.src">Indicateurs bibliométriques — <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&amp;hl=fr" target="_blank" rel="noopener">Google Scholar</a>, août 2026.</p>
+    <p class="msource rv" data-i18n="m.src">Indicateurs bibliométriques — <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&amp;hl=fr" target="_blank" rel="noopener">Google Scholar</a>, <span class="sch-date">septembre 2026</span>.</p>
 
     <div class="dist rv">
       <div class="dist-row">
@@ -924,7 +924,7 @@ footer.site{border-top:1px solid var(--rule);padding:40px 0;background:var(--pap
     <div class="sec-head rv">
       <span class="sec-num">06</span>
       <h2 data-i18n="s5.h">Publications</h2>
-      <p data-i18n="s5.p">Plus de 50 publications et communications recensées sur Google Scholar — 568 citations, indice h 12. Les 40 travaux revus par les pairs ci-dessous, dont 4 en cours de révision.</p>
+      <p data-i18n="s5.p">Plus de 50 publications et communications recensées sur Google Scholar — <span class="sch-c">683</span> citations, indice h <span class="sch-hh">12</span>. Les 40 travaux revus par les pairs ci-dessous, dont 4 en cours de révision.</p>
     </div>
     <div class="filters rv">
       <button class="fbtn on" data-f="all" data-i18n="f.all">Tout</button>
@@ -1533,7 +1533,7 @@ const I18N = {
     's1.h':'A profile at the interface of climate, health and data',
     's1.p':'Fifteen years of interdisciplinary research, from a PhD on seasonal malaria in the Sahel to IPCC assessments — with projects funded by the European Union (FP7), USAID, WHO, UNICEF, NOAA and IRD.',
     'm.1':'Publications &amp; communications','m.2':'Citations','m.3':'h-index','m.4':'i10-index','m.5':'Years of experience','m.6':'IPCC Lead Author',
-    'm.src':'Bibliometric indicators — <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>, August 2026.',
+    'm.src':'Bibliometric indicators — <a href="https://scholar.google.com/citations?user=phsMm7sAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>, <span class="sch-date">September 2026</span>.',
     'dist.1':'Malaria &amp; climate','dist.2':'Other climate-sensitive diseases — meningitis, heatwaves, COVID-19',
     'dist.3':'Rainfall extremes &amp; hydrology','dist.4':'Climate services, data &amp; adaptation','dist.art':'articles',
     'tk.1':'Programming','tk.2':'Models','tk.3':'Funding',
@@ -1566,7 +1566,7 @@ const I18N = {
     'e.5':'Expert meeting on Climate Change and Health, Wellcome Trust — London',
     'e.6':'First Lead Author Meeting, IPCC AR7 — Paris',
     'pt.l':'Institutions &amp; partners','pt.gf':'Global Fund','pt.labe':'University of Labé',
-    's5.h':'Publications','s5.p':'More than 50 publications and communications listed on Google Scholar — 568 citations, h-index 12. The 40 peer-reviewed works below, four of them under review.',
+    's5.h':'Publications','s5.p':'More than 50 publications and communications listed on Google Scholar — <span class="sch-c">683</span> citations, h-index <span class="sch-hh">12</span>. The 40 peer-reviewed works below, four of them under review.',
     'f.all':'All','f.mal':'Malaria','f.dis':'Other diseases','f.ext':'Extremes &amp; hydrology','f.ai':'AI &amp; data','f.serv':'Climate services',
     'pub.rev':'in review','pub.gn':'Guinea','pub.co':'Co-author','pub.sn':'Senegal','pub.mod':'Modelling','pub.prev':'Seasonal forecasting',
     'pub.men':'Meningitis','pub.wa':'West Africa','pub.heat':'Heatwaves','pub.mort':'Mortality','pub.mal':'Malaria','pub.ext':'Extremes','pub.ai':'AI','pub.serv':'Climate services','pub.data':'Data','pub.pol':'Policy','pub.pol':'Policy','pub.adapt':'Adaptation','pub.hyd':'Hydrology','pub.surv':'Surveillance','pub.pub':'Public health','pub.first':'First author',
@@ -1707,6 +1707,38 @@ setLang(storedLang === 'fr' ? 'fr' : 'en');
 document.querySelectorAll('[data-lang]').forEach(b =>
   b.addEventListener('click', () => setLang(b.dataset.lang))
 );
+
+
+/* ---------- Google Scholar : indicateurs mis à jour automatiquement (scholar.json) ---------- */
+let SCHOLAR = null;
+function applyScholar(){
+  if(!SCHOLAR) return;
+  const lang = document.documentElement.getAttribute('lang') === 'fr' ? 'fr-FR' : 'en-US';
+  const setCount = (id, v, keepSfx) => {
+    const c = document.getElementById(id);
+    if(!c || v == null) return;
+    c.dataset.count = v;
+    if(!keepSfx) c.dataset.suffix = '';
+    if(c.closest('.rv') && c.closest('.rv').classList.contains('in')) c.textContent = v + (c.dataset.suffix || '');
+  };
+  setCount('sch-cit', SCHOLAR.citations, false);
+  setCount('sch-h', SCHOLAR.h_index, false);
+  setCount('sch-i10', SCHOLAR.i10_index, false);
+  setCount('sch-pubs', SCHOLAR.publications, SCHOLAR.source === 'manual');
+  document.querySelectorAll('.sch-c').forEach(e => e.textContent = SCHOLAR.citations);
+  document.querySelectorAll('.sch-hh').forEach(e => e.textContent = SCHOLAR.h_index);
+  if(SCHOLAR.updated){
+    const d = new Date(SCHOLAR.updated + 'T12:00:00');
+    const txt = d.toLocaleDateString(lang, {month:'long', year:'numeric'});
+    document.querySelectorAll('.sch-date').forEach(e => e.textContent = txt);
+  }
+}
+const _setLang = setLang;
+setLang = function(l){ _setLang(l); applyScholar(); };
+fetch('scholar.json?v=' + Date.now(), {cache:'no-store'})
+  .then(r => r.ok ? r.json() : null)
+  .then(d => { if(d && d.citations){ SCHOLAR = d; applyScholar(); } })
+  .catch(() => {});
 
 
 /* ---------- gallery: filters + lightbox ---------- */
