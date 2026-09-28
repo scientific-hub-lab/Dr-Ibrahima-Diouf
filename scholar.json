@@ -1,5 +1,5 @@
 {
-  "citations": 586,
+  "citations": 587,
   "h_index": 13,
   "i10_index": 16,
   "publications": 56,
@@ -46,7 +46,7 @@
     },
     {
       "year": 2026,
-      "citations": 121
+      "citations": 122
     }
   ],
   "recent": [
@@ -91,7 +91,7 @@
       "cites": 15
     }
   ],
-  "updated": "2026-09-27",
+  "updated": "2026-09-28",
   "source": "serpapi",
   "profile": "https://scholar.google.com/citations?user=phsMm7sAAAAJ"
 }
