@@ -403,7 +403,7 @@ fetch('scholar.json?v=' + Date.now(), {cache:'no-store'})
 
 /* old one-page links (ibrahimadiouf.com/#publications ...) now open the matching page */
 (function(){
-  const map = {galerie:'/gallery', recherche:'/research', dashboards:'/dashboards', impact:'/impact',
+  const map = {recherche:'/research', dashboards:'/dashboards', impact:'/impact',
                publications:'/publications', parcours:'/career', contact:'/contact'};
   const h = location.hash.slice(1);
   if(map[h] && (location.pathname === '/' || location.pathname.endsWith('/index.html'))) location.replace(map[h]);
