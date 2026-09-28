@@ -453,6 +453,8 @@ nav.main a.on{color:var(--gold)}
 .ident{flex:0 1 auto}
 @media (max-width:1180px){.ident .rl{display:none}}
 .sec-num{display:none}
+/* phone: the home page carries every section (one scroll); computer: gallery only, other sections on their own pages */
+@media (min-width:901px){[data-m]{display:none!important}}
 nav.main a.on::after{right:0}
 main.page > section:first-child, main.page > .page-top{padding-top:56px}
 .explore{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}

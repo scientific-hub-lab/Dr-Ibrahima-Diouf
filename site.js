@@ -243,7 +243,7 @@ const I18N = {
     'g.f4':"Bellagio residency",
     'g.more':"See all photos",
     'ft.role':'Physicist, Climate &amp; Health Scientist','ft.rights':'All rights reserved','ft.top':'Back to top ↑'
-    ,'ex.h':'Explore','ex.p':'Research, tools, publications and career, each on its own page.','ex.go':'Open →'
+    ,'ex.h':'Explore','ex.p':'Research, tools, publications and career, each on its own page.','ex.go':'Open →','nav.9':'About'
   }
 };
 document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if(I18N.fr[k] === undefined) I18N.fr[k] = el.innerHTML; });
@@ -404,7 +404,19 @@ fetch('scholar.json?v=' + Date.now(), {cache:'no-store'})
 /* old one-page links (ibrahimadiouf.com/#publications ...) now open the matching page */
 (function(){
   const map = {recherche:'/research', dashboards:'/dashboards', impact:'/impact',
-               publications:'/publications', parcours:'/career', contact:'/contact'};
+               publications:'/publications', parcours:'/career', contact:'/contact', profil:'/about'};
   const h = location.hash.slice(1);
-  if(map[h] && (location.pathname === '/' || location.pathname.endsWith('/index.html'))) location.replace(map[h]);
+  const phone = window.matchMedia('(max-width:900px)').matches;
+  if(!phone && map[h] && (location.pathname === '/' || location.pathname.endsWith('/index.html'))) location.replace(map[h]);
+})();
+/* phone: menu and internal links scroll through the one-page home; computer: separate pages */
+(function(){
+  const PHONE = window.matchMedia('(max-width:900px)');
+  const ANCHOR = {'/':'galerie', '/about':'apropos', '/research':'recherche', '/dashboards':'dashboards',
+                  '/impact':'impact', '/publications':'publications', '/career':'parcours', '/contact':'contact'};
+  const links = Array.from(document.querySelectorAll('a[href]')).filter(a => ANCHOR[a.getAttribute('href')] !== undefined);
+  links.forEach(a => a.dataset.page = a.getAttribute('href'));
+  function mode(){ links.forEach(a => a.setAttribute('href', PHONE.matches ? '/#' + ANCHOR[a.dataset.page] : a.dataset.page)); }
+  mode();
+  if(PHONE.addEventListener) PHONE.addEventListener('change', mode);
 })();
