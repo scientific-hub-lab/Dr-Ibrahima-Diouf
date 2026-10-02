@@ -1,5 +1,5 @@
 {
-  "citations": 588,
+  "citations": 591,
   "h_index": 13,
   "i10_index": 16,
   "publications": 56,
@@ -46,7 +46,7 @@
     },
     {
       "year": 2026,
-      "citations": 124
+      "citations": 127
     }
   ],
   "recent": [
@@ -88,10 +88,10 @@
       "authors": "C Caminade, D Ayala, T de Chevigny, O Ngou, A Tchouatieu, F Girond, ...",
       "venue": "Malaria Journal 24 (1), 179, 2025",
       "year": 2025,
-      "cites": 15
+      "cites": 16
     }
   ],
-  "updated": "2026-09-30",
+  "updated": "2026-10-02",
   "source": "serpapi",
   "profile": "https://scholar.google.com/citations?user=phsMm7sAAAAJ"
 }
