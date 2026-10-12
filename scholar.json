@@ -1,7 +1,7 @@
 {
-  "citations": 596,
+  "citations": 598,
   "h_index": 13,
-  "i10_index": 16,
+  "i10_index": 17,
   "publications": 56,
   "graph": [
     {
@@ -46,7 +46,7 @@
     },
     {
       "year": 2026,
-      "citations": 130
+      "citations": 132
     }
   ],
   "recent": [
@@ -91,7 +91,7 @@
       "cites": 17
     }
   ],
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "source": "serpapi",
   "profile": "https://scholar.google.com/citations?user=phsMm7sAAAAJ"
 }
