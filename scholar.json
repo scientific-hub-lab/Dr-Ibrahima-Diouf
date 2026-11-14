@@ -1,8 +1,8 @@
 {
-  "citations": 623,
+  "citations": 625,
   "h_index": 13,
   "i10_index": 17,
-  "publications": 57,
+  "publications": 58,
   "graph": [
     {
       "year": 2016,
@@ -46,7 +46,7 @@
     },
     {
       "year": 2026,
-      "citations": 155
+      "citations": 157
     }
   ],
   "recent": [
@@ -67,6 +67,14 @@
       "cites": 1
     },
     {
+      "title": "Vaccination and Conditional Pathogen Invasion in a Malaria Meningococcal Model with Disease Specific Immunity",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=phsMm7sAAAAJ&pagesize=100&citation_for_view=phsMm7sAAAAJ:nPT8s1NX_-sC",
+      "authors": "I Diouf, D Diouf",
+      "venue": "Preprints, 2026",
+      "year": 2026,
+      "cites": 0
+    },
+    {
       "title": "Impact of climate change on malaria incidence in Senegal and Nigeria: a machine learning approach",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=phsMm7sAAAAJ&pagesize=100&citation_for_view=phsMm7sAAAAJ:hQUaER0FWQ4C",
       "authors": "I Diouf, A Dieng, MB Barry, C Talla, O Oyebiyi, AS Babalola, EU Igumbor, ...",
@@ -81,17 +89,9 @@
       "venue": "Climate 14 (9), 189, 2026",
       "year": 2026,
       "cites": 0
-    },
-    {
-      "title": "Meningitis Variability in West Africa: Changes and Drivers",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=phsMm7sAAAAJ&pagesize=100&citation_for_view=phsMm7sAAAAJ:t-hv7AR41mYC",
-      "authors": "D Diouf, M Martín-Rey, B Rodríguez-Fonseca, I Diouf, C Dione, ...",
-      "venue": "",
-      "year": 2026,
-      "cites": 0
     }
   ],
-  "updated": "2026-11-10",
+  "updated": "2026-11-14",
   "source": "serpapi",
   "profile": "https://scholar.google.com/citations?user=phsMm7sAAAAJ"
 }
